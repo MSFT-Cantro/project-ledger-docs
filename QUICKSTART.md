@@ -36,7 +36,16 @@ This will:
 1. Create or update the database schema
 2. Generate Prisma Client
 3. Create and apply migrations
-4. Seed the database with initial data
+
+Then seed the database with initial data:
+
+```bash
+npx prisma db seed
+```
+
+This will create:
+1. Default admin account with credentials below
+2. Sample client and project data for demonstration
 
 ### Running the Application
 
@@ -56,9 +65,22 @@ The application will be available at:
 - Frontend: http://localhost:3000
 - Backend API: http://localhost:3001
 
+## Database Seeding
+
+**Important:** If you haven't run the seeding command yet, make sure to seed the database to create the default admin account:
+
+```bash
+# For local development
+cd project-ledger/server
+npx prisma db seed
+
+# For Docker Compose
+docker-compose exec backend npx prisma db seed
+```
+
 ## Default Admin Account
 
-After database setup, you can log in with these credentials:
+After database seeding, you can log in with these credentials:
 - Email: admin@projectledger.com
 - Password: admin123
 
@@ -79,8 +101,11 @@ This will start:
 2. Initial database setup (first time only):
 ```bash
 # In a new terminal
-docker-compose exec server npx prisma migrate dev
+docker-compose exec backend npx prisma migrate dev
+docker-compose exec backend npx prisma db seed
 ```
+
+The migrate command will set up the database schema, and the seed command will create the default admin account and sample data.
 
 To stop all services:
 ```bash
