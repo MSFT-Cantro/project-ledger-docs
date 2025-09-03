@@ -1,0 +1,2 @@
+item#1
+Create Invetory screen where a user can create and document the items they would input on a quote or invoice. The items will have prices for each. The item dropdowns on the quote and invoice pages will now pull from the features and allow a user to select these items quickly and once selected the price will be update based on the backend. The user can overwrtie the name and price still. 
