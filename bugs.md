@@ -1,7 +1,7 @@
-Item#1
+Item#1 ✅ COMPLETED
 Update the Quote List page, so that the Client column in the table shows as Client & Project and displays the client and project like it does on the Invoice Page
 
-Item#2 
+Item#2 ✅ COMPLETED
 On the Invoice Detail Page, so that Payment History is under the Invoice Details and is the larger
 
 Item#3 
