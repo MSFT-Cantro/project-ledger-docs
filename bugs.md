@@ -10,7 +10,7 @@ On the Invoice Detail Page, Update the Invoice Summary so that it display the Pr
 Item#4 ✅ COMPLETED
 On the Client Page, on the edit client, make it so I can change the status of a client to Active to Inactive.
 
-Item#5 
+Item#5 ✅ COMPLETED
 On the Project Page, when creating or editing a project, make it so that the client dropdown only show active clients. Inactive clients should be not be come up in the results/dropdown. 
 
 Item#6 
