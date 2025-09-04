@@ -13,7 +13,7 @@ On the Client Page, on the edit client, make it so I can change the status of a 
 Item#5 ✅ COMPLETED
 On the Project Page, when creating or editing a project, make it so that the client dropdown only show active clients. Inactive clients should be not be come up in the results/dropdown. 
 
-Item#6 
+Item#6 ✅ COMPLETED
 On all pages, remove the export buttons 
 
 Item#7
