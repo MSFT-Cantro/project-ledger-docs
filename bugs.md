@@ -7,7 +7,7 @@ On the Invoice Detail Page, so that Payment History is under the Invoice Details
 Item#3 ✅ COMPLETED
 On the Invoice Detail Page, Update the Invoice Summary so that it display the Project Name and Client name, not the project and client ids. 
 
-Item#4 
+Item#4 ✅ COMPLETED
 On the Client Page, on the edit client, make it so I can change the status of a client to Active to Inactive.
 
 Item#5 
