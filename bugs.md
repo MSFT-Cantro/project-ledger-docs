@@ -4,7 +4,7 @@ Update the Quote List page, so that the Client column in the table shows as Clie
 Item#2 ✅ COMPLETED
 On the Invoice Detail Page, so that Payment History is under the Invoice Details and is the larger
 
-Item#3 
+Item#3 ✅ COMPLETED
 On the Invoice Detail Page, Update the Invoice Summary so that it display the Project Name and Client name, not the project and client ids. 
 
 Item#4 
