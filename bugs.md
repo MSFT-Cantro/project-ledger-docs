@@ -18,3 +18,6 @@ On all pages, remove the export buttons
 
 Item#7 ✅ COMPLETED
 Line items on Quotes and Invoices look and function a little different, can we make the line item component on the quote page the standard and give invoice the same one and align the functionality so they work the same. 
+
+Item#8
+The inventory page is using a differnet layout then the other pages. Can you standaize it so that it looks and functions like the other pages.
