@@ -17,5 +17,4 @@ Item#6 ✅ COMPLETED
 On all pages, remove the export buttons 
 
 Item#7
-Update the description field on the Create Invoice page so that the field doesn't confirm the input until the user hits enter or tab off. Right now the field confirms the input after each click
-
+Line items on Quotes and Invoices look and function a little different, can we make the line item component on the quote page the standard and give invoice the same one and align the functionality so they work the same. 
