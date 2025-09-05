@@ -16,5 +16,5 @@ On the Project Page, when creating or editing a project, make it so that the cli
 Item#6 ✅ COMPLETED
 On all pages, remove the export buttons 
 
-Item#7
+Item#7 ✅ COMPLETED
 Line items on Quotes and Invoices look and function a little different, can we make the line item component on the quote page the standard and give invoice the same one and align the functionality so they work the same. 
