@@ -1,131 +1,17 @@
-# User Settings Consolidation Recommendations
+✅ Begin planning and how to implement by creating a plan document in the docs folder for pricing pan integration. Free plan will be allowed to create 25 clients, projects, quotes, invoice, and 5 user accounts. Inventory should not be accessible to free tier. Paid Plan will allow a account to do any functionality with no limitations. 
 
-## Current State Analysis
+✅ Begin planning and how to implement by creating a plan document in the docs folder for strip integration so that a user can pay for their subcription.
 
-Currently, the application has user settings functionality in two different locations:
+✅ Begin planning and how to implement by creating a plan document in the docs folder for setting up the taxes based on Country and State/Province so that the tax are apply on quote and invoices based on that selection. 
 
-1. **UserSettingsModal** - Accessed via the top-level UserMenu dropdown
-   - Contains: Theme selection (light/dark), basic notification toggles
-   - Limited functionality, meant for quick access
-   
-2. **SettingsPage** - Full dedicated page at `/settings`
-   - Contains: Complete user profile, preferences, notifications, account management, admin panel
-   - Comprehensive functionality with proper form handling and persistence
+✅ Update Settings page and seperate the Admin Panel into multiple tabs for each of the section like Company Info, Integration, Billing and Package, and Users 
 
-## Recommended Approach
+Improve the User creation flow in the Setting page. We need to be able to create new users and assign a password.
 
-Based on UX best practices and the current application structure, I recommend maintaining **both** interfaces but with clear differentiation and improved integration:
+Limit the pages based on user role permissions. Admin will be able do all task and changes on any pages. User role will be able to make all the changes on the page but will only be able to see the Admin Panel but can not edit any of the settings. They should all look disabled. Viewer will be able to view all the page but can make no edits to any project or settings, they also can not see the settings page on the nav or get to the page. 
 
-### 1. Keep UserSettingsModal for Quick Actions
-**Purpose**: Provide instant access to frequently used settings without navigation
-**Contents** (simplified):
-- Theme toggle (light/dark/system)
-- Quick notification toggle (on/off)
-- "More Settings" button linking to full Settings page
+Implement the Pricing Plan Integration based on the pricing-plan-integration.md in the docs folders.
 
-### 2. Enhance SettingsPage as Primary Settings Hub
-**Purpose**: Comprehensive settings management
-**Contents** (organized by tabs):
-- **Profile**: Personal information, avatar, contact details
-- **Preferences**: Detailed notifications, language, timezone, accessibility
-- **Security**: Password change, two-factor authentication, sessions
-- **Account**: Billing, subscription, company information (for admins)
-- **Admin Panel**: User management, system settings (admin only)
+Implement the Stripe Integration based on the stripe-integration.md in the docs folders.
 
-### 3. Implementation Strategy
-
-#### Phase 1: Simplify UserSettingsModal ✅ COMPLETED
-- ✅ Remove duplicate functionality that exists on SettingsPage
-- ✅ Keep only most essential quick-access features:
-  - ✅ Theme toggle with visual preview
-  - ✅ Master notification toggle
-  - ✅ Link to full Settings page
-- ✅ Add proper state synchronization with main settings
-- ✅ Improved UserMenu integration (removed duplicate theme toggle)
-- ✅ Enhanced SettingsPage with URL-based tab navigation
-
-#### Phase 2: Enhance SettingsPage Organization
-- Remove duplicate functionality that exists on SettingsPage
-- Keep only most essential quick-access features:
-  - Theme toggle with visual preview
-  - Master notification toggle
-  - Link to full Settings page
-- Add proper state synchronization with main settings
-
-#### Phase 2: Enhance SettingsPage Organization ✅ PARTIALLY COMPLETED
-- ✅ Enhanced tab structure with better accessibility
-- ✅ Added URL-based tab navigation (/settings?tab=admin)
-- ✅ Improved integration messaging between modal and page
-- ✅ Added helpful tips and alerts for better UX
-- 🔄 Add search functionality for settings (TODO)
-- 🔄 Implement setting categories with clear visual hierarchy (TODO)
-- 🔄 Add keyboard shortcuts for power users (TODO)
-
-#### Phase 3: Improve Integration
-- Ensure settings sync between modal and page
-- Add contextual help and explanations
-- Implement settings import/export for admin users
-- Add settings change history/audit log
-
-### 4. User Experience Flow
-
-```
-User Avatar Click → UserMenu Dropdown
-├── Quick Theme Toggle (immediate action)
-├── Notification Toggle (immediate action)  
-├── "Settings & Preferences" → Full SettingsPage
-└── Other user actions (logout, help, etc.)
-
-Settings Page Navigation
-├── /settings (Profile tab - default)
-├── /settings?tab=preferences 
-├── /settings?tab=security
-├── /settings?tab=account (admin)
-└── /settings?tab=admin (admin only)
-```
-
-### 5. Technical Implementation
-
-#### File Structure:
-```
-components/common/
-├── UserMenu.tsx (keep existing, simplify modal)
-├── UserSettingsModal.tsx (simplify to quick actions only)
-└── SettingsQuickActions.tsx (new - extract quick actions)
-
-pages/
-└── SettingsPage.tsx (enhance organization)
-```
-
-#### State Management:
-- Use React Query for settings data caching
-- Implement optimistic updates for quick actions
-- Add proper error handling and retry logic
-- Sync settings between modal and page components
-
-### 6. Benefits of This Approach
-
-1. **User Convenience**: Quick access to common actions without leaving current page
-2. **Comprehensive Management**: Full settings page for detailed configuration
-3. **Progressive Disclosure**: Simple → Advanced settings based on user needs
-4. **Consistent Experience**: Unified state management across interfaces
-5. **Scalability**: Easy to add new settings in appropriate location
-
-### 7. Implementation Priority
-
-**High Priority**: ✅ COMPLETED
-- ✅ Simplify UserSettingsModal to essential quick actions only
-- ✅ Add "More Settings" link to bridge to full page
-- ✅ Ensure theme and notification state sync
-
-**Medium Priority**: ✅ MOSTLY COMPLETED
-- ✅ Reorganize SettingsPage with better tab structure
-- 🔄 Add settings search functionality (TODO)
-- ✅ Improve mobile responsiveness (built-in with current structure)
-
-**Low Priority**:
-- Settings import/export for admins
-- Advanced accessibility options
-- Settings change history
-
-This approach provides the best of both worlds: convenience for quick changes and comprehensive management for detailed configuration, while maintaining a clean and intuitive user experience. 
+Implement the Tax Configuration based on the tax-configuration.md in the docs folders.
