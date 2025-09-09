@@ -26,7 +26,7 @@ This document outlines the implementation plan for integrating Stripe payment pr
 #### Stripe Configuration
 - **Business Type**: SaaS Platform
 - **Products**: 
-  - Professional Plan Monthly ($29.99/month)
+  - Professional Plan Monthly ($99.99/month)
   - Professional Plan Yearly ($299.99/year) - 17% discount
 - **Tax Settings**: Enable automatic tax collection
 - **Webhooks**: Configure for subscription events
@@ -395,7 +395,7 @@ export const SubscriptionUpgrade: React.FC = () => {
                 checked={selectedPlan === 'monthly'}
                 onChange={(e) => setSelectedPlan(e.target.value as 'monthly')}
               />
-              Monthly - $29.99/month
+              Monthly - $99.99/month
             </label>
             <label>
               <input 

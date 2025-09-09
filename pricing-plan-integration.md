@@ -79,7 +79,7 @@ INSERT INTO subscription_plans (name, slug, price, billing_cycle, features, limi
 ('Free', 'free', 0.00, 'monthly', 
  '["basic_features", "community_support"]',
  '{"clients": 25, "projects": 25, "quotes": 25, "invoices": 25, "users": 5, "inventory_access": false}'),
-('Professional', 'professional', 29.99, 'monthly',
+('Professional', 'professional', 99.99, 'monthly',
  '["all_features", "priority_support", "advanced_analytics", "inventory_management"]',
  '{"clients": -1, "projects": -1, "quotes": -1, "invoices": -1, "users": -1, "inventory_access": true}');
 ```
