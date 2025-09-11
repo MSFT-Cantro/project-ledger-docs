@@ -14,6 +14,14 @@
   - **User List**: Shows only ACTIVE and INACTIVE users, hides SUSPENDED (removed) users
   - Both preserve data integrity by keeping user records and their related projects, quotes, etc.
 
+✅ Implement PayPal Integration for subscription payments. Complete with:
+  - **Real PayPal Sandbox Integration**: Direct PayPal Orders API integration with payment capture
+  - **Hybrid Mock/Live System**: Automatic fallback to mock when credentials not configured
+  - **Frontend Payment Flow**: PayPal payment method selection, redirect to PayPal checkout, callback handling
+  - **Backend Payment Processing**: PayPal order creation, payment capture, subscription activation
+  - **Database Integration**: Full transaction tracking and subscription management
+  - **Environment Configuration**: Docker-ready with PayPal sandbox/live credential support
+
 Need a Account Page for when a user logs into the service but their account is part of multiple orgs so they can pick the account they are logging into after a successful authentication. 
 
 Limit the pages based on user role permissions. Admin will be able do all task and changes on any pages. User role will be able to make all the changes on the page but will only be able to see the Admin Panel but can not edit any of the settings. They should all look disabled. Viewer will be able to view all the page but can make no edits to any project or settings, they also can not see the settings page on the nav or get to the page. 
