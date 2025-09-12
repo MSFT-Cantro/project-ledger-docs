@@ -31,3 +31,18 @@ Implement the Pricing Plan Integration based on the pricing-plan-integration.md 
 Implement the Stripe Integration based on the stripe-integration.md in the docs folders.
 
 Implement the Tax Configuration based on the tax-configuration.md in the docs folders.
+
+## TODO: 14-Day Trial Implementation
+
+Implement a 14-day free trial system for new users to experience Professional plan features before deciding to upgrade:
+
+- **Trial Period Management**: Automatically grant Professional plan access for 14 days upon account creation
+- **Trial Tracking**: Track trial start date, expiration date, and days remaining in subscription system  
+- **UI Indicators**: Display trial status in navigation/dashboard with countdown timer
+- **Feature Access**: Allow full Professional features during trial period, then restrict to Free plan limits
+- **Trial Expiration Handling**: Gracefully downgrade to Free plan when trial expires
+- **Upgrade Prompts**: Show upgrade notifications as trial approaches expiration
+- **Email Notifications**: Send trial status emails (welcome, reminders, expiration)
+- **Database Schema**: Add trial-related fields to account/subscription models
+- **Backend Logic**: Update subscription service to handle trial periods and automatic downgrades
+- **Frontend Components**: Create trial status components and upgrade flow integration
