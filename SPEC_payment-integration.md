@@ -2,15 +2,15 @@
 
 ## ✅ IMPLEMENTATION STATUS: PHASE 1 STARTING
 
-**Last Updated**: September 10, 2025  
+**Last Updated**: September 16, 2025  
 **Current Status**: Phase 1 (PayPal Backend Integration) - Ready to implement  
-**Prerequisites**: ✅ Pricing plan integration complete, backend subscription system operational  
+**Prerequisites**: ✅ Pricing plan integration complete, ✅ Account-based subscription system operational  
 **Next Phase**: PayPal payment processing integration to enable credit card functionality in billing page
 
 ## Overview
 This document outlines the implementation plan for integrating PayPal payment processing to handle subscription payments for Project Ledger's pricing plans. This integration will enable users to upgrade from free to paid plans and manage their billing through PayPal's robust payment system.
 
-**Building Upon**: Complete subscription system with Free ($0) and Professional ($99.99) plans already operational
+**Building Upon**: Complete account-based subscription system with Free ($0) and Professional ($99.99) plans already operational
 
 ## PayPal Integration Requirements
 
@@ -37,7 +37,7 @@ This document outlines the implementation plan for integrating PayPal payment pr
 - **Business Type**: SaaS Platform
 - **Products**: 
   - Professional Plan Monthly ($99.99/month)
-  - Professional Plan Yearly ($299.99/year) - 17% discount
+  - Professional Plan Yearly ($999.99/year) - 17% discount
 - **Tax Settings**: Enable automatic tax collection
 - **Webhooks**: Configure for subscription events
 - **API Access**: Enable REST API access for subscriptions
@@ -94,7 +94,7 @@ CREATE TABLE payment_methods (
 -- Subscription transactions
 CREATE TABLE subscription_transactions (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    user_id INT NOT NULL,
+    account_id INT NOT NULL,
     subscription_id INT NOT NULL,
     paypal_transaction_id VARCHAR(255),
     paypal_subscription_id VARCHAR(255),
@@ -107,9 +107,9 @@ CREATE TABLE subscription_transactions (
     billing_period_end DATE,
     paypal_fee DECIMAL(10,2) DEFAULT 0,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
-    FOREIGN KEY (subscription_id) REFERENCES user_subscriptions(id) ON DELETE CASCADE,
-    INDEX idx_user_transactions (user_id),
+    FOREIGN KEY (account_id) REFERENCES accounts(id) ON DELETE CASCADE,
+    FOREIGN KEY (subscription_id) REFERENCES account_subscriptions(id) ON DELETE CASCADE,
+    INDEX idx_account_transactions (account_id),
     INDEX idx_subscription_transactions (subscription_id),
     INDEX idx_paypal_transaction (paypal_transaction_id)
 );
@@ -131,8 +131,8 @@ CREATE TABLE paypal_webhook_events (
 
 #### Update Existing Tables
 ```sql
--- Add PayPal subscription ID to user_subscriptions
-ALTER TABLE user_subscriptions 
+-- Add PayPal subscription ID to account_subscriptions
+ALTER TABLE account_subscriptions 
 ADD COLUMN paypal_subscription_id VARCHAR(255) NULL,
 ADD COLUMN paypal_plan_id VARCHAR(255) NULL,
 ADD INDEX idx_paypal_subscription (paypal_subscription_id);
@@ -214,8 +214,8 @@ export class BillingService {
 
   async initializeCustomer(userId: number): Promise<PayPalCustomer>
   async upgradeSubscription(userId: number, planId: number): Promise<{ approvalUrl: string; subscriptionId: string }>
-  async confirmSubscription(userId: number, subscriptionId: string, paypalSubscriptionId: string): Promise<UserSubscription>
-  async cancelSubscription(userId: number, reason?: string): Promise<UserSubscription>
+  async confirmSubscription(userId: number, subscriptionId: string, paypalSubscriptionId: string): Promise<AccountSubscription>
+  async cancelSubscription(userId: number, reason?: string): Promise<AccountSubscription>
   async getBillingHistory(userId: number): Promise<SubscriptionTransaction[]>
   async processWebhookEvent(eventType: string, eventData: any): Promise<void>
   async syncSubscriptionStatus(paypalSubscriptionId: string): Promise<void>
@@ -663,8 +663,8 @@ export const BillingTab: React.FC = () => {
 
       <div className="billing-portal">
         <h3>Manage Billing</h3>
-        <p>Access Stripe's customer portal to update payment information, view invoices, and manage your subscription.</p>
-        <button onClick={() => openCustomerPortal()}>
+        <p>Access PayPal's billing management to update payment information, view invoices, and manage your subscription.</p>
+        <button onClick={() => openPayPalBillingPortal()}>
           Open Billing Portal
         </button>
       </div>
@@ -702,7 +702,7 @@ export interface PaymentMethod {
 
 export interface SubscriptionTransaction {
   id: number;
-  userId: number;
+  accountId: number;
   subscriptionId: number;
   paypalTransactionId?: string;
   paypalSubscriptionId?: string;
