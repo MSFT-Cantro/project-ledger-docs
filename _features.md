@@ -22,19 +22,19 @@
   - **Database Integration**: Full transaction tracking and subscription management
   - **Environment Configuration**: Docker-ready with PayPal sandbox/live credential support
 
-Need a Account Page for when a user logs into the service but their account is part of multiple orgs so they can pick the account they are logging into after a successful authentication. 
+## TODO: Need a Account Page for when a user logs into the service but their account is part of multiple orgs so they can pick the account they are logging into after a successful authentication. 
 
-Limit the pages based on user role permissions. Admin will be able do all task and changes on any pages. User role will be able to make all the changes on the page but will only be able to see the Admin Panel but can not edit any of the settings. They should all look disabled. Viewer will be able to view all the page but can make no edits to any project or settings, they also can not see the settings page on the nav or get to the page. 
+## TODO: Limit the pages based on user role permissions. Admin will be able do all task and changes on any pages. User role will be able to make all the changes on the page but will only be able to see the Admin Panel but can not edit any of the settings. They should all look disabled. Viewer will be able to view all the page but can make no edits to any project or settings, they also can not see the settings page on the nav or get to the page. 
 
-Implement the Pricing Plan Integration based on the pricing-plan-integration.md in the docs folders.
+## TODO: Implement the Pricing Plan Integration based on the pricing-plan-integration.md in the docs folders.
 
-Implement the Stripe Integration based on the stripe-integration.md in the docs folders.
+## TODO: Implement the Stripe Integration based on the stripe-integration.md in the docs folders.
 
-Implement the Tax Configuration based on the tax-configuration.md in the docs folders.
+## TODO: Implement the Tax Configuration based on the tax-configuration.md in the docs folders.
 
 ## TODO: 14-Day Trial Implementation
 
-Implement a 14-day free trial system for new users to experience Professional plan features before deciding to upgrade:
+## TODO: Implement a 14-day free trial system for new users to experience Professional plan features before deciding to upgrade:
 
 - **Trial Period Management**: Automatically grant Professional plan access for 14 days upon account creation
 - **Trial Tracking**: Track trial start date, expiration date, and days remaining in subscription system  
@@ -46,3 +46,9 @@ Implement a 14-day free trial system for new users to experience Professional pl
 - **Database Schema**: Add trial-related fields to account/subscription models
 - **Backend Logic**: Update subscription service to handle trial periods and automatic downgrades
 - **Frontend Components**: Create trial status components and upgrade flow integration
+
+## TODO: Make a Reports Page, where we have standrad reports for each of the pages and then allow clients to make their own.
+
+## TODO: Make a Notification system and tab for the application allow clients to get the notification. Mark them as read or unread. 
+
+## TODO: Make a search functionlaity so that the search bar in the top toolbar functions as expected to all the user to search across the whole app based on their search. 
