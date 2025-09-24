@@ -21,3 +21,5 @@ Line items on Quotes and Invoices look and function a little different, can we m
 
 Item#8 ✅ COMPLETED
 The inventory page is using a different layout than the other pages. Can you standardize it so that it looks and functions like the other pages.
+
+Update Loading Page background to blue
