@@ -47,8 +47,6 @@
 - **Backend Logic**: Update subscription service to handle trial periods and automatic downgrades
 - **Frontend Components**: Create trial status components and upgrade flow integration
 
-## TODO: Make a Reports Page, where we have standrad reports for each of the pages and then allow clients to make their own.
-
 ## TODO: Make a Notification system and tab for the application allow clients to get the notification. Mark them as read or unread. 
 
 ## TODO: Make a search functionlaity so that the search bar in the top toolbar functions as expected to all the user to search across the whole app based on their search. 
