@@ -1,6 +1,6 @@
 # 📚 Project Ledger Documentation Index
 
-**Last Updated:** October 1, 2025  
+**Last Updated:** October 2, 2025  
 **Location:** `docs/DOCUMENTATION_INDEX.md`
 
 ---
@@ -20,12 +20,6 @@ Start here if you're new to the project:
 ## 🔧 Technical Fixes & Solutions
 
 ### Frontend-Backend Communication
-- **[AZURE_LOCAL_TEST_FIX_SUMMARY.md](fixes/AZURE_LOCAL_TEST_FIX_SUMMARY.md)** - Complete fix summary
-  - All 4 issues resolved (SubscriptionService, RecurringInvoiceService, SubscriptionContext, Database)
-  - Technical details for each fix
-  - Before/After comparisons
-  - Verification steps
-
 - **[FRONTEND_API_FIX_COMPLETE.md](fixes/FRONTEND_API_FIX_COMPLETE.md)** - Detailed API configuration
   - axiosInstance vs raw axios explanation
   - Request flow diagrams
@@ -51,25 +45,28 @@ Start here if you're new to the project:
 ### Architecture & Planning
 Located in `docs/` directory:
 
-- **[architecture.md](docs/Completed/architecture.md)** - System architecture overview
-- **[BRANDING_APPLICATION_PLAN.md](docs/Completed/BRANDING_APPLICATION_PLAN.md)** - Brand guidelines
-- **[ACCESSIBILITY_MOBILE_IMPROVEMENTS.md](docs/Completed/ACCESSIBILITY_MOBILE_IMPROVEMENTS.md)** - UX improvements
+- **[Completed/architecture.md](Completed/architecture.md)** - System architecture overview
+- **[Completed/BRANDING_APPLICATION_PLAN.md](Completed/BRANDING_APPLICATION_PLAN.md)** - Brand guidelines
+- **[Completed/ACCESSIBILITY_MOBILE_IMPROVEMENTS.md](Completed/ACCESSIBILITY_MOBILE_IMPROVEMENTS.md)** - UX improvements
 
 ### Feature Specifications
-- **[SPEC_payment-integration.md](docs/SPEC_payment-integration.md)** - Payment system design
-- **[SPEC_pricing-plan-integration.md](docs/SPEC_pricing-plan-integration.md)** - Subscription plans
-- **[SPEC_ReportingFunctionality.md](docs/SPEC_ReportingFunctionality.md)** - Reporting features
-- **[SPEC_tax-configuration.md](docs/Completed/SPEC_tax-configuration.md)** - Tax system design
+- **[SPEC_payment-integration.md](SPEC_payment-integration.md)** - Payment system design
+- **[SPEC_pricing-plan-integration.md](SPEC_pricing-plan-integration.md)** - Subscription plans
+- **[SPEC_ReportingFunctionality.md](SPEC_ReportingFunctionality.md)** - Reporting features
+- **[SPEC_tax-configuration.md](Completed/SPEC_tax-configuration.md)** - Tax system design
+- **[SPEC_OAUTH_SETUP.md](SPEC_OAUTH_SETUP.md)** - OAuth integration guide
+- **[SPEC_ACCOUNT_SUBSCRIPTION_MIGRATION.md](SPEC_ACCOUNT_SUBSCRIPTION_MIGRATION.md)** - Account system
 
 ### Deployment & Operations
-- **[AZURE_DEPLOYMENT_PLAN.md](docs/AZURE_DEPLOYMENT_PLAN.md)** - Azure deployment strategy
-- **[PRODUCTION_DEPLOYMENT_PAYPAL.md](docs/PRODUCTION_DEPLOYMENT_PAYPAL.md)** - PayPal production setup
-- **[SECURITY_AUDIT_PAYPAL.md](docs/SECURITY_AUDIT_PAYPAL.md)** - Security considerations
-- **[MONITORING_ALERTING_PAYPAL.md](docs/MONITORING_ALERTING_PAYPAL.md)** - Monitoring setup
+**See [deployment/README.md](deployment/README.md) for complete deployment documentation**
 
-### OAuth & Authentication
-- **[SPEC_OAUTH_SETUP.md](docs/SPEC_OAUTH_SETUP.md)** - OAuth integration guide
-- **[SPEC_ACCOUNT_SUBSCRIPTION_MIGRATION.md](docs/SPEC_ACCOUNT_SUBSCRIPTION_MIGRATION.md)** - Account system
+- **[deployment/DEPLOYMENT_PLAN.md](deployment/DEPLOYMENT_PLAN.md)** - Zero-downtime deployment strategy
+- **[deployment/AZURE_DEPLOYMENT_COMPLETE.md](deployment/AZURE_DEPLOYMENT_COMPLETE.md)** - Current Azure setup details
+- **[deployment/APP_SUBDOMAIN_IMPLEMENTATION.md](deployment/APP_SUBDOMAIN_IMPLEMENTATION.md)** - Custom domain setup (app.projectledger.ca)
+- **[deployment/GODADDY_DNS_SETUP.md](deployment/GODADDY_DNS_SETUP.md)** - DNS configuration guide
+- **[deployment/PRODUCTION_DEPLOYMENT_PAYPAL.md](deployment/PRODUCTION_DEPLOYMENT_PAYPAL.md)** - PayPal production setup
+- **[deployment/SECURITY_AUDIT_PAYPAL.md](deployment/SECURITY_AUDIT_PAYPAL.md)** - Security considerations
+- **[deployment/MONITORING_ALERTING_PAYPAL.md](deployment/MONITORING_ALERTING_PAYPAL.md)** - Monitoring setup
 
 ---
 
@@ -126,20 +123,21 @@ ProjectLedger2/
 ├── packages/
 │   └── shared-types/         # Shared TypeScript types
 ├── docs/                     # All documentation
-│   ├── Completed/           # Completed specs
-│   ├── SPEC_*.md            # Feature specifications
-│   ├── _bugs.md             # Issue tracking
-│   ├── _features.md         # Feature requests
-│   └── _techdebt.md         # Technical debt
+│   ├── deployment/          # 🚀 Deployment docs
+│   ├── fixes/               # 🔧 Technical fixes
+│   ├── guides/              # 📖 User guides
+│   ├── Completed/           # ✅ Completed specs
+│   ├── SPEC_*.md            # 📋 Feature specifications
+│   ├── _bugs.md             # 🐛 Issue tracking
+│   ├── _features.md         # ✨ Feature requests
+│   └── _techdebt.md         # ⚙️ Technical debt
 ├── tools/                    # Automation scripts
 │   ├── testing/             # Test utilities
 │   ├── deployment/          # Deploy scripts
 │   ├── monitoring/          # Monitoring tools
 │   └── utilities/           # Helper scripts
-├── QUICK_START.md           # ⭐ Start here
-├── AZURE_LOCAL_TEST_FIX_SUMMARY.md  # Fix documentation
-├── FRONTEND_API_FIX_COMPLETE.md     # API configuration
-└── TAX_ISSUE_RESOLUTION.md          # Tax fixes
+├── NEXT_STEPS.md            # 🎯 Quick setup guide
+└── CUSTOM_DOMAIN_SETUP.md   # 🌐 Domain setup
 ```
 
 ---
@@ -149,28 +147,31 @@ ProjectLedger2/
 ### "I want to..."
 
 **...set up the project locally**
-→ [QUICK_START.md](QUICK_START.md)
+→ [guides/QUICK_START.md](guides/QUICK_START.md)
 
 **...understand the recent fixes**
-→ [AZURE_LOCAL_TEST_FIX_SUMMARY.md](AZURE_LOCAL_TEST_FIX_SUMMARY.md)
+→ [fixes/FRONTEND_API_FIX_COMPLETE.md](fixes/FRONTEND_API_FIX_COMPLETE.md)
 
 **...troubleshoot API issues**
-→ [FRONTEND_API_FIX_COMPLETE.md](FRONTEND_API_FIX_COMPLETE.md)
+→ [fixes/FRONTEND_API_FIX_COMPLETE.md](fixes/FRONTEND_API_FIX_COMPLETE.md)
 
 **...deploy to Azure**
-→ [docs/AZURE_DEPLOYMENT_PLAN.md](docs/AZURE_DEPLOYMENT_PLAN.md)
+→ [deployment/DEPLOYMENT_PLAN.md](deployment/DEPLOYMENT_PLAN.md) or [deployment/README.md](deployment/README.md)
+
+**...set up custom domain**
+→ [deployment/GODADDY_DNS_SETUP.md](deployment/GODADDY_DNS_SETUP.md)
 
 **...understand the architecture**
-→ [docs/Completed/architecture.md](docs/Completed/architecture.md)
+→ [Completed/architecture.md](Completed/architecture.md)
 
 **...add a new feature**
-→ [docs/SPEC_*.md](docs/) + [tools/README.md](tools/README.md)
+→ [SPEC_*.md](.) + [tools/README.md](../tools/README.md)
 
 **...fix a tax calculation bug**
-→ [TAX_ISSUE_RESOLUTION.md](TAX_ISSUE_RESOLUTION.md)
+→ [fixes/TAX_ISSUE_RESOLUTION.md](fixes/TAX_ISSUE_RESOLUTION.md)
 
 **...set up PayPal**
-→ [docs/PRODUCTION_DEPLOYMENT_PAYPAL.md](docs/PRODUCTION_DEPLOYMENT_PAYPAL.md)
+→ [deployment/PRODUCTION_DEPLOYMENT_PAYPAL.md](deployment/PRODUCTION_DEPLOYMENT_PAYPAL.md)
 
 ---
 
@@ -206,7 +207,9 @@ ProjectLedger2/
 When adding new documentation:
 
 1. **Create files in appropriate locations:**
-   - Technical fixes: Root level (`*_FIX.md`, `*_RESOLUTION.md`)
+   - Deployment documentation: `docs/deployment/`
+   - Technical fixes: `docs/fixes/`
+   - User guides: `docs/guides/`
    - Specifications: `docs/SPEC_*.md`
    - Completed work: `docs/Completed/`
    - Issue tracking: `docs/_bugs.md`, `docs/_features.md`, `docs/_techdebt.md`
@@ -214,7 +217,9 @@ When adding new documentation:
 2. **Update this index** with links to new documentation
 
 3. **Follow naming conventions:**
-   - Fixes: `{ISSUE}_FIX.md` or `{ISSUE}_RESOLUTION.md`
+   - Deployment docs: In `deployment/` folder with descriptive names
+   - Fixes: `{ISSUE}_FIX.md` or `{ISSUE}_RESOLUTION.md` in `fixes/`
+   - Guides: In `guides/` folder
    - Specs: `SPEC_{feature}.md`
    - Plans: `{SERVICE}_PLAN.md` or `{SERVICE}_DEPLOYMENT.md`
 
@@ -234,5 +239,5 @@ Can't find what you're looking for?
 
 ---
 
-**Last Review:** October 1, 2025  
+**Last Review:** October 2, 2025  
 **Maintained By:** Development Team
