@@ -85,7 +85,7 @@ Backend Container App:
 DATABASE_URL=postgresql://postgres:HzxHJdKgjLaamQSqYUUdD8oE8@projectledger-db.eastus2.azurecontainer.io:5432/projectledger
 NODE_ENV=production
 PORT=3001
-FRONTEND_URL=https://projectledger.ca
+FRONTEND_URL=https://app.projectledger.ca
 ```
 
 Frontend Container App:
@@ -195,13 +195,14 @@ Run seed scripts to populate initial data:
 - Default configurations
 
 ### **2. Custom Domain Configuration**
-Configure `projectledger.ca`:
-1. Get static IP from Container Apps Environment
-2. Create DNS A records in GoDaddy:
-   - `@` → `20.1.213.250`
-   - `www` → `20.1.213.250`
-3. Add custom domain to frontend Container App
-4. Configure SSL certificate (automated by Azure)
+Configure `app.projectledger.ca`:
+1. Get static IP from Container Apps Environment: `20.1.213.250`
+2. Create DNS A record in GoDaddy:
+   - `app` → `20.1.213.250`
+3. Create DNS TXT record for verification:
+   - `asuid.app.projectledger.ca` → verification ID
+4. Add custom domain to frontend Container App
+5. Configure SSL certificate (automated by Azure)
 
 ### **3. Monitoring & Alerts**
 Set up monitoring:

@@ -1,14 +1,15 @@
-# 🌐 GoDaddy DNS Setup Guide for projectledger.ca
+# 🌐 GoDaddy DNS Setup Guide for app.projectledger.ca
 
 **Date:** October 2, 2025  
 **Domain:** projectledger.ca  
+**Application URL:** app.projectledger.ca  
 **Azure Static IP:** 20.1.213.250
 
 ---
 
 ## 📋 Overview
 
-This guide will help you configure your GoDaddy domain `projectledger.ca` to point to your Azure Container Apps deployment.
+This guide will help you configure your GoDaddy domain to use the subdomain `app.projectledger.ca` for your Azure Container Apps deployment.
 
 ---
 
@@ -24,22 +25,12 @@ This guide will help you configure your GoDaddy domain `projectledger.ca` to poi
 
 You need to configure the following DNS records:
 
-#### **A Record (Root Domain)**
-Configure the root domain (@) to point to Azure:
+#### **A Record (app subdomain)**
+Configure the app subdomain to point to Azure:
 
 ```
 Type: A
-Name: @
-Value: 20.1.213.250
-TTL: 600 seconds (10 minutes)
-```
-
-#### **A Record (www subdomain)**
-Configure www subdomain:
-
-```
-Type: A
-Name: www
+Name: app
 Value: 20.1.213.250
 TTL: 600 seconds (10 minutes)
 ```
@@ -49,14 +40,14 @@ Azure needs to verify domain ownership. We'll add this in Step 2.
 
 ```
 Type: TXT
-Name: asuid.projectledger.ca
+Name: asuid.app.projectledger.ca
 Value: [Will be provided by Azure in Step 2]
 TTL: 600 seconds (10 minutes)
 ```
 
 ### **Remove Conflicting Records**
-- Delete any existing CNAME records for @ or www that point elsewhere
-- Delete any existing A records that conflict with the new ones
+- Delete any existing CNAME records for 'app' that point elsewhere
+- Delete any existing A records for 'app' that conflict with the new one
 
 ---
 
@@ -86,7 +77,7 @@ Go back to GoDaddy DNS settings and add:
 
 ```
 Type: TXT
-Name: asuid.projectledger.ca
+Name: asuid.app.projectledger.ca
 Value: [Paste the verification ID from Step 2.1]
 TTL: 600 seconds
 ```
@@ -95,22 +86,13 @@ TTL: 600 seconds
 
 #### **Step 2.3: Add Custom Domain to Container App**
 
-For **projectledger.ca** (root domain):
+For **app.projectledger.ca**:
 
 ```bash
 az containerapp hostname add \
   --name projectledger-frontend \
   --resource-group projectledger-poc \
-  --hostname projectledger.ca
-```
-
-For **www.projectledger.ca**:
-
-```bash
-az containerapp hostname add \
-  --name projectledger-frontend \
-  --resource-group projectledger-poc \
-  --hostname www.projectledger.ca
+  --hostname app.projectledger.ca
 ```
 
 #### **Step 2.4: Bind SSL Certificate**
@@ -118,19 +100,11 @@ az containerapp hostname add \
 Azure Container Apps automatically provisions a free managed SSL certificate:
 
 ```bash
-# Enable managed certificate for root domain
+# Enable managed certificate for app subdomain
 az containerapp hostname bind \
   --name projectledger-frontend \
   --resource-group projectledger-poc \
-  --hostname projectledger.ca \
-  --environment projectledger-env \
-  --validation-method HTTP
-
-# Enable managed certificate for www subdomain
-az containerapp hostname bind \
-  --name projectledger-frontend \
-  --resource-group projectledger-poc \
-  --hostname www.projectledger.ca \
+  --hostname app.projectledger.ca \
   --environment projectledger-env \
   --validation-method HTTP
 ```
@@ -155,10 +129,9 @@ Wait 5-10 minutes for DNS propagation.
 
 1. In Azure Portal, still on the Custom domains page
 2. Click **+ Add custom domain**
-3. Enter `projectledger.ca`
+3. Enter `app.projectledger.ca`
 4. Click **Validate**
 5. If validation succeeds, click **Add**
-6. Repeat for `www.projectledger.ca`
 
 #### **Step 2.4: Configure SSL**
 
@@ -189,17 +162,19 @@ curl -I https://projectledger.ca
 
 # Test www subdomain
 curl -I https://www.projectledger.ca
+```bash
+# Test domain accessibility
+curl -I https://app.projectledger.ca
 ```
 
-Both should return **200 OK** with SSL certificate.
+Should return **200 OK** with SSL certificate.
 
 ### **Test in Browser**
 
 Open in your browser:
-- https://projectledger.ca
-- https://www.projectledger.ca
+- https://app.projectledger.ca
 
-Both should load your application with a valid SSL certificate (green padlock).
+Your application should load with a valid SSL certificate (green padlock).
 
 ---
 
@@ -211,7 +186,7 @@ After custom domain is working, update your backend environment variables:
 az containerapp update \
   --name projectledger-backend \
   --resource-group projectledger-poc \
-  --set-env-vars "FRONTEND_URL=https://projectledger.ca"
+  --set-env-vars "FRONTEND_URL=https://app.projectledger.ca"
 ```
 
 ---
@@ -220,11 +195,10 @@ az containerapp update \
 
 After setup, your GoDaddy DNS should look like this:
 
-| Type | Name                  | Value                              | TTL |
-|------|-----------------------|-----------------------------------|-----|
-| A    | @                     | 20.1.213.250                      | 600 |
-| A    | www                   | 20.1.213.250                      | 600 |
-| TXT  | asuid.projectledger.ca| [Azure verification ID]           | 600 |
+| Type | Name                      | Value                              | TTL |
+|------|---------------------------|------------------------------------|-----|
+| A    | app                       | 20.1.213.250                       | 600 |
+| TXT  | asuid.app.projectledger.ca| [Azure verification ID]            | 600 |
 
 ---
 
@@ -249,7 +223,7 @@ After setup, your GoDaddy DNS should look like this:
 ### **Domain Verification Fails**
 - **Issue:** Azure can't verify domain ownership
 - **Solution:**
-  - Ensure TXT record `asuid.projectledger.ca` is added correctly
+  - Ensure TXT record `asuid.app.projectledger.ca` is added correctly
   - Wait 10-15 minutes after adding TXT record
   - Use `nslookup -type=TXT asuid.projectledger.ca` to verify
   - Check there are no conflicting DNS records

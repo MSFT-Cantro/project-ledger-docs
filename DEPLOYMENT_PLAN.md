@@ -242,7 +242,7 @@ az containerapp revision list \
   -o table
 
 # Test application
-curl -I https://projectledger.ca
+curl -I https://app.projectledger.ca
 curl https://projectledger-backend.orangeplant-da913b57.eastus2.azurecontainerapps.io/api/health
 
 # Check logs for errors
@@ -411,7 +411,7 @@ Container Apps Environment (projectledger-env)
 ├── Default Domain: orangeplant-da913b57.eastus2.azurecontainerapps.io
 ├── Frontend Container App (updates don't change IP)
 ├── Backend Container App (updates don't change IP)
-└── Custom Domain: projectledger.ca (points to static IP)
+└── Custom Domain: app.projectledger.ca (points to static IP)
 ```
 
 **IP Remains Stable When:**
@@ -451,7 +451,7 @@ Container Apps Environment (projectledger-env)
 - [ ] No errors in logs
 
 ### **Post-Deployment**
-- [ ] Application accessible at projectledger.ca
+- [ ] Application accessible at app.projectledger.ca
 - [ ] Login functionality tested
 - [ ] Critical features verified
 - [ ] Performance metrics normal
@@ -543,7 +543,7 @@ curl https://projectledger-backend.orangeplant-da913b57.eastus2.azurecontainerap
 
 echo ""
 echo "✅ Deployment complete!"
-echo "🔗 Frontend: https://projectledger.ca"
+echo "🔗 Frontend: https://app.projectledger.ca"
 echo "🔗 Backend: https://projectledger-backend.orangeplant-da913b57.eastus2.azurecontainerapps.io"
 echo ""
 echo "📊 Monitor logs with:"
@@ -603,7 +603,7 @@ git pull origin main
 ./tools/deployment/deploy-update.sh v1.0.3
 
 # 9:05 AM - Verify deployment
-curl https://projectledger.ca
+curl https://app.projectledger.ca
 # Test login, create project, verify features
 
 # 9:10 AM - Monitor for issues
