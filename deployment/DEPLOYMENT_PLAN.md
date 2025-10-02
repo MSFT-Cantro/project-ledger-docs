@@ -189,6 +189,52 @@ PGPASSWORD=HzxHJdKgjLaamQSqYUUdD8oE8 psql \
 
 ---
 
+### **Step 3.5: Database Seeding (First Time Setup Only)**
+
+**IMPORTANT:** After initial deployment and migrations, seed the database with required data.
+
+#### **Seed Subscription Plans** (REQUIRED for signup to work)
+
+This must be run once after initial deployment:
+
+```bash
+cd apps/backend
+
+# Seed Free and Professional plans
+DATABASE_URL="postgresql://postgres:HzxHJdKgjLaamQSqYUUdD8oE8@projectledger-db.eastus2.azurecontainer.io:5432/projectledger" \
+npx ts-node prisma/seed-subscriptions.ts
+```
+
+**What this creates:**
+- ✅ **Free Plan:** $0/month (25 clients, 25 projects, 25 quotes, 25 invoices, 1 user)
+- ✅ **Professional Plan:** $99.99/month (Unlimited everything, multiple users, inventory access)
+
+**Verify subscription plans are seeded:**
+```bash
+curl https://projectledger-backend.orangeplant-da913b57.eastus2.azurecontainerapps.io/api/subscriptions/plans/public
+# Should return 2 plans: Free and Professional
+```
+
+#### **Seed Canadian Tax Rates** (Required for Canadian customers)
+
+```bash
+cd apps/backend
+
+# Seed GST/HST/PST rates for all provinces
+DATABASE_URL="postgresql://postgres:HzxHJdKgjLaamQSqYUUdD8oE8@projectledger-db.eastus2.azurecontainer.io:5432/projectledger" \
+node seed-canada.js
+```
+
+**What this creates:**
+- GST rates (5% federal)
+- HST rates (13-15% for ON, NS, NB, PE, NL)
+- PST rates (where applicable)
+- Combined tax rates for all Canadian provinces
+
+**Note:** Seeding is idempotent - safe to run multiple times. Existing records will be updated, not duplicated.
+
+---
+
 ### **Step 4: Deploy Backend (Zero Downtime)**
 
 ```bash

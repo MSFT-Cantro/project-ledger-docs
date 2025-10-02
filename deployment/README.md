@@ -8,6 +8,7 @@ This folder contains all documentation related to deploying and managing the Pro
 
 ### **Getting Started**
 - **[DEPLOYMENT_PLAN.md](DEPLOYMENT_PLAN.md)** - Complete deployment strategy with zero-downtime updates
+- **[DATABASE_SEEDING.md](DATABASE_SEEDING.md)** - ⚠️ CRITICAL: Database seeding guide (required after initial deployment)
 - **[APP_SUBDOMAIN_IMPLEMENTATION.md](APP_SUBDOMAIN_IMPLEMENTATION.md)** - Implementation guide for app.projectledger.ca
 - **[APP_SUBDOMAIN_UPDATE.md](APP_SUBDOMAIN_UPDATE.md)** - Detailed update plan for subdomain migration
 
@@ -31,8 +32,19 @@ This folder contains all documentation related to deploying and managing the Pro
 
 ### **Initial Deployment**
 1. Read [AZURE_DEPLOYMENT_COMPLETE.md](AZURE_DEPLOYMENT_COMPLETE.md) for infrastructure setup
-2. Follow [GODADDY_DNS_SETUP.md](GODADDY_DNS_SETUP.md) for custom domain
-3. Review [SECURITY_AUDIT_PAYPAL.md](SECURITY_AUDIT_PAYPAL.md) before going live
+2. **IMPORTANT:** Seed the database after deployment:
+   ```bash
+   # Seed subscription plans (REQUIRED - signup won't work without this!)
+   cd apps/backend
+   DATABASE_URL="postgresql://postgres:PASSWORD@projectledger-db.eastus2.azurecontainer.io:5432/projectledger" \
+   npx ts-node prisma/seed-subscriptions.ts
+   
+   # Seed Canadian tax rates
+   DATABASE_URL="postgresql://postgres:PASSWORD@projectledger-db.eastus2.azurecontainer.io:5432/projectledger" \
+   node seed-canada.js
+   ```
+3. Follow [GODADDY_DNS_SETUP.md](GODADDY_DNS_SETUP.md) for custom domain
+4. Review [SECURITY_AUDIT_PAYPAL.md](SECURITY_AUDIT_PAYPAL.md) before going live
 
 ### **Daily Updates**
 1. Use the deployment scripts in `/tools/deployment/`

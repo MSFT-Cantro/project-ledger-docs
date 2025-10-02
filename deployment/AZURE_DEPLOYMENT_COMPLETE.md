@@ -111,11 +111,21 @@ BACKEND_URL=https://projectledger-backend.orangeplant-da913b57.eastus2.azurecont
 - Reports
 
 ### **Seeding Status:**
-⏳ Pending - Need to run seed scripts:
+✅ **Subscription Plans:** Seeded (Free $0/month, Professional $99.99/month)
+⚠️ **Tax Rates:** Not seeded yet (Canadian provinces)
+
+**To seed subscription plans:**
 ```bash
-# Subscription Plans (Free, Professional)
-# Tax Rates (Canadian provinces)
-# Default data
+cd apps/backend
+DATABASE_URL="postgresql://postgres:HzxHJdKgjLaamQSqYUUdD8oE8@projectledger-db.eastus2.azurecontainer.io:5432/projectledger" \
+npx ts-node prisma/seed-subscriptions.ts
+```
+
+**To seed Canadian tax rates:**
+```bash
+cd apps/backend
+DATABASE_URL="postgresql://postgres:HzxHJdKgjLaamQSqYUUdD8oE8@projectledger-db.eastus2.azurecontainer.io:5432/projectledger" \
+node seed-canada.js
 ```
 
 ---
@@ -188,16 +198,28 @@ az container show --name projectledger-db --resource-group projectledger-poc -o 
 
 ## 📝 Next Steps
 
-### **1. Database Seeding**
-Run seed scripts to populate initial data:
-- Subscription plans (Free, Professional)
-- Tax rates for Canadian provinces
-- Default configurations
+### **1. Database Seeding** ✅ COMPLETED
+Subscription plans have been seeded with:
+- ✅ **Free Plan:** $0/month (25 clients, projects, quotes, invoices, 1 user)
+- ✅ **Professional Plan:** $99.99/month (Unlimited everything, multiple users, inventory)
 
-### **2. Custom Domain Configuration**
-Configure `app.projectledger.ca`:
-1. Get static IP from Container Apps Environment: `20.1.213.250`
-2. Create DNS A record in GoDaddy:
+**Still needed:**
+```bash
+# Seed Canadian tax rates (GST/HST/PST for all provinces)
+cd apps/backend
+DATABASE_URL="postgresql://postgres:HzxHJdKgjLaamQSqYUUdD8oE8@projectledger-db.eastus2.azurecontainer.io:5432/projectledger" \
+node seed-canada.js
+```
+
+### **2. Custom Domain Configuration** ✅ COMPLETED
+Custom domain `app.projectledger.ca` is fully configured:
+- ✅ DNS A record: `app` → `20.1.213.250`
+- ✅ TXT verification record: `asuid.app.projectledger.ca`
+- ✅ Custom domain added to Container App
+- ✅ SSL certificate issued (DigiCert GeoTrust, valid until April 2026)
+- ✅ Backend FRONTEND_URL updated
+
+**Production URL:** https://app.projectledger.ca
    - `app` → `20.1.213.250`
 3. Create DNS TXT record for verification:
    - `asuid.app.projectledger.ca` → verification ID
