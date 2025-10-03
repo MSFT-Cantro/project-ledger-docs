@@ -22,4 +22,19 @@ Line items on Quotes and Invoices look and function a little different, can we m
 Item#8 ✅ COMPLETED
 The inventory page is using a different layout than the other pages. Can you standardize it so that it looks and functions like the other pages.
 
+Item#9 ✅ COMPLETED
 Update Loading Page background to blue
+
+Add theme detection to the user device. User can still override that change
+
+Remove Tax Info panel from User Settings as it is no longer needed
+
+Update the Create and Edit Invetory Page so they are more inline with our current application create and edit. Use create and edit client as an exmaples.
+
+Make it so the search functionality at the top of the page works as expected. I can search and it give me the results across clients, projects, quotes, invoices and inventory
+
+Update the profile dropdown so that it is themed and looks correct in dark mode. 
+
+The input fields on the Create and Edit Client have different animations from fields on the create or edit project fields
+
+Change the Status dropdown on the Client Page so it works like the one on the invoice page. 
