@@ -34,11 +34,19 @@ Remove Tax Info panel from User Settings as it is no longer needed
 Item#12 ✅ COMPLETED
 Update the Create and Edit Inventory Page so they are more inline with our current application create and edit. Use create and edit client as examples.
 
+Item#13 ✅ COMPLETED
 Make it so the search functionality at the top of the page works as expected. I can search and it give me the results across clients, projects, quotes, invoices and inventory
 
+Item#14 ✅ COMPLETED
 Update the profile dropdown so that it is themed and looks correct in dark mode. 
 
 Update the mobile component so that they are all themed and look correct in light and dark mode.
+
+Invetory Detail Page as components that are not themed and display incorrectly in Dark Mode. 
+
+The Reports Page does not scroll. Can't scroll to the custom reports section. 
+
+Change the Signup Page setup from 3 steps to 4. User Information, Account Information, Choose Plan and Complete. The Current Account Information section will be split into 2.  
 
 The input fields on the Create and Edit Client have different animations from fields on the create or edit project fields
 
