@@ -31,7 +31,8 @@ Add theme detection to the user device. User can still override that change
 Item#11 ✅ COMPLETED
 Remove Tax Info panel from User Settings as it is no longer needed
 
-Update the Create and Edit Invetory Page so they are more inline with our current application create and edit. Use create and edit client as an exmaples.
+Item#12 ✅ COMPLETED
+Update the Create and Edit Inventory Page so they are more inline with our current application create and edit. Use create and edit client as examples.
 
 Make it so the search functionality at the top of the page works as expected. I can search and it give me the results across clients, projects, quotes, invoices and inventory
 
@@ -42,3 +43,5 @@ The input fields on the Create and Edit Client have different animations from fi
 Change the Status dropdown on the Client Page so it works like the one on the invoice page. 
 
 The export, refresh and back to Report button on the top of each of the standard reports do not look and follow our size or styling
+
+The filter modal on all the pages is styled incorrectly and doesn't use other current modal. 
