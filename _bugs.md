@@ -49,7 +49,10 @@ Invetory Detail Page as components that are not themed and display incorrectly i
 Item#17 ✅ COMPLETED
 The Reports Page does not scroll. Can't scroll to the custom reports section. 
 
+Item#18 ✅ COMPLETED
 Update the Mobile Side Nav so it points to the correct places. Account Settings should open the account setting modal in the middle of the scrren. It only has Settings but it should have the User Setting and Account Settings like on the desktop nav. 
+
+Add the User Icon to the mobile toolbar in place of the vetical triple dots. Make the Search button on the mobile tool bar work with the search functionality.
 
 Update the User Perference dropdown in the top right so that profile and notification are removed and Account Setting should updated to Quick Settings. Make changes to the mobile nav so that these changes is made there as well. 
 
