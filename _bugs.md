@@ -25,6 +25,7 @@ The inventory page is using a different layout than the other pages. Can you sta
 Item#9 ✅ COMPLETED
 Update Loading Page background to blue
 
+Item#10 ✅ COMPLETED
 Add theme detection to the user device. User can still override that change
 
 Remove Tax Info panel from User Settings as it is no longer needed
@@ -38,3 +39,5 @@ Update the profile dropdown so that it is themed and looks correct in dark mode.
 The input fields on the Create and Edit Client have different animations from fields on the create or edit project fields
 
 Change the Status dropdown on the Client Page so it works like the one on the invoice page. 
+
+The export, refresh and back to Report button on the top of each of the standard reports do not look and follow our size or styling
