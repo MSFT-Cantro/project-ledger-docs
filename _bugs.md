@@ -28,6 +28,7 @@ Update Loading Page background to blue
 Item#10 ✅ COMPLETED
 Add theme detection to the user device. User can still override that change
 
+Item#11 ✅ COMPLETED
 Remove Tax Info panel from User Settings as it is no longer needed
 
 Update the Create and Edit Invetory Page so they are more inline with our current application create and edit. Use create and edit client as an exmaples.
