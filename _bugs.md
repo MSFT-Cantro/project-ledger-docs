@@ -38,6 +38,8 @@ Make it so the search functionality at the top of the page works as expected. I 
 
 Update the profile dropdown so that it is themed and looks correct in dark mode. 
 
+Update the mobile component so that they are all themed and look correct in light and dark mode.
+
 The input fields on the Create and Edit Client have different animations from fields on the create or edit project fields
 
 Change the Status dropdown on the Client Page so it works like the one on the invoice page. 
