@@ -46,10 +46,12 @@ Update the mobile component so that they are all themed and look correct in ligh
 Item#16 ✅ COMPLETED
 Invetory Detail Page as components that are not themed and display incorrectly in Dark Mode. 
 
-Item#17
+Item#17 ✅ COMPLETED
 The Reports Page does not scroll. Can't scroll to the custom reports section. 
 
 Update the Mobile Side Nav so it points to the correct places. Account Settings should open the account setting modal in the middle of the scrren. It only has Settings but it should have the User Setting and Account Settings like on the desktop nav. 
+
+Update the User Perference dropdown in the top right so that profile and notification are removed and Account Setting should updated to Quick Settings. Make changes to the mobile nav so that these changes is made there as well. 
 
 Change the Signup Page setup from 3 steps to 4. User Information, Account Information, Choose Plan and Complete. The Current Account Information section will be split into 2.  
 
