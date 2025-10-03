@@ -40,11 +40,16 @@ Make it so the search functionality at the top of the page works as expected. I 
 Item#14 ✅ COMPLETED
 Update the profile dropdown so that it is themed and looks correct in dark mode. 
 
+Item#15 ✅ COMPLETED
 Update the mobile component so that they are all themed and look correct in light and dark mode.
 
+Item#16 ✅ COMPLETED
 Invetory Detail Page as components that are not themed and display incorrectly in Dark Mode. 
 
+Item#17
 The Reports Page does not scroll. Can't scroll to the custom reports section. 
+
+Update the Mobile Side Nav so it points to the correct places. Account Settings should open the account setting modal in the middle of the scrren. It only has Settings but it should have the User Setting and Account Settings like on the desktop nav. 
 
 Change the Signup Page setup from 3 steps to 4. User Information, Account Information, Choose Plan and Complete. The Current Account Information section will be split into 2.  
 
