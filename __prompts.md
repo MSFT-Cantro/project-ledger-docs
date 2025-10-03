@@ -1,5 +1,7 @@
 Review the features.md file and work on the next item on the list. implement the changes needed, the build it to confirm no issues and then ask me to approved that changes before we merge them
 
+Review the _bugs.md file and work on the next item on the list. implement the changes needed, the build it to confirm no issues and then ask me to approved that changes before we mark is complete and merge it to GitHub
+
 
 Valid Test Credit Cards:
 
