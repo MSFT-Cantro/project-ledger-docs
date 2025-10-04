@@ -58,26 +58,20 @@ Add the User Icon to the mobile toolbar in place of the vetical triple dots. Mak
 Item#20 ✅ COMPLETED
 Integrated Breamer as our notification system in the application. All notification buttons should open beamer for the user.
 
-<script>
-  var beamer_config = {
-    product_id : "SbTnvhZr79497", // DO NOT CHANGE: This is your product code on Beamer
-    user_id : "user's unique id" // A unique ID to identify the user
-  };
-</script>
-<script type="text/javascript" src="https://app.getbeamer.com/js/beamer-embed.js" defer="defer"></script>
-
+Item#21 ✅ COMPLETED
 Update the User Perference dropdown in the top right so that profile and notification are removed and Account Setting should updated to Quick Settings. Make changes to the mobile nav so that these changes is made there as well. 
 
-Item#21
+Item#22
 Change the Signup Page setup from 3 steps to 4. User Information, Account Information, Choose Plan and Complete. The Current Account Information section will be split into 2.  
 
-Item#22
+Item#23
 The input fields on the Create and Edit Client have different animations from fields on the create or edit project fields
 
-Item#23
+Item#24
 Change the Status dropdown on the Client Page so it works like the one on the invoice page. 
 
-Item#24
+Item#25
 The export, refresh and back to Report button on the top of each of the standard reports do not look and follow our size or styling
 
+Item#26
 The filter modal on all the pages is styled incorrectly and doesn't use other current modal. 

@@ -21,16 +21,6 @@
   - **Backend Payment Processing**: PayPal order creation, payment capture, subscription activation
   - **Database Integration**: Full transaction tracking and subscription management
   - **Environment Configuration**: Docker-ready with PayPal sandbox/live credential 
-  
-##TODO: Integrated Breamer as our notification system in the application. 
-
-<script>
-  var beamer_config = {
-    product_id : "SbTnvhZr79497", // DO NOT CHANGE: This is your product code on Beamer
-    user_id : "user's unique id" // A unique ID to identify the user
-  };
-</script>
-<script type="text/javascript" src="https://app.getbeamer.com/js/beamer-embed.js" defer="defer"></script>
 
 ## TODO: Need a Account Page for when a user logs into the service but their account is part of multiple orgs so they can pick the account they are logging into after a successful authentication. 
 
