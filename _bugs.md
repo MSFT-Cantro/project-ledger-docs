@@ -73,8 +73,11 @@ The export, refresh and back to Report button on the top of each of the standard
 Item#25 ✅ COMPLETED
 Change the Status dropdown on the Client Page so it works like the one on the invoice page. 
 
-Item#26
-The input fields on the Create and Edit Client have different animations on fields on the create or edit project fields
+Item#26 ✅ COMPLETED
+The input fields when selected, have a focus indicator that go through/over the title of the input. This is the only pages that do that, other pages like create invoice do not. Can you make it so it doesn't overlay. 
+
+Item#27
+When screen sizes get smaller then 2000x775 the main body of the page doesn't have a breakpoint to keep the page looking and fitting correctly on the screen. Don't change the that at 900 it turns into mobile as that is correct. 
 
 
 
