@@ -73,8 +73,11 @@ The export, refresh and back to Report button on the top of each of the standard
 Item#25 ✅ COMPLETED
 Change the Status dropdown on the Client Page so it works like the one on the invoice page. 
 
-Item#26
+Item#26 ✅ COMPLETED
 The input fields on the Create and Edit Client have different animations on fields on the create or edit project fields
+
+Item#27 ✅ COMPLETED
+I would like to modify the Project Detail layout. Right now all the section are under a tab bar on the page, I would like to make each of these into a collapable section on the page. You should  be able to expand all of them at once or have them all collapsed. Should also be mobile first and work for mobile and desktop.
 
 
 
