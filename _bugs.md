@@ -67,7 +67,7 @@ Change the Signup Page setup from 3 steps to 4. User Information, Account Inform
 Item#23 ✅ COMPLETED
 The filter modal on all the pages is styled incorrectly and doesn't use other current modal. 
 
-Item#24
+Item#24 ✅ COMPLETED
 The export, refresh and back to Report button on the top of each of the standard reports do not look and follow our size or styling
 
 Item#25
