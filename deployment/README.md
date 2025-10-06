@@ -157,4 +157,4 @@ This folder contains all documentation related to deploying and managing the Pro
 
 ---
 
-**í³¦ Recent Cleanup (October 6, 2025):** Archived 6 outdated documents to `archive/` folder for historical reference.
+**ï¿½ï¿½ï¿½ Recent Cleanup (October 6, 2025):** Archived 6 outdated documents to `archive/` folder for historical reference.

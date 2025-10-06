@@ -64,14 +64,19 @@ Update the User Perference dropdown in the top right so that profile and notific
 Item#22 ✅ COMPLETED
 Change the Signup Page setup from 3 steps to 4. User Information, Account Information, Choose Plan and Complete. The Current Account Information section will be split into 2.  
 
-Item#23
-The input fields on the Create and Edit Client have different animations from fields on the create or edit project fields
+Item#23 ✅ COMPLETED
+The filter modal on all the pages is styled incorrectly and doesn't use other current modal. 
 
 Item#24
-Change the Status dropdown on the Client Page so it works like the one on the invoice page. 
-
-Item#25
 The export, refresh and back to Report button on the top of each of the standard reports do not look and follow our size or styling
 
+Item#25
+Change the Status dropdown on the Client Page so it works like the one on the invoice page. 
+
 Item#26
-The filter modal on all the pages is styled incorrectly and doesn't use other current modal. 
+The input fields on the Create and Edit Client have different animations on fields on the create or edit project fields
+
+
+
+
+
