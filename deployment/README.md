@@ -16,6 +16,11 @@ This folder contains all documentation related to deploying and managing the Pro
 - **[DEPLOYMENT_PLAN.md](DEPLOYMENT_PLAN.md)** - Complete deployment strategy with zero-downtime updates
 - **[DATABASE_SEEDING.md](DATABASE_SEEDING.md)** - ⚠️ CRITICAL: Database seeding guide (required after initial deployment)
 
+### **Release History**
+- **[releases/](releases/)** - 📦 Archived releases with documentation and scripts
+  - **[v1.2.0/](releases/v1.2.0/)** - TextField focus fix & Project Detail accordions (October 6, 2025)
+  - **[v1.1.0/](releases/v1.1.0/)** - Beamer Integration + UserMenu Updates (October 2, 2025)
+
 ### **Azure Deployment**
 - **[AZURE_DEPLOYMENT_COMPLETE.md](AZURE_DEPLOYMENT_COMPLETE.md)** - ✅ Complete Azure deployment details and current configuration
 
@@ -53,30 +58,32 @@ This folder contains all documentation related to deploying and managing the Pro
 1. Copy templates:
    ```bash
    # Copy release template
-   cp docs/deployment/RELEASE_TEMPLATE.md docs/deployment/RELEASE_NOTES_v1.2.0.md
+   cp docs/deployment/RELEASE_TEMPLATE.md docs/deployment/releases/v1.X.X/RELEASE_NOTES_v1.X.X.md
    
    # Copy checklist template
-   cp docs/deployment/DEPLOYMENT_CHECKLIST_TEMPLATE.md docs/deployment/DEPLOYMENT_CHECKLIST_v1.2.0.md
+   cp docs/deployment/DEPLOYMENT_CHECKLIST_TEMPLATE.md docs/deployment/releases/v1.X.X/DEPLOYMENT_CHECKLIST_v1.X.X.md
    
    # Copy script template
-   cp tools/deployment/release-template.sh tools/deployment/release-v1.2.0.sh
-   chmod +x tools/deployment/release-v1.2.0.sh
+   cp tools/deployment/release-template.sh tools/deployment/releases/release-v1.X.X.sh
+   chmod +x tools/deployment/releases/release-v1.X.X.sh
    ```
 
 2. Update all three files with:
-   - Version number (e.g., 1.2.0)
+   - Version number (e.g., 1.X.X)
    - Release-specific features/changes
    - Any custom deployment steps
 
 3. Run the release script:
    ```bash
-   bash tools/deployment/release-v1.2.0.sh
+   bash tools/deployment/releases/release-v1.X.X.sh
    ```
 
 4. Follow verification checklist
 5. Monitor using [MONITORING_ALERTING_PAYPAL.md](MONITORING_ALERTING_PAYPAL.md)
 
-**Example Release:** See [PRODUCTION_RELEASE_PLAN.md](PRODUCTION_RELEASE_PLAN.md) for v1.1.0 as reference
+**Example Releases:** 
+- See [releases/v1.2.0/](releases/v1.2.0/) for latest release
+- See [releases/v1.1.0/](releases/v1.1.0/) for previous release
 
 ### **Daily Updates**
 1. Use the deployment scripts in `/tools/deployment/`
@@ -114,9 +121,10 @@ This folder contains all documentation related to deploying and managing the Pro
 - HOW_TO_RELEASE.md
 - DEPLOYMENT_PLAN.md
 
-### **Current Release Documentation**
-- RELEASE_SUMMARY_v1.1.0.md
-- DEPLOYMENT_CHECKLIST_v1.1.0.md
+### **Release History**
+- **[releases/](releases/)** - All production releases organized by version
+  - **[v1.2.0/](releases/v1.2.0/)** - Latest: TextField fixes & Project accordions (Oct 6, 2025)
+  - **[v1.1.0/](releases/v1.1.0/)** - Beamer Integration + UserMenu Updates (Oct 2, 2025)
 
 ### **Infrastructure & Configuration**
 - AZURE_DEPLOYMENT_COMPLETE.md
@@ -136,6 +144,7 @@ This folder contains all documentation related to deploying and managing the Pro
 ## 🔗 Related Documentation
 
 - **Deployment Scripts:** `/tools/deployment/`
+  - **Release Scripts:** `/tools/deployment/releases/` - Version-specific deployment scripts
 - **Azure Scripts:** `/tools/azure/`
 - **Quick Start:** `/NEXT_STEPS.md` (root)
 - **Custom Domain Setup:** `/CUSTOM_DOMAIN_SETUP.md` (root)
@@ -148,13 +157,18 @@ This folder contains all documentation related to deploying and managing the Pro
 - Database persists across all deployments (never redeployed)
 - Static IP (20.1.213.250) is permanent for the Container Apps Environment
 - SSL certificates are automatically managed by Azure
+- Release documentation is organized in `releases/` folder by version number
 
 ---
 
 **Last Updated:** October 6, 2025  
-**Latest Release:** v1.1.0 (Beamer Integration + UserMenu Updates)  
+**Latest Release:** v1.2.0 (TextField Focus Fix + Project Detail Accordions)  
 **Templates Version:** 1.0
 
 ---
 
-**��� Recent Cleanup (October 6, 2025):** Archived 6 outdated documents to `archive/` folder for historical reference.
+**🧹 Recent Updates (October 6, 2025):** 
+- Reorganized release documentation into `releases/` folder for better organization
+- v1.2.0 deployed: TextField focus indicators and Project Detail accordion conversion
+- All release-specific files now stored in version-specific subfolders
+
