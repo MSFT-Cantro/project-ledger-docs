@@ -61,7 +61,7 @@ Integrated Breamer as our notification system in the application. All notificati
 Item#21 ✅ COMPLETED
 Update the User Perference dropdown in the top right so that profile and notification are removed and Account Setting should updated to Quick Settings. Make changes to the mobile nav so that these changes is made there as well. 
 
-Item#22
+Item#22 ✅ COMPLETED
 Change the Signup Page setup from 3 steps to 4. User Information, Account Information, Choose Plan and Complete. The Current Account Information section will be split into 2.  
 
 Item#23
