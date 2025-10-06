@@ -12,17 +12,12 @@ This folder contains all documentation related to deploying and managing the Pro
 - **[release-template.sh](../../tools/deployment/release-template.sh)** - 🤖 Automated deployment script template
 
 ### **Getting Started**
+- **[HOW_TO_RELEASE.md](HOW_TO_RELEASE.md)** - 🎯 Complete guide for releasing new versions
 - **[DEPLOYMENT_PLAN.md](DEPLOYMENT_PLAN.md)** - Complete deployment strategy with zero-downtime updates
-- **[PRODUCTION_RELEASE_PLAN.md](PRODUCTION_RELEASE_PLAN.md)** - Step-by-step production release plan (v1.1.0 example)
 - **[DATABASE_SEEDING.md](DATABASE_SEEDING.md)** - ⚠️ CRITICAL: Database seeding guide (required after initial deployment)
-- **[APP_SUBDOMAIN_IMPLEMENTATION.md](APP_SUBDOMAIN_IMPLEMENTATION.md)** - Implementation guide for app.projectledger.ca
-- **[APP_SUBDOMAIN_UPDATE.md](APP_SUBDOMAIN_UPDATE.md)** - Detailed update plan for subdomain migration
 
 ### **Azure Deployment**
-- **[AZURE_DEPLOYMENT_COMPLETE.md](AZURE_DEPLOYMENT_COMPLETE.md)** - Complete Azure deployment details and configuration
-- **[AZURE_DEPLOYMENT_PLAN.md](AZURE_DEPLOYMENT_PLAN.md)** - Original Azure deployment planning document
-- **[AZURE_LOCAL_TEST_FIX_SUMMARY.md](AZURE_LOCAL_TEST_FIX_SUMMARY.md)** - Local testing setup for Azure deployment
-- **[SPEC_AZURE_MANUAL_ROLLOUT.md](SPEC_AZURE_MANUAL_ROLLOUT.md)** - Manual rollout specifications
+- **[AZURE_DEPLOYMENT_COMPLETE.md](AZURE_DEPLOYMENT_COMPLETE.md)** - ✅ Complete Azure deployment details and current configuration
 
 ### **Custom Domain Setup**
 - **[GODADDY_DNS_SETUP.md](GODADDY_DNS_SETUP.md)** - Complete DNS configuration guide for GoDaddy
@@ -113,24 +108,28 @@ This folder contains all documentation related to deploying and managing the Pro
 
 ## 📚 Document Categories
 
-### **Planning & Strategy**
+### **Active Templates & Guides**
+- RELEASE_TEMPLATE.md
+- DEPLOYMENT_CHECKLIST_TEMPLATE.md
+- HOW_TO_RELEASE.md
 - DEPLOYMENT_PLAN.md
-- AZURE_DEPLOYMENT_PLAN.md
-- SPEC_AZURE_MANUAL_ROLLOUT.md
 
-### **Implementation Guides**
-- APP_SUBDOMAIN_IMPLEMENTATION.md
-- APP_SUBDOMAIN_UPDATE.md
+### **Current Release Documentation**
+- RELEASE_SUMMARY_v1.1.0.md
+- DEPLOYMENT_CHECKLIST_v1.1.0.md
+
+### **Infrastructure & Configuration**
 - AZURE_DEPLOYMENT_COMPLETE.md
 - GODADDY_DNS_SETUP.md
-
-### **Testing & Validation**
-- AZURE_LOCAL_TEST_FIX_SUMMARY.md
+- DATABASE_SEEDING.md
 
 ### **Production Operations**
 - PRODUCTION_DEPLOYMENT_PAYPAL.md
 - MONITORING_ALERTING_PAYPAL.md
 - SECURITY_AUDIT_PAYPAL.md
+
+### **Archived Documentation**
+- **[archive/README.md](archive/README.md)** - Historical documents preserved for reference
 
 ---
 
@@ -155,3 +154,7 @@ This folder contains all documentation related to deploying and managing the Pro
 **Last Updated:** October 6, 2025  
 **Latest Release:** v1.1.0 (Beamer Integration + UserMenu Updates)  
 **Templates Version:** 1.0
+
+---
+
+**��� Recent Cleanup (October 6, 2025):** Archived 6 outdated documents to `archive/` folder for historical reference.
