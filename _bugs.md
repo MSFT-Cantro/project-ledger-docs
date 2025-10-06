@@ -70,7 +70,7 @@ The filter modal on all the pages is styled incorrectly and doesn't use other cu
 Item#24 ✅ COMPLETED
 The export, refresh and back to Report button on the top of each of the standard reports do not look and follow our size or styling
 
-Item#25
+Item#25 ✅ COMPLETED
 Change the Status dropdown on the Client Page so it works like the one on the invoice page. 
 
 Item#26
