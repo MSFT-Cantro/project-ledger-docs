@@ -6,9 +6,14 @@ This folder contains all documentation related to deploying and managing the Pro
 
 ## 📑 Quick Reference
 
+### **⭐ Release Templates** (Start Here for New Releases)
+- **[RELEASE_TEMPLATE.md](RELEASE_TEMPLATE.md)** - 🎯 Standard template for all production releases
+- **[DEPLOYMENT_CHECKLIST_TEMPLATE.md](DEPLOYMENT_CHECKLIST_TEMPLATE.md)** - ✅ Printable checklist for any release
+- **[release-template.sh](../../tools/deployment/release-template.sh)** - 🤖 Automated deployment script template
+
 ### **Getting Started**
 - **[DEPLOYMENT_PLAN.md](DEPLOYMENT_PLAN.md)** - Complete deployment strategy with zero-downtime updates
-- **[PRODUCTION_RELEASE_PLAN.md](PRODUCTION_RELEASE_PLAN.md)** - 🆕 Step-by-step production release plan (v1.1.0)
+- **[PRODUCTION_RELEASE_PLAN.md](PRODUCTION_RELEASE_PLAN.md)** - Step-by-step production release plan (v1.1.0 example)
 - **[DATABASE_SEEDING.md](DATABASE_SEEDING.md)** - ⚠️ CRITICAL: Database seeding guide (required after initial deployment)
 - **[APP_SUBDOMAIN_IMPLEMENTATION.md](APP_SUBDOMAIN_IMPLEMENTATION.md)** - Implementation guide for app.projectledger.ca
 - **[APP_SUBDOMAIN_UPDATE.md](APP_SUBDOMAIN_UPDATE.md)** - Detailed update plan for subdomain migration
@@ -48,10 +53,35 @@ This folder contains all documentation related to deploying and managing the Pro
 4. Review [SECURITY_AUDIT_PAYPAL.md](SECURITY_AUDIT_PAYPAL.md) before going live
 
 ### **Production Releases**
-1. Review [PRODUCTION_RELEASE_PLAN.md](PRODUCTION_RELEASE_PLAN.md) for current release
-2. Run the release script: `bash tools/deployment/release-v1.1.0.sh`
-3. Follow verification and testing procedures
-4. Monitor using [MONITORING_ALERTING_PAYPAL.md](MONITORING_ALERTING_PAYPAL.md)
+
+**For a New Release:**
+1. Copy templates:
+   ```bash
+   # Copy release template
+   cp docs/deployment/RELEASE_TEMPLATE.md docs/deployment/RELEASE_NOTES_v1.2.0.md
+   
+   # Copy checklist template
+   cp docs/deployment/DEPLOYMENT_CHECKLIST_TEMPLATE.md docs/deployment/DEPLOYMENT_CHECKLIST_v1.2.0.md
+   
+   # Copy script template
+   cp tools/deployment/release-template.sh tools/deployment/release-v1.2.0.sh
+   chmod +x tools/deployment/release-v1.2.0.sh
+   ```
+
+2. Update all three files with:
+   - Version number (e.g., 1.2.0)
+   - Release-specific features/changes
+   - Any custom deployment steps
+
+3. Run the release script:
+   ```bash
+   bash tools/deployment/release-v1.2.0.sh
+   ```
+
+4. Follow verification checklist
+5. Monitor using [MONITORING_ALERTING_PAYPAL.md](MONITORING_ALERTING_PAYPAL.md)
+
+**Example Release:** See [PRODUCTION_RELEASE_PLAN.md](PRODUCTION_RELEASE_PLAN.md) for v1.1.0 as reference
 
 ### **Daily Updates**
 1. Use the deployment scripts in `/tools/deployment/`
@@ -122,5 +152,6 @@ This folder contains all documentation related to deploying and managing the Pro
 
 ---
 
-**Last Updated:** October 3, 2025  
-**Latest Release:** v1.1.0 (Beamer Integration + UserMenu Updates)
+**Last Updated:** October 6, 2025  
+**Latest Release:** v1.1.0 (Beamer Integration + UserMenu Updates)  
+**Templates Version:** 1.0
