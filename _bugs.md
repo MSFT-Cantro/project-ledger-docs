@@ -76,12 +76,12 @@ Change the Status dropdown on the Client Page so it works like the one on the in
 Item#26 ✅ COMPLETED
 The input fields when selected, have a focus indicator that go through/over the title of the input. This is the only pages that do that, other pages like create invoice do not. Can you make it so it doesn't overlay. 
 
-Item#27
-When screen sizes get smaller then 2000x775 the main body of the page doesn't have a breakpoint to keep the page looking and fitting correctly on the screen. Don't change the that at 900 it turns into mobile as that is correct. 
-The input fields on the Create and Edit Client have different animations on fields on the create or edit project fields
-
 Item#27 ✅ COMPLETED
 I would like to modify the Project Detail layout. Right now all the section are under a tab bar on the page, I would like to make each of these into a collapable section on the page. You should  be able to expand all of them at once or have them all collapsed. Should also be mobile first and work for mobile and desktop.
+
+Item#28
+When screen sizes get smaller then 2000x775 the main body of the page doesn't have a breakpoint to keep the page looking and fitting correctly on the screen. Don't change the that at 900 it turns into mobile as that is correct. 
+The input fields on the Create and Edit Client have different animations on fields on the create or edit project fields
 
 
 
