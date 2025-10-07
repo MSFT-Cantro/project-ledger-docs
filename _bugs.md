@@ -79,10 +79,11 @@ The input fields when selected, have a focus indicator that go through/over the 
 Item#27 ✅ COMPLETED
 I would like to modify the Project Detail layout. Right now all the section are under a tab bar on the page, I would like to make each of these into a collapable section on the page. You should  be able to expand all of them at once or have them all collapsed. Should also be mobile first and work for mobile and desktop.
 
-Item#28
-When screen sizes get smaller then 2000x775 the main body of the page doesn't have a breakpoint to keep the page looking and fitting correctly on the screen. Don't change the that at 900 it turns into mobile as that is correct. 
+Item#28 ✅ COMPLETED
+The Settings and Admin pages need to be updates so that each of the sections are in drawers and not in the tab. The tab don't work well on mobile and that is the focus. So we should have a draw for each tab and all the section can be expanded or collapsed. Use the Project Detail as a example of how that works in other locations in the application.
 
-
+Item#29
+When creating an invoice, when you select the quote you are using to base the invoice on. Have a pop up to allow the user to select with items on the quote they want to add to the invoice. Those are then added to the item line of the invoice. 
 
 
 
