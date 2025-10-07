@@ -81,7 +81,6 @@ I would like to modify the Project Detail layout. Right now all the section are 
 
 Item#28
 When screen sizes get smaller then 2000x775 the main body of the page doesn't have a breakpoint to keep the page looking and fitting correctly on the screen. Don't change the that at 900 it turns into mobile as that is correct. 
-The input fields on the Create and Edit Client have different animations on fields on the create or edit project fields
 
 
 
