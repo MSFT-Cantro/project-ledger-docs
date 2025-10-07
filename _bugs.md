@@ -82,8 +82,16 @@ I would like to modify the Project Detail layout. Right now all the section are 
 Item#28 ✅ COMPLETED
 The Settings and Admin pages need to be updates so that each of the sections are in drawers and not in the tab. The tab don't work well on mobile and that is the focus. So we should have a draw for each tab and all the section can be expanded or collapsed. Use the Project Detail as a example of how that works in other locations in the application.
 
-Item#29
+Item#30 ✅ COMPLETED
 When creating an invoice, when you select the quote you are using to base the invoice on. Have a pop up to allow the user to select with items on the quote they want to add to the invoice. Those are then added to the item line of the invoice. 
+
+Items#31
+Remove the beamer button from the bottom right of the application. We have notification button in the toolbar. The built in button from beamer is not needed and confusing to users
+
+Item#32
+I need better layouts and breakpoints for tablets and smaller screen. Right now the side nav is going over the main body on the page, making the app unusable on screens 901 to 1600 wide in size
+
+
 
 
 
