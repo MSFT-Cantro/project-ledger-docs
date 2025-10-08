@@ -22,7 +22,7 @@
   - **Database Integration**: Full transaction tracking and subscription management
   - **Environment Configuration**: Docker-ready with PayPal sandbox/live credential 
 
-## TODO: Need a Account Page for when a user logs into the service but their account is part of multiple orgs so they can pick the account they are logging into after a successful authentication. 
+✅ Need a Account Page for when a user logs into the service but their account is part of multiple orgs so they can pick the account they are logging into after a successful authentication. 
 
 ## TODO: Limit the pages based on user role permissions. Admin will be able do all task and changes on any pages. User role will be able to make all the changes on the page but will only be able to see the Admin Panel but can not edit any of the settings. They should all look disabled. Viewer will be able to view all the page but can make no edits to any project or settings, they also can not see the settings page on the nav or get to the page. 
 

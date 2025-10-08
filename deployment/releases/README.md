@@ -20,6 +20,29 @@ Each release folder contains:
 
 ## 📋 Available Releases
 
+### v1.3.0 - October 8, 2025
+**Multi-Organization Support + Invoice Enhancement + Documentation Cleanup**
+
+- **[Release Notes](v1.3.0/RELEASE_NOTES_v1.3.0.md)**
+- **[Deployment Checklist](v1.3.0/DEPLOYMENT_CHECKLIST_v1.3.0.md)**
+- **[Deployment Script](../../../tools/deployment/release-v1.3.0.sh)**
+
+**Key Changes:**
+- 🚀 **NEW MAJOR FEATURE**: Multi-Organization Support - Users can belong to multiple organizations and switch between them
+- Organization Selector: Full-page selector for multi-org users after login
+- Organization Switcher: Navigation dropdown for quick organization switching  
+- Enhanced Invoice Creation: Quote item selector for partial invoicing (Bug #30)
+- UI Improvement: Removed confusing Beamer default button (Bug #31)
+- Documentation Cleanup: Organized specs and comprehensive documentation
+- Database Migration: UserAccount table with many-to-many User ↔ Account relationship
+- Zero Breaking Changes: Single-org users experience no change in workflow
+
+**Status:** ✅ Successfully Deployed  
+**Deployed By:** GitHub Copilot Assistant  
+**Deployment Date:** October 8, 2025
+
+---
+
 ### v1.2.0 - October 6, 2025
 **TextField Focus Fix + Project Detail Accordions**
 
@@ -106,5 +129,5 @@ When creating a new release:
 
 ---
 
-**Last Updated:** October 6, 2025  
-**Latest Release:** v1.2.0
+**Last Updated:** October 8, 2025  
+**Latest Release:** v1.3.0
