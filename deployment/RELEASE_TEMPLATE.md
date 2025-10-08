@@ -26,6 +26,7 @@
 - [ ] Bug list updated (mark completed items)
 - [ ] No TypeScript errors
 - [ ] No console errors in browser
+- [ ] **Marketing post created** (see Marketing Content section below)
 
 ### Git & Version Control
 - [ ] All changes committed to `main` branch
@@ -39,15 +40,111 @@
 - [ ] Access to Azure Container Registry verified
 - [ ] Environment variables verified (no changes needed, or changes documented)
 
-### Database
+### Database (CRITICAL - October 8, 2025 Data Loss Prevention)
+- [ ] 🚨 **MANDATORY: Production database backup created** (`./tools/backup/backup-database.sh deployment`)
+- [ ] 🚨 **MANDATORY: Database state verified** (`DATABASE_URL=... node scripts/verify-production-data.js`)
+- [ ] 🚨 **MANDATORY: Migration status checked** (not "out of sync" or empty)
 - [ ] Database migrations created (if needed)
 - [ ] Migration scripts tested locally
 - [ ] Rollback migration scripts prepared (if applicable)
-- [ ] Database backup confirmed recent
+- [ ] 🚨 **MANDATORY: Recovery plan documented** (location of backup, restore commands)
 
 ---
 
-## 🚀 Deployment Process
+## � Marketing Content Creation
+
+### Create Marketing Post (MANDATORY)
+
+Before deployment, create a user-facing marketing post to announce the release.
+
+#### **Location:**
+`docs/deployment/releases/vX.Y.Z/MARKETING_POST_vX.Y.Z.md`
+
+#### **Template Structure:**
+
+```markdown
+# 🚀 ProjectLedger vX.Y.Z — [Catchy Headline]
+
+**Release Date:** [Date]
+**Version:** X.Y.Z
+
+## ✨ Overview
+[2-3 paragraphs describing the release theme and main value proposition]
+
+## 💡 What's New
+
+### 🎯 **[Feature 1 Name]**
+**[Benefit-focused subtitle]**
+
+[Description of feature from user perspective]
+
+**Why you'll love it:**
+- [Benefit 1]
+- [Benefit 2]
+- [Benefit 3]
+
+**How it works:**
+- [Usage explanation]
+
+### [Repeat for each major feature]
+
+## ⚙️ Behind the Scenes
+[Technical improvements without jargon]
+
+## 🧭 What to Expect
+[Reassurance about backward compatibility and user experience]
+
+## ✅ Summary
+[Bullet-point list of key improvements]
+
+## 🎯 Perfect For:
+- [Target audience 1]
+- [Target audience 2]
+
+## 🚀 Available Now
+[Call to action]
+```
+
+#### **Writing Guidelines:**
+
+1. **Focus on Benefits, Not Features**
+   - ❌ "We added a new database table for organizations"
+   - ✅ "Manage multiple businesses from one account"
+
+2. **Use Clear, Non-Technical Language**
+   - Write for business owners, not developers
+   - Explain "what" and "why", not "how"
+   - Avoid technical jargon (API, database, migration, etc.)
+
+3. **Emphasize User Value**
+   - How does this save time?
+   - How does this reduce friction?
+   - How does this help them grow?
+
+4. **Include Reassurance**
+   - Backward compatibility
+   - Data safety
+   - No disruption to existing workflows
+
+5. **Match Brand Tone**
+   - Professional but approachable
+   - Confident but not boastful
+   - Helpful and supportive
+
+#### **Distribution Checklist:**
+- [ ] Marketing post created and reviewed
+- [ ] Post added to release documentation folder
+- [ ] Ready for blog/website publication
+- [ ] Ready for email newsletter
+- [ ] Ready for social media adaptation
+- [ ] Key talking points identified for support team
+
+#### **Example Reference:**
+See `docs/deployment/releases/v1.3.0/MARKETING_POST_v1.3.0.md` for a complete example.
+
+---
+
+## �🚀 Deployment Process
 
 ### Phase 1: Pre-Deployment (5 minutes)
 
@@ -73,7 +170,28 @@ git tag vX.Y.Z
 git push origin vX.Y.Z
 ```
 
-#### 1.3 Backup Current Revisions
+#### 1.3 🚨 CRITICAL: Database Safety Checks
+```bash
+# Step 1: Create database backup (MANDATORY)
+./tools/backup/backup-database.sh deployment "Pre-deployment backup for vX.Y.Z"
+
+# Step 2: Verify database state (MANDATORY)
+cd apps/backend
+DATABASE_URL="postgresql://postgres:HzxHJdKgjLaamQSqYUUdD8oE8@projectledger-db.eastus2.azurecontainer.io:5432/projectledger" \
+node scripts/verify-production-data.js
+
+# Expected output: ✅ VERIFICATION PASSED - DATABASE HEALTHY
+# If FAILED or WARNINGS: INVESTIGATE BEFORE PROCEEDING
+
+# Step 3: Check migration status (MANDATORY)
+DATABASE_URL="postgresql://postgres:HzxHJdKgjLaamQSqYUUdD8oE8@projectledger-db.eastus2.azurecontainer.io:5432/projectledger" \
+npx prisma migrate status
+
+# Expected: "Database schema is up to date!"
+# If "out of sync": DO NOT DEPLOY - investigate immediately
+```
+
+#### 1.4 Backup Current Revisions
 ```bash
 # Create backup directory
 mkdir -p .deployment-backup
@@ -350,6 +468,12 @@ curl -I https://app.projectledger.ca
 - [ ] Update deployment documentation
 - [ ] Mark completed items in bug/feature lists
 - [ ] Update CHANGELOG.md with release notes
+- [ ] **Publish marketing post** to blog/website
+- [ ] **Send release announcement** via email newsletter (if applicable)
+- [ ] **Share on social media** (adapt marketing post for platform)
+- [ ] **Update support team** with key talking points from marketing post
+- [ ] Send release notification (if applicable)
+- [ ] Archive deployment logs
 - [ ] Send release notification (if applicable)
 - [ ] Archive deployment logs
 

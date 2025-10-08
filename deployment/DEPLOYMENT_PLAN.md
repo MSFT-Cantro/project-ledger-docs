@@ -161,12 +161,75 @@ docker push projectledgerregistry.azurecr.io/projectledger-frontend:${VERSION}
 
 ---
 
-### **Step 3: Database Migrations (If Needed)**
+### **Step 3: 🚨 CRITICAL DATABASE SAFETY CHECKS**
 
-**IMPORTANT:** Run migrations BEFORE deploying new code!
+**⚠️ MANDATORY BEFORE EVERY DEPLOYMENT ⚠️**
+
+**THIS STEP PREVENTS CATASTROPHIC DATA LOSS** - October 8, 2025 incident analysis showed that all production data was wiped because migration safety checks were skipped. **NEVER SKIP THIS STEP.**
+
+#### **3.1: Verify Migration State (CRITICAL)**
 
 ```bash
-# Option A: Run migrations via backend container
+# Check what migrations are currently applied in production
+DATABASE_URL="postgresql://postgres:HzxHJdKgjLaamQSqYUUdD8oE8@projectledger-db.eastus2.azurecontainer.io:5432/projectledger" \
+npx prisma migrate status
+
+# Expected output should show applied migrations, NOT "Database is out of sync"
+# ✅ SAFE: "Database schema is up to date!"
+# ❌ DANGER: "Your database is not in sync with your migration files"
+```
+
+**If database is "out of sync" or `_prisma_migrations` table is empty:**
+1. **STOP DEPLOYMENT IMMEDIATELY** 
+2. **Create full database backup**
+3. **Investigate why migration table is missing**
+4. **Do NOT run `prisma migrate deploy` - it will wipe all data**
+5. **Contact database administrator**
+
+#### **3.2: Database Backup (MANDATORY)**
+
+```bash
+# Create timestamped backup before ANY deployment
+DATE=$(date +%Y%m%d_%H%M%S)
+mkdir -p ./backups
+
+echo "🛡️  Creating database backup before deployment..."
+PGPASSWORD=HzxHJdKgjLaamQSqYUUdD8oE8 pg_dump \
+  -h projectledger-db.eastus2.azurecontainer.io \
+  -U postgres \
+  -d projectledger \
+  -F c \
+  -f "./backups/pre_deployment_${DATE}.backup"
+
+echo "✅ Backup created: ./backups/pre_deployment_${DATE}.backup"
+
+# Verify backup is valid
+ls -la "./backups/pre_deployment_${DATE}.backup"
+# File should be > 1MB if database has data
+```
+
+#### **3.3: Data Verification Check**
+
+```bash
+# Verify production database has expected data BEFORE deployment
+DATABASE_URL="postgresql://postgres:HzxHJdKgjLaamQSqYUUdD8oE8@projectledger-db.eastus2.azurecontainer.io:5432/projectledger" \
+node scripts/verify-production-data.js
+
+# Expected output should show:
+# ✅ Users: X (should be > 0 for existing production)
+# ✅ Accounts: X (should be > 0 for existing production) 
+# ✅ Subscription Plans: 2 (Free and Professional)
+# ✅ Migration table: Contains X applied migrations
+
+# ❌ STOP if output shows all zeros - database may have been reset
+```
+
+#### **3.4: Safe Migration Deployment**
+
+**ONLY after backup and verification above:**
+
+```bash
+# Option A: Run migrations via backend container (PREFERRED)
 az containerapp exec \
   --name projectledger-backend \
   --resource-group projectledger-poc \
@@ -180,8 +243,22 @@ PGPASSWORD=HzxHJdKgjLaamQSqYUUdD8oE8 psql \
   -f path/to/migration.sql
 ```
 
+#### **3.5: Post-Migration Verification**
+
+```bash
+# Verify migration completed successfully and data still exists
+DATABASE_URL="postgresql://postgres:HzxHJdKgjLaamQSqYUUdD8oE8@projectledger-db.eastus2.azurecontainer.io:5432/projectledger" \
+node scripts/verify-production-data.js
+
+# User/Account counts should be SAME as before migration
+# If counts dropped to zero - RESTORE FROM BACKUP IMMEDIATELY
+```
+
 **Migration Safety Checklist:**
-- ✅ Backup database before major schema changes
+- ✅ ✅ ✅ **Database backup created and verified**
+- ✅ ✅ ✅ **Migration status checked (not "out of sync")**
+- ✅ ✅ ✅ **Production data verified before migration**
+- ✅ ✅ ✅ **Production data verified after migration**
 - ✅ Test migrations on local environment first
 - ✅ Use backward-compatible migrations when possible
 - ✅ Never drop columns in production without grace period

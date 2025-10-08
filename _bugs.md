@@ -85,8 +85,14 @@ The Settings and Admin pages need to be updates so that each of the sections are
 Item#30 ✅ COMPLETED
 When creating an invoice, when you select the quote you are using to base the invoice on. Have a pop up to allow the user to select with items on the quote they want to add to the invoice. Those are then added to the item line of the invoice. 
 
-Items#31 ✅ COMPLETED
+Item#31 ✅ COMPLETED
 Remove the beamer button from the bottom right of the application. We have notification button in the toolbar. The built in button from beamer is not needed and confusing to users
+
+Item#32
+A way for a user to create a quote template that can be save to their account and can be used when create new quote to minimize clicks in the future.
+
+Item#32
+A way for a user to create a invoice template that can be save to their account and can be used when create new quote to minimize clicks in the future.
 
 Item#32
 I need better layouts and breakpoints for tablets and smaller screen. Right now the side nav is going over the main body on the page, making the app unusable on screens 901 to 1600 wide in size
