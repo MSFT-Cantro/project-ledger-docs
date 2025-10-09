@@ -88,8 +88,17 @@ When creating an invoice, when you select the quote you are using to base the in
 Item#31 ✅ COMPLETED
 Remove the beamer button from the bottom right of the application. We have notification button in the toolbar. The built in button from beamer is not needed and confusing to users
 
-Item#32
+Item#32 ✅ COMPLETED - Fixed: 2025-10-09
 A user should be able to create a quote template via the quote page based on a new or existing edit template that can be save to their account and can be used when create new quote to minimize clicks in the future. All users within the account should be able to see those templates.
+
+Item#33 ✅ COMPLETED - Fixed: 2025-10-09
+- Added UserQuoteTemplate database model with Prisma schema and migration
+- Implemented backend CRUD API endpoints for template management
+- Created QuoteTemplateManager component for viewing/selecting templates
+- Created SaveQuoteTemplateModal for saving quotes as templates
+- Integrated template functionality in QuoteCreatePage and QuoteDetailPage
+- Template actions accessible via More menu dropdown (⋮ icon)
+- Support for default templates and full quote configuration
 
 Item#33 ✅ COMPLETED - Fixed: 2025-10-09
 A user should be able to create a invoice template via the invoice page based on a new or existing edit template that can be save to their account and can be used when create new inovoice to minimize clicks in the future. All users within the account should be able to see those templates.
