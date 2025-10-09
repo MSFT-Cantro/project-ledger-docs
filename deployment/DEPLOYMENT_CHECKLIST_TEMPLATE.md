@@ -46,6 +46,13 @@
 - [ ] Backend health check (200 OK, DB connected)
 - [ ] No 404 or 500 errors
 
+### Database Verification
+- [ ] All migrations applied successfully
+- [ ] UserAccount table has records (critical for authentication)
+- [ ] SubscriptionPlan table populated
+- [ ] AccountSubscription records exist
+- [ ] No orphaned User records (all have UserAccount entries)
+
 ### Core Functionality
 - [ ] Login/logout works
 - [ ] Dashboard loads
@@ -110,6 +117,10 @@
 # Health checks
 curl -I https://app.projectledger.ca
 curl https://projectledger-backend.orangeplant-da913b57.eastus2.azurecontainerapps.io/api/health
+
+# Verify UserAccount records (CRITICAL - prevents 403 errors)
+docker run --rm postgres:17.0-alpine psql "postgresql://[DB_CONNECTION_STRING]" -c "SELECT COUNT(*) FROM \"UserAccount\";"
+docker run --rm postgres:17.0-alpine psql "postgresql://[DB_CONNECTION_STRING]" -c "SELECT u.email, ua.role, ua.status FROM \"User\" u LEFT JOIN \"UserAccount\" ua ON u.id = ua.\"userId\" WHERE ua.id IS NULL;"
 
 # Monitor logs
 az containerapp logs show --name projectledger-backend --resource-group projectledger-poc --tail 50 --follow
