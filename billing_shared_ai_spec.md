@@ -384,6 +384,19 @@ Essential internal administrative tool for customer operations including:
 - Customer support tools with complete audit trails
 - Required for operational management of customer accounts
 
+### 14.1.2 Terms and Conditions System
+**File:** `backlog/critical/SPEC_terms_conditions.md`  
+**Status:** Not Implemented (0%)  
+**Priority:** Critical  
+
+Comprehensive legal framework management for all billing documents including:
+- Terms template management with versioning and multi-jurisdictional support
+- Automatic terms application to quotes, invoices, and change orders
+- Client acceptance tracking with legal audit trails and IP/timestamp recording
+- Electronic signature integration for legally binding agreements
+- GDPR/CCPA compliance and document retention policies
+- Essential for legal protection and enforceability of business agreements
+
 ### 14.2 Document Immutability & Security
 **File:** `backlog/high/SPEC_document_immutability.md`  
 **Status:** Partially Implemented (25%)  
@@ -494,27 +507,35 @@ Comprehensive PayPal integration for subscription billing including:
 ### Phase 1: Foundation & Critical Missing Features (Weeks 1-8) 
 **Target: Achieve 80% Implementation Coverage**
 
-#### Phase 1A: Document Management & Compliance (Weeks 1-3)
+#### Phase 1A: Document Management & Compliance (Weeks 1-4)
+- **Terms and Conditions System** (`SPEC_terms_conditions.md`)
+  - Database schema for terms templates and acceptance tracking (Week 1)
+  - Terms template management and versioning system (Week 2)
+  - Document integration and client acceptance workflow (Week 3)
+  - Legal compliance features and audit trails (Week 4)
+  - **Dependencies:** None - foundational legal requirement
+  - **Resources:** 1 Backend Developer, 1 Frontend Developer, Legal Consultant
+
 - **Document Immutability System** (`SPEC_document_immutability.md`)
-  - Database schema updates with audit trails (Week 1)
-  - API endpoints for immutable document creation (Week 2)
-  - Frontend UI for version management and legal compliance (Week 3)
-  - **Dependencies:** None - foundational requirement
+  - Database schema updates with audit trails (Week 2)
+  - API endpoints for immutable document creation (Week 3)
+  - Frontend UI for version management and legal compliance (Week 4)
+  - **Dependencies:** Terms and conditions for legal framework
   - **Resources:** 1 Backend Developer, 1 Frontend Developer
 
 - **Credit Notes System** (`SPEC_credit_notes.md`)  
-  - Database models and Prisma migrations (Week 2)
-  - Backend APIs for credit note CRUD operations (Week 3)
-  - Frontend components and credit application logic (Week 3)
-  - **Dependencies:** Document immutability for audit compliance
+  - Database models and Prisma migrations (Week 3)
+  - Backend APIs for credit note CRUD operations (Week 4)
+  - Frontend components and credit application logic (Week 4)
+  - **Dependencies:** Document immutability and terms acceptance for audit compliance
   - **Resources:** 1 Full-Stack Developer
 
-#### Phase 1B: Change Management & Project Controls (Weeks 4-8)
+#### Phase 1B: Change Management & Project Controls (Weeks 5-8)
 - **Change Orders System** (`SPEC_change_orders.md`)
-  - Complete database schema implementation (Week 4)
-  - Backend APIs with approval workflow engine (Weeks 5-6)
-  - Frontend change order interface and approval UI (Weeks 7-8)
-  - **Dependencies:** Document immutability for legal requirements
+  - Complete database schema implementation (Week 5)
+  - Backend APIs with approval workflow engine (Weeks 6-7)
+  - Frontend change order interface and approval UI (Week 8)
+  - **Dependencies:** Terms and conditions system and document immutability for legal requirements
   - **Resources:** 1 Backend Developer, 1 Frontend Developer, 0.5 DevOps
 
 - **Contingency Calculations** (`SPEC_contingency_calculations.md`)

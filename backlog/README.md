@@ -15,6 +15,10 @@ This folder contains the complete technical specifications for all missing billi
   - **Why Critical:** Essential for customer onboarding, support operations, subscription management, and troubleshooting
   - **Dependencies:** Required for managing customers as they are onboarded to the platform
 
+- **`SPEC_terms_conditions.md`** - Terms and conditions system for legal compliance
+  - **Why Critical:** Essential for legal protection, enforceability of agreements, and regulatory compliance
+  - **Dependencies:** Required for all billing documents (quotes, invoices, change orders) to be legally binding
+
 ### 🟡 High Priority (`/high/`)
 **Important for business operations and legal compliance**
 
@@ -80,12 +84,12 @@ This folder contains the complete technical specifications for all missing billi
 
 | Priority | Features | Status | Target Coverage |
 |----------|----------|--------|-----------------|
-| Critical | 2 features | 0% implemented | Week 8 |
+| Critical | 3 features | 0% implemented | Week 8 |
 | High | 5 features | ~25% average | Week 16 |
 | Medium | 5 features | 0% implemented | Week 22 |
 
 **Overall Target:** 95%+ billing system implementation coverage by Week 24  
-**Total Specifications:** 12 comprehensive technical specifications
+**Total Specifications:** 13 comprehensive technical specifications
 
 ## 🔄 Dependencies Map
 
