@@ -1,9 +1,72 @@
 # Change Orders System Specification
 
-**Date:** October 14, 2025  
-**Version:** 1.3  
+**Date:** October 15, 2025  
+**Version:** 1.4  
 **Status:** Phase 3 Complete - Phase 4 In Progress (Approval Workflow)  
 **Current Branch:** feature/phase-4-change-order-approval-workflow  
+
+---
+
+## 📊 Project Progress Summary
+
+### Overall Completion: 60% (3 of 5 phases complete)
+
+```
+Phase 1: Core Infrastructure      ████████████████████ 100% ✅
+Phase 2: Business Logic           ████████████████████ 100% ✅
+Phase 3: User Interface           ████████████████████ 100% ✅
+Phase 4: Approval Workflow        ████████░░░░░░░░░░░░  40% 🚧
+Phase 5: Financial Integration    ░░░░░░░░░░░░░░░░░░░░   0% ⏳
+Phase 6: Testing & Polish         ░░░░░░░░░░░░░░░░░░░░   0% ⏳
+```
+
+### 🎯 Current Sprint: Phase 4 - Approval Workflow
+**Started:** October 14, 2025  
+**Target Completion:** October 18, 2025  
+**Progress:** Backend routes complete, working on token service and email integration
+
+### ✅ Recent Achievements (October 15, 2025)
+- **Critical Production Fix**: Resolved frontend API URL configuration issue that was blocking login
+  - Issue: Git Bash converting `/api` to `C:/Program Files/Git/api`
+  - Solution: Created `.env.production` file with `REACT_APP_API_URL=/api`
+  - Result: Production login now fully functional at https://app.projectledger.ca
+- **Deployment**: Successfully deployed v1.5.3 to Azure production environment
+- **Testing**: All core features validated in production
+
+### 🚀 Next Milestones
+1. **Phase 4 Completion** (Oct 21, 2025) - Extended for general email system
+   - General email notification infrastructure
+   - Token generation service
+   - Email template system (reusable)
+   - Public approval page
+   - PDF generation
+
+2. **Email System Rollout** (Oct 22-23, 2025)
+   - Quote email templates
+   - Invoice email templates
+   - Auth email templates (password reset, welcome)
+
+3. **Phase 5 Start** (Oct 24, 2025)
+   - Invoice/credit note auto-generation
+   - Financial system integration
+
+4. **Production Release** (Oct 28, 2025)
+   - Full change order system live
+   - Email system operational across all modules
+
+### 📈 Key Metrics
+- **Backend API**: 7 routes, 100% functional
+- **Frontend Pages**: 4 pages implemented (List, Detail, Create, Edit)
+- **Database Schema**: 3 tables with full relations
+- **Test Coverage**: API endpoints validated, UI flow tested
+- **Production Status**: ✅ Deployed and operational
+
+### 🎉 Major Wins
+- Complete navigation and UI integration
+- Comprehensive reporting infrastructure
+- Real-time status tracking and filtering
+- Project detail page integration with count badges
+- Production deployment successful with login fix
 
 ---
 
@@ -780,19 +843,30 @@ export function ChangeOrderApproval({ changeOrder, token }: ChangeOrderApprovalP
 
 **Status:** In Development  
 **Started:** October 14, 2025  
-**Estimated Completion:** October 18, 2025  
+**Estimated Completion:** October 21, 2025 (Extended for general email system)  
 **Branch:** `feature/phase-4-change-order-approval-workflow`  
 **PR:** [#19](https://github.com/MSFT-Cantro/project-ledger/pull/19)
 
 #### Overview
 Implement the complete client-facing approval workflow for change orders, including secure token-based authentication, email notifications, and professional PDF generation.
 
+**⚠️ ARCHITECTURAL DECISION:** Phase 4 will build a **general-purpose email notification system** that can be reused across Quotes, Invoices, Change Orders, and other modules. This adds 2-3 days to the timeline but provides long-term value.
+
 #### Key Features
-- Client approval interface (public pages, no login required)
-- Email notification system (send, reminders, confirmations)
-- Secure approval token management (generation, validation, expiration)
-- Professional PDF generation with branding
-- Complete approval tracking and audit trail
+- **General Email System** (NEW - Foundation for all modules)
+  - Email template engine with variable interpolation
+  - Multi-provider support (SendGrid, AWS SES, SMTP)
+  - Email queue with retry logic
+  - Template management (create, edit, preview)
+  - Email tracking (sent, opened, clicked, bounced)
+  - Attachment support for PDFs
+  - Reusable across Quotes, Invoices, Change Orders, Auth
+  
+- **Change Order Specific**
+  - Client approval interface (public pages, no login required)
+  - Secure approval token management (generation, validation, expiration)
+  - Professional PDF generation with branding
+  - Complete approval tracking and audit trail
 
 #### Detailed Specification
 For complete implementation details, API specifications, email templates, PDF wireframes, security considerations, and testing checklists, see:
@@ -802,12 +876,26 @@ For complete implementation details, API specifications, email templates, PDF wi
 #### Quick Status
 - [x] Backend routes for approval workflow (Phase 2)
 - [x] Status management (SENT, UNDER_REVIEW, APPROVED, DECLINED)
-- [ ] Token generation service (Phase 4)
-- [ ] Email service integration (Phase 4)
-- [ ] Public approval page component (Phase 4)
-- [ ] PDF generation service (Phase 4)
-- [ ] Email templates (Phase 4)
-- [ ] Testing and validation (Phase 4)
+- [ ] **General Email System** (Phase 4 - Foundation)
+  - [ ] Email service abstraction layer
+  - [ ] Template engine with variable interpolation
+  - [ ] Email queue with retry logic
+  - [ ] Template management API and UI
+  - [ ] Email tracking and analytics
+- [ ] **Change Order Approval** (Phase 4 - Specific Implementation)
+  - [ ] Token generation service
+  - [ ] Approval email templates
+  - [ ] Public approval page component
+  - [ ] PDF generation service
+  - [ ] Testing and validation
+
+#### Architectural Benefits of General Email System
+1. **Reusability**: Quote emails, invoice emails, auth emails use same infrastructure
+2. **Consistency**: All emails have same branding, tracking, and retry logic
+3. **Maintainability**: Single place to update email provider or templates
+4. **Future-proof**: Easy to add new email types (project updates, reports, etc.)
+5. **Professional**: Template management UI for non-technical users
+6. **Analytics**: Track email effectiveness across all modules
 
 ---
 
