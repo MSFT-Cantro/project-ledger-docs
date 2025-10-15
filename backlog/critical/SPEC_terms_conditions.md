@@ -1,8 +1,8 @@
 # Terms and Conditions System Specification
 
 **Date:** October 15, 2025  
-**Version:** 1.3  
-**Status:** Phase 2 Complete - Document Integration  
+**Version:** 1.4  
+**Status:** Phase 3 In Progress - PDF & UI Integration  
 **Priority:** Critical  
 
 ---
@@ -14,8 +14,8 @@
 ```
 Phase 1: Core Infrastructure     ████████████████████  100% ✅ COMPLETE
 Phase 2: Document Integration    ████████████████████  100% ✅ COMPLETE
-Phase 3: Acceptance Workflow     ░░░░░░░░░░░░░░░░░░░░   0% ⏳
-Phase 4: User Interface          ░░░░░░░░░░░░░░░░░░░░   0% ⏳
+Phase 3: PDF & UI Integration    ░░░░░░░░░░░░░░░░░░░░   0% 🔨 IN PROGRESS
+Phase 4: Acceptance Workflow     ░░░░░░░░░░░░░░░░░░░░   0% ⏳
 Phase 5: Legal Compliance        ░░░░░░░░░░░░░░░░░░░░   0% ⏳
 Phase 6: Testing & Deployment    ░░░░░░░░░░░░░░░░░░░░   0% ⏳
 ```
@@ -29,6 +29,12 @@ Phase 6: Testing & Deployment    ░░░░░░░░░░░░░░░�
 ### 🎯 Phase 2: Document Integration - ✅ COMPLETE
 **Started:** October 15, 2025  
 **Completed:** October 15, 2025  
+**Status:** All tasks completed successfully, endpoints tested and working
+**PR:** [#TBD](https://github.com/MSFT-Cantro/project-ledger/pull/TBD) 🔄 In Review
+
+### 🔨 Phase 3: PDF & UI Integration - IN PROGRESS
+**Started:** October 15, 2025  
+**Status:** Implementation starting
 **Status:** All tasks completed successfully, endpoints tested and working
 
 ### ✅ Completed Tasks - Phase 1
@@ -1247,19 +1253,23 @@ async function createChangeOrderWithTerms(changeOrderData: CreateChangeOrderInpu
 - ⏳ Auto-application of default terms (Phase 2B - Optional Enhancement)
 - ⏳ Terms inheritance workflows (Phase 2B - Optional Enhancement)
 
-### Phase 3: Acceptance Workflow (Week 3-4)
+### Phase 3: PDF & UI Integration (Week 3-4)
+- [ ] Modify PDF service to include terms sections
+- [ ] Update quote HTML template for terms rendering
+- [ ] Update invoice HTML template for terms rendering
+- [ ] Update change order HTML template for terms rendering
+- [ ] Frontend terms management UI component
+- [ ] Terms display in document preview
+- [ ] Admin dashboard for terms management
+- [ ] Client portal integration for viewing terms
+
+### Phase 4: Acceptance Workflow (Week 4-5)
 - [ ] Terms acceptance tracking system
 - [ ] Client-facing acceptance interface
 - [ ] Electronic signature integration
 - [ ] Legal compliance validation
 - [ ] Acceptance audit trail
-
-### Phase 4: User Interface (Week 4-5)
-- [ ] Terms template editor with rich text support
-- [ ] Document terms manager component
-- [ ] Terms acceptance interface
-- [ ] Admin dashboard for terms management
-- [ ] Client portal integration
+- [ ] Terms acceptance UI component
 
 ### Phase 5: Legal Compliance (Week 5-6)
 - [ ] Legal content generation helpers
