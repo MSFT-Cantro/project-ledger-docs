@@ -1,20 +1,20 @@
 # Terms and Conditions System Specification
 
 **Date:** October 15, 2025  
-**Version:** 1.4  
-**Status:** Phase 3 In Progress - PDF & UI Integration  
+**Version:** 1.5  
+**Status:** Phase 3 In Progress - PDF Integration Complete, Frontend UI Next  
 **Priority:** Critical  
 
 ---
 
 ## 📊 Implementation Progress Summary
 
-### Overall Completion: Phase 1 & 2 Complete (33.4%)
+### Overall Completion: Phase 1-2 Complete, Phase 3 50% (41.7%)
 
 ```
 Phase 1: Core Infrastructure     ████████████████████  100% ✅ COMPLETE
 Phase 2: Document Integration    ████████████████████  100% ✅ COMPLETE
-Phase 3: PDF & UI Integration    ░░░░░░░░░░░░░░░░░░░░   0% 🔨 IN PROGRESS
+Phase 3: PDF & UI Integration    ██████████░░░░░░░░░░  50% 🔨 IN PROGRESS
 Phase 4: Acceptance Workflow     ░░░░░░░░░░░░░░░░░░░░   0% ⏳
 Phase 5: Legal Compliance        ░░░░░░░░░░░░░░░░░░░░   0% ⏳
 Phase 6: Testing & Deployment    ░░░░░░░░░░░░░░░░░░░░   0% ⏳
@@ -1253,15 +1253,37 @@ async function createChangeOrderWithTerms(changeOrderData: CreateChangeOrderInpu
 - ⏳ Auto-application of default terms (Phase 2B - Optional Enhancement)
 - ⏳ Terms inheritance workflows (Phase 2B - Optional Enhancement)
 
-### Phase 3: PDF & UI Integration (Week 3-4)
-- [ ] Modify PDF service to include terms sections
-- [ ] Update quote HTML template for terms rendering
-- [ ] Update invoice HTML template for terms rendering
-- [ ] Update change order HTML template for terms rendering
-- [ ] Frontend terms management UI component
-- [ ] Terms display in document preview
-- [ ] Admin dashboard for terms management
-- [ ] Client portal integration for viewing terms
+### Phase 3: PDF & UI Integration (Week 3-4) - 🔨 50% IN PROGRESS
+- ✅ Modify PDF service to include terms sections
+- ✅ Update quote HTML template for terms rendering  
+- ✅ Update invoice HTML template for terms rendering
+- ✅ Update change order HTML template for terms rendering
+- ⏳ Frontend terms management UI component (IN PROGRESS)
+- ⏳ Terms display in document preview
+- ⏳ Admin dashboard for terms management
+- ⏳ Client portal integration for viewing terms
+
+**Completed:** October 15, 2025 (PDF Backend Integration)  
+**Current Focus:** Frontend UI Components
+
+**Phase 3A Completion Summary (PDF Integration):**
+- ✅ Quote PDF service updated to fetch and render QuoteTerms
+- ✅ Invoice PDF service updated to fetch and render InvoiceTerms
+- ✅ Change Order PDF service updated to fetch and render ChangeOrderTerms
+- ✅ Professional formatting with numbered terms, bold titles, justified content
+- ✅ Page break handling for multi-page terms sections
+- ✅ Custom content support with template fallback
+- ✅ Backwards compatibility with legacy quote.terms field
+- ✅ All services compile without errors
+- ✅ Backend container rebuilt and running
+- ✅ Documentation: `docs/PHASE_3_PDF_INTEGRATION_COMPLETE.md`
+
+**Phase 3B Next Steps (Frontend UI):**
+- Create TermsManagement React component
+- Integrate with quote/invoice/change order edit pages
+- Implement drag-and-drop term reordering
+- Add custom content editing modal
+- Display attached terms in document previews
 
 ### Phase 4: Acceptance Workflow (Week 4-5)
 - [ ] Terms acceptance tracking system
