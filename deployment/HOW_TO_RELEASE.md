@@ -48,7 +48,18 @@ bash tools/deployment/release-v1.2.0.sh
 - [ ] Update `CHANGELOG.md` with changes
 - [ ] Update version in `package.json` files (optional)
 
-**1.3 Commit All Changes**
+**1.3 Check Database Migrations**
+- [ ] Review new migrations in `apps/backend/prisma/migrations/`
+- [ ] Ensure migrations are tested locally
+- [ ] Verify seed data migrations (e.g., terms templates) work correctly
+- [ ] Check migration history with `npx prisma migrate status`
+
+**Note:** Database migrations run automatically during deployment via `docker-entrypoint-production.sh`. This includes:
+- Schema changes
+- Data seeding (e.g., terms templates auto-seeded by `20251015120000_seed_terms_templates`)
+- See `docs/deployment/TERMS_TEMPLATES_MIGRATION.md` for details
+
+**1.4 Commit All Changes**
 ```bash
 git add .
 git commit -m "chore: Prepare for v1.2.0 release"
