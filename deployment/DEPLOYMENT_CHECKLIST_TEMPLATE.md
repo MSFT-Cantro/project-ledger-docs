@@ -52,6 +52,7 @@
 - [ ] SubscriptionPlan table populated
 - [ ] AccountSubscription records exist
 - [ ] No orphaned User records (all have UserAccount entries)
+- [ ] TermsTemplate table has 7 standard templates (auto-seeded by migration)
 
 ### Core Functionality
 - [ ] Login/logout works
