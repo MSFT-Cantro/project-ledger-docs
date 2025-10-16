@@ -1,4 +1,4 @@
-íº€ ProjectLedger v1.6.0 â€” Work Faster, Work Smarter, Work Anywhere
+ğŸš€ ProjectLedger v1.6.0 â€” Work Faster, Work Smarter, Work Anywhere
 
 Release Date: October 15, 2025  
 Version: 1.6.0
@@ -11,9 +11,9 @@ We've rolled out ProjectLedger v1.6.0 with three key improvements designed to ma
 
 ---
 
-## í²¡ Key Updates
+## ğŸ’¡ Key Updates
 
-### í³‹ Streamlined Change Order Editing
+### ğŸ“‹ Streamlined Change Order Editing
 
 We redesigned the change order interface to be faster and cleaner. Same powerful functionality, just easier to use.
 
@@ -28,7 +28,7 @@ Client wants to add work while you're on-site? Open the change order on your pho
 
 ---
 
-### í³± Mobile-Optimized Interface
+### ğŸ“± Mobile-Optimized Interface
 
 Your phone is now a better tool for running your business. We optimized the entire app for mobile devices.
 
@@ -43,7 +43,7 @@ Show clients quotes at their property, review invoices on-site, or check project
 
 ---
 
-### í³„ Contract Terms Templates
+### ğŸ“„ Contract Terms Templates
 
 Seven pre-built contract templates covering payment terms, warranties, change procedures, liability, delays, materials, and dispute resolution.
 
@@ -69,7 +69,7 @@ New client questions your payment schedule? Include your "Payment Terms" templat
 
 ---
 
-## ï¿½ï¿½ Available Now
+## ğŸš€ Available Now
 
 Already upgraded. Just log in: **[app.projectledger.ca](https://app.projectledger.ca)**
 
@@ -77,15 +77,15 @@ The next time you're on a job site, you'll appreciate how well everything works 
 
 ---
 
-## í³± Social Media Posts
+## ğŸ“± Social Media Posts
 
 ### Twitter/X
 \`\`\`
 âš’ï¸ ProjectLedger v1.6.0 is live! 
 
 âœ… Faster change order management
-í³± Better mobile access for job sites
-í³„ Contract templates to protect your business
+ğŸ“± Better mobile access for job sites
+ğŸ“„ Contract templates to protect your business
 
 Updated while you were working - zero downtime.
 
@@ -113,7 +113,7 @@ Log in now: https://app.projectledger.ca
 
 ### Facebook/Instagram
 \`\`\`
-í´¨ Big update for contractors! 
+ğŸ”¨ Big update for contractors! 
 
 ProjectLedger v1.6.0 is here with features you've been asking for:
 
@@ -123,14 +123,14 @@ ProjectLedger v1.6.0 is here with features you've been asking for:
 
 Already upgraded. No downtime. Just log in and go.
 
-í±‰ app.projectledger.ca
+ğŸ‘‰ app.projectledger.ca
 
 #Contractor #SmallBusiness #ConstructionLife #ContractorTools
 \`\`\`
 
 ---
 
-## í³§ Email Announcement Template
+## ğŸ“§ Email Announcement Template
 
 **Subject:** ProjectLedger Update - Faster Change Orders & Mobile Improvements
 
@@ -169,7 +169,7 @@ P.S. Working on more contractor-focused features for the next release. Stay tune
 
 ---
 
-## í³ Support Team Quick Reference
+## ğŸ“ Support Team Quick Reference
 
 ### Key Messages
 - v1.6.0 focuses on mobile optimization and workflow speed
@@ -203,7 +203,7 @@ A: Yes! All existing change orders work exactly as before.
 
 ---
 
-## í³‹ Distribution Checklist
+## ğŸ“‹ Distribution Checklist
 
 - [x] Marketing post created (summary version)
 - [x] Full version backed up as MARKETING_ANNOUNCEMENT_FULL.md
