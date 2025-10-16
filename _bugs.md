@@ -103,9 +103,6 @@ Item#33 ✅ COMPLETED - Fixed: 2025-10-09
 Item#33 ✅ COMPLETED - Fixed: 2025-10-09
 A user should be able to create a invoice template via the invoice page based on a new or existing edit template that can be save to their account and can be used when create new inovoice to minimize clicks in the future. All users within the account should be able to see those templates.
 
-Item#34
-I need better layouts and breakpoints for tablets and smaller screen. Right now the side nav is going over the main body on the page, making the app unusable on screens 901 to 1600 wide in size
-
 Item#35 ✅ COMPLETED - Fixed: 2025-10-09
 403 Forbidden errors after database seeding. Issue: The seed script created User records but didn't create corresponding UserAccount records required by the authentication middleware. Fixed by running fix-user-accounts.js script. See docs/fixes/403_ERROR_FIX.md for details.
 
