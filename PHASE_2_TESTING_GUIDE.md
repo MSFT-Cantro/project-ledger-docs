@@ -14,7 +14,10 @@ Phase 2 introduces a complete client portal system allowing clients to log in, v
 
 ### Basic Portal Flow Test
 ```bash
-# 1. Open browser to portal login
+# 1. Open browser to portal login (NEW URL)
+http://localhost:3002/login
+
+# OR the old path-based URL still works:
 http://localhost:3000/portal/login
 
 # 2. Login with test credentials
@@ -363,7 +366,8 @@ After Phase 2 completion, prepare for:
 
 ## 📞 Support Information
 - **Test Client**: test.client@example.com / TestPassword123!
-- **Portal URL**: http://localhost:3000/portal/login
+- **Portal URL (New)**: http://localhost:3002/login (Recommended)
+- **Portal URL (Legacy)**: http://localhost:3000/portal/login (Still works)
 - **API Base**: http://localhost:3001/api/portal/
 - **Admin Portal**: http://localhost:3000/login (separate system)
 
