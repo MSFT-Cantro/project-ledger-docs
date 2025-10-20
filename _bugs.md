@@ -106,4 +106,5 @@ A user should be able to create a invoice template via the invoice page based on
 Item#35 ✅ COMPLETED - Fixed: 2025-10-09
 403 Forbidden errors after database seeding. Issue: The seed script created User records but didn't create corresponding UserAccount records required by the authentication middleware. Fixed by running fix-user-accounts.js script. See docs/fixes/403_ERROR_FIX.md for details.
 
-
+Item#36
+Remove the log out button from the side nav as it no longer needed. Move the User Settings and Account Settings into the footer. Rename Account Setting to Admin Settings. Make sure these updates are done in the desktop and side nav on the main app and the portal app. 
