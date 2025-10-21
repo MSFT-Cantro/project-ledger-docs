@@ -1294,6 +1294,20 @@ model ClientPortalActivity {
 
 ---
 
+## Related Documentation
+
+### Core Documentation
+- **[Client Approval Workflow](../backlog/high/SPEC_APPROVAL_WORKFLOW.md)** - Comprehensive documentation of quote approval workflow (complete) and invoice approval workflow (planned)
+- **[Client Portal API Documentation](../../apps/backend/src/routes/portal/README.md)** - API endpoints and authentication
+- **[Email Service Documentation](../../apps/backend/src/lib/emailService.ts)** - Notification system implementation
+
+### Implementation Guides
+- **Quote Approval System** - See Phase 3 section in this document
+- **Invoice Enhancement** - See Phase 4 section in this document
+- **Security Best Practices** - See Phase 5 section in this document
+
+---
+
 ## Conclusion
 
 This client portal feature will significantly enhance client experience and reduce administrative overhead. The phased approach ensures we deliver value incrementally while managing risk. Starting with authentication and viewing, then adding interactive features like quote approval, provides a solid foundation for future enhancements like payment processing.
