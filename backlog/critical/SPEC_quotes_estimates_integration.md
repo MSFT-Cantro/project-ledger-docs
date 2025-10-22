@@ -1,21 +1,21 @@
 # Quotes & Estimates Integration Specification
 
 **Date:** October 21, 2025  
-**Version:** 1.0  
-**Status:** Planning - Not Started  
+**Version:** 1.1  
+**Status:** Phase 2 Complete - API Endpoints Ready  
 **Priority:** Critical  
-**Branch:** TBD
+**Branch:** feature/quotes-estimates-phase1 (Phase 1), feature/quotes-estimates-phase2 (Phase 2)
 
 ---
 
 ## 📊 Implementation Progress Summary
 
-### Overall Completion: Phase 1 Complete (11%)
+### Overall Completion: Phase 2 Complete (22%)
 
 ```
 Phase 1: Database & Core Logic    ████████████████████   100% ✅ COMPLETED
-Phase 2: API Endpoints             ░░░░░░░░░░░░░░░░░░░░     0% ⏳ NOT STARTED
-Phase 3: Frontend Create/Edit      ░░░░░░░░░░░░░░░░░░░░     0% ⏳ NOT STARTED
+Phase 2: API Endpoints             ████████████████████   100% ✅ COMPLETED
+Phase 3: Frontend Create/Edit      ░░░░░░░░░░░░░░░░░░░░     0% ⏳ NEXT
 Phase 4: Frontend List/Display     ░░░░░░░░░░░░░░░░░░░░     0% ⏳ NOT STARTED
 Phase 5: PDF Generation            ░░░░░░░░░░░░░░░░░░░░     0% ⏳ NOT STARTED
 Phase 6: Change Order Integration  ░░░░░░░░░░░░░░░░░░░░     0% ⏳ NOT STARTED
@@ -24,12 +24,52 @@ Phase 8: Reporting & Analytics     ░░░░░░░░░░░░░░░
 Phase 9: Testing & Documentation   ░░░░░░░░░░░░░░░░░░░░     0% ⏳ NOT STARTED
 ```
 
-### 🎯 Current Milestone: Phase 1 Complete - Backend Foundation Ready
+### 🎯 Current Milestone: Phase 2 Complete - API Endpoints Ready
 **Status:** ✅ Completed on October 22, 2025  
 **Next Steps:** 
-1. Review Phase 1 implementation
-2. Test database changes and calculation logic
-3. Proceed to Phase 2: API Endpoints
+1. Review Phase 2 implementation report
+2. Test API endpoints with Postman/curl
+3. Proceed to Phase 3: Frontend Create/Edit UI
+
+---
+
+### Phase 2 Implementation Summary
+
+**Completed Tasks:**
+- ✅ Updated POST /api/quotes validation schema with type and contingencyPct
+- ✅ Updated POST /api/quotes route handler to pass new fields
+- ✅ Added type filtering to GET /api/quotes endpoint
+- ✅ Updated PATCH /api/quotes/:id to allow type and contingency updates
+- ✅ Created POST /api/quotes/:id/convert endpoint for ESTIMATE→QUOTE conversion
+- ✅ Added validation middleware (Zod schema + service layer)
+- ✅ Wrote comprehensive API integration tests (23/23 passing)
+- ✅ Added extensive JSDoc documentation with examples
+- ✅ Tested all endpoints manually
+
+**Files Modified:**
+- `apps/backend/src/routes/quotes.ts` - Updated all endpoints, added /convert route, added JSDoc
+- `apps/backend/src/services/quoteService.ts` - Updated interfaces, added convertEstimateToQuote(), updated filtering
+- `apps/backend/src/routes/__tests__/quotes.estimate.test.ts` - NEW: 23 comprehensive API tests
+- `docs/backlog/critical/PHASE_2_COMPLETE.md` - NEW: Detailed Phase 2 completion report
+
+**Test Results:**
+```
+Test Suites: 1 passed
+Tests:       23 passed
+Coverage:    56.32% routes/quotes.ts
+Time:        3.687s
+```
+
+**API Endpoints:**
+| Endpoint | Method | Status | Description |
+|----------|--------|--------|-------------|
+| `/api/quotes` | POST | ✅ UPDATED | Create quote or estimate with contingency |
+| `/api/quotes` | GET | ✅ UPDATED | List with type filtering |
+| `/api/quotes/:id` | GET | ✅ UPDATED | Returns new fields |
+| `/api/quotes/:id` | PATCH | ✅ UPDATED | Update type and contingency |
+| `/api/quotes/:id/convert` | POST | ✅ NEW | Convert estimate to quote |
+| `/api/quotes/:id/status` | POST | ✅ WORKS | Status updates (unchanged) |
+| `/api/quotes/:id/pdf` | GET | ⚠️ WORKS | Needs Phase 5 updates |
 
 ---
 
