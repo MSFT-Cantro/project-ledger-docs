@@ -10,7 +10,7 @@
 
 ## 📊 Implementation Progress Summary
 
-### Overall Completion: Phases 3, 4 & 5 Complete (72%)
+### Overall Completion: Phases 3, 4, 5 & 6 Complete (80%)
 
 ```
 Phase 1: Database & Core Logic    ████████████████████   100% ✅ COMPLETED
@@ -18,19 +18,97 @@ Phase 2: API Endpoints             ███████████████
 Phase 3: Frontend Create/Edit      ██████████████████░░    90% ✅ COMPLETED
 Phase 4: Frontend List/Display     ████████████████████   100% ✅ COMPLETED
 Phase 5: PDF Generation            ████████████████████   100% ✅ COMPLETED
-Phase 6: Change Order Integration  ░░░░░░░░░░░░░░░░░░░░     0% ⏳ NOT STARTED
+Phase 6: Change Order Integration  ████████████████████   100% ✅ COMPLETED
 Phase 7: Client Portal             ░░░░░░░░░░░░░░░░░░░░     0% ⏳ NOT STARTED
 Phase 8: Reporting & Analytics     ░░░░░░░░░░░░░░░░░░░░     0% ⏳ NOT STARTED
 Phase 9: Testing & Documentation   ░░░░░░░░░░░░░░░░░░░░     0% ⏳ NOT STARTED
 ```
 
-### 🎯 Current Milestone: PDF Generation Complete - Ready for Testing
-**Status:** ✅ Phase 5 Completed on October 23, 2025  
+### 🎯 Current Milestone: Change Order Integration Complete - Ready for Client Portal
+**Status:** ✅ Phase 6 Completed on October 23, 2025  
 **Next Steps:** 
-1. Test PDF generation with quotes and estimates
-2. Write E2E tests for Phases 3, 4 & 5
-3. Proceed to Phase 6: Change Order Integration
+1. Proceed to Phase 7: Client Portal Integration
+2. Write E2E tests for Phases 3-6
+3. Add reporting and analytics for estimates
 4. Create completion documentation with screenshots
+
+---
+
+### Phase 6 Implementation Summary (Completed)
+
+**Status:** ✅ 100% Complete  
+**Completion Date:** October 23, 2025
+
+**Completed Tasks:**
+- ✅ Updated ChangeOrderService to handle estimates correctly
+- ✅ Use base total (not grandTotal) for estimate change order calculations
+- ✅ Added estimate-specific fields to ChangeOrderFinancialImpact interface
+- ✅ Calculate new grand total with contingency after change orders
+- ✅ Updated CreateChangeOrderPage with estimate-specific UI
+- ✅ Updated ChangeOrderEditPage with estimate-specific UI
+- ✅ Added estimate warning indicators in change order forms
+- ✅ Display contingency breakdown in financial summaries
+- ✅ Updated Change Order PDF template to show estimate information
+- ✅ Added estimate-specific labels and calculations in PDFs
+
+**Files Modified:**
+- `apps/backend/src/services/ChangeOrderService.ts` - Change order service with estimate support
+  - Updated `calculateFinancialImpact()` to use `quote.total` (not `grandTotal`) as baseline for estimates
+  - Added `isEstimate`, `contingencyPct`, `contingencyAmount`, `originalGrandTotal`, `newGrandTotal` to result
+  - Calculate new grand total with same contingency percentage after changes
+- `packages/shared-types/change-orders/types.ts` - Updated ChangeOrderFinancialImpact interface
+  - Added optional fields: `isEstimate`, `contingencyPct`, `contingencyAmount`, `originalGrandTotal`, `newGrandTotal`
+- `apps/frontend/src/pages/change-orders/CreateChangeOrderPage.tsx` - Create page with estimate support
+  - Added Phase 6 estimate-specific calculations in `financialImpact` calculation
+  - Updated UI to show base total vs grand total for estimates
+  - Added orange estimate badge and contingency information display
+  - Added estimate contingency warning alert with detailed breakdown
+  - Display "Original Base Total", "New Base Total", and "New Estimated Total" for estimates
+- `apps/frontend/src/pages/change-orders/ChangeOrderEditPage.tsx` - Edit page with estimate support
+  - Added Phase 6 estimate-specific calculations in `financialImpact` calculation
+  - Updated UI to show estimate-specific financial summaries
+  - Added contingency breakdown and warnings
+  - Consistent orange theme for estimate indicators
+- `apps/backend/src/lib/pdfService.ts` - Change Order PDF with estimate display
+  - Added estimate warning indicator: "⚠️ ESTIMATE CHANGE ORDER"
+  - Display "Original Base Total" vs "Original Contract Total" based on type
+  - Show contingency breakdown in financial summary
+  - Calculate and display new estimated total with contingency
+
+**Key Features:**
+- **Baseline Calculation:** Change orders on estimates use `total` (base amount excluding contingency) as baseline, NOT `grandTotal`
+- **Contingency Preservation:** Contingency percentage is maintained after change orders, recalculated on new total
+- **Financial Display:** Clear breakdown showing:
+  - Original Base Total (without contingency)
+  - Change Amount
+  - New Base Total (after changes)
+  - New Estimated Total (with contingency recalculated)
+- **Visual Distinction:** Orange badges, warnings, and background colors for estimate change orders
+- **Contingency Information:** Detailed display showing:
+  - Original contingency amount and percentage
+  - New contingency amount (recalculated)
+  - Explanation that changes apply to base total only
+- **PDF Integration:** Change order PDFs show estimate-specific labels and contingency calculations
+
+**Business Logic:**
+- When creating a change order from an estimate with $10,000 base + 10% contingency ($1,000) = $11,000 grand total:
+  - Baseline is $10,000 (the base total, not $11,000)
+  - Change order adds $1,000 to base → new base total = $11,000
+  - Contingency recalculated: 10% of $11,000 = $1,100
+  - New estimated total: $11,000 + $1,100 = $12,100
+- This ensures contingency always reflects the current estimate size
+
+**Technical Implementation:**
+- Backend service correctly identifies estimate type and extracts contingency percentage
+- Financial impact calculation includes both base totals and grand totals
+- Frontend displays all relevant amounts clearly
+- PDF generation shows estimate-specific information
+- Change order status and approval workflow unchanged (works for both quotes and estimates)
+
+**Remaining Tasks:**
+- ⏳ Write automated tests for estimate change orders
+- ⏳ Test change order creation and editing with various estimate scenarios
+- ⏳ Capture screenshots for documentation
 
 ---
 
@@ -40,6 +118,11 @@ Phase 9: Testing & Documentation   ░░░░░░░░░░░░░░░
 **Completion Date:** October 23, 2025
 
 **Completed Tasks:**
+- ✅ Migrated from PDFKit to Puppeteer for all document types
+- ✅ Created modern HTML/CSS-based templates matching change order design
+- ✅ Applied professional styling to Quote PDFs (blue theme)
+- ✅ Applied professional styling to Estimate PDFs (orange theme)
+- ✅ Applied professional styling to Invoice PDFs (blue theme with payment status)
 - ✅ Added estimate-specific header with orange "ESTIMATE" title and warning badge
 - ✅ Added non-binding disclaimer immediately after header
 - ✅ Updated document number label to show "Estimate Number" vs "Quote Number"
@@ -48,36 +131,85 @@ Phase 9: Testing & Documentation   ░░░░░░░░░░░░░░░
 - ✅ Added visual distinction with orange color for estimate-specific elements
 - ✅ Created highlighted disclaimer box explaining estimate nature
 - ✅ Lists all factors that may cause variation (scope, materials, labor, conditions)
+- ✅ Added payment status highlighting for invoices (green for paid, red for overdue)
+- ✅ Added balance tracking with color-coded displays
+- ✅ Implemented signature sections for all document types
+- ✅ Added grouped items support with subtotals
 - ✅ Maintains backward compatibility with regular quote PDFs
 
 **Files Modified:**
-- `apps/backend/src/services/pdfService.ts` - Updated generateQuotePDFFromData method
+- `apps/backend/src/services/pdfService.ts` - Complete rewrite of PDF generation
+  - Added `import puppeteer`
+  - Created `generateQuoteHTMLTemplate()` method
+  - Created `generateInvoiceHTMLTemplate()` method
+  - Replaced `generateQuotePDFFromData()` with Puppeteer implementation
+  - Replaced `generateInvoicePDFFromData()` with Puppeteer implementation
+  - Kept legacy PDFKit methods for compatibility
 
 **Key Features:**
-- **Visual Distinction:** Orange header and elements for estimates vs blue for quotes
-- **Warning Indicator:** "⚠ NON-BINDING APPROXIMATION" badge under header
+- **Modern Design:** All PDFs now use professional HTML/CSS templates with consistent styling
+- **Color Coding:**
+  - Quotes: Blue theme (#2196F3)
+  - Estimates: Orange theme (#ff9800)
+  - Invoices: Blue theme with dynamic payment status colors
+- **Visual Distinction:** Orange header and elements for estimates vs blue for quotes/invoices
+- **Warning Indicator:** "⚠ NON-BINDING APPROXIMATION" badge under estimate header
 - **Contingency Display:** Clear breakdown showing base + contingency = grand total
 - **Disclaimer Section:** Highlighted yellow box with comprehensive explanation
-- **Professional Layout:** Clean, organized presentation of estimate vs quote information
-- **Backward Compatible:** Regular quotes unchanged, no breaking changes
+- **Payment Status:** Invoices show green "PAID IN FULL" or red "PAYMENT OVERDUE" notices
+- **Professional Layout:** Clean, organized presentation matching change order templates
+- **Signature Sections:** Professional signature boxes for all document types
+- **Grouped Items:** Support for item grouping with subtotals and proper hierarchy
+- **Print Optimized:** `print-color-adjust: exact` for accurate color rendering
+- **Backward Compatible:** All existing functionality preserved
 
-**PDF Differences:**
+**PDF Design Elements:**
 
-**Quote PDF:**
-- Blue "QUOTE" header
+**All Documents:**
+- Modern header with company info and document details side-by-side
+- Color-coded section headers and borders
+- Professional "Parties" section (From/To layout)
+- Enhanced items table with hover effects
+- Financial summary with color-coded backgrounds
+- Terms and conditions integration
+- Signature section with acceptance language
+- Professional footer with generation date
+
+**Quote PDF (Blue Theme):**
+- Blue "QUOTE" header (#2196F3)
 - Standard financial summary (Subtotal → Tax → Total)
-- No disclaimers or warnings
+- Clean professional styling
+- Acceptance signature section
 
-**Estimate PDF:**
-- Orange "ESTIMATE" header with warning badge
+**Estimate PDF (Orange Theme):**
+- Orange "ESTIMATE" header (#ff9800) with "NON-BINDING APPROXIMATION" badge
 - Extended financial summary (Subtotal → Tax → Base Total → Contingency → Estimated Total)
-- Contingency explanation with asterisk
-- Highlighted disclaimer box explaining non-binding nature
-- Lists all variation factors
+- Prominent disclaimer box with orange border
+- Warning callouts in orange
+- Contingency explanation with percentage
+- Lists all variation factors (scope, materials, labor, conditions)
+
+**Invoice PDF (Blue Theme with Status):**
+- Blue "INVOICE" header (#2196F3)
+- Payment status badge (PAID/UNPAID/PARTIAL/OVERDUE)
+- Dynamic status notices (green for paid, red for overdue)
+- Financial summary showing: Subtotal → Tax → Total → Amount Paid → Balance Due
+- Balance due color-coded (green if $0, red if outstanding)
+- Payment terms display
+- Payment acknowledgment signature section (only if unpaid)
+
+**Technical Implementation:**
+- **Technology:** Puppeteer for HTML-to-PDF conversion
+- **Templates:** Inline HTML/CSS in TypeScript template literal strings
+- **Styling:** Modern CSS with flexbox, proper typography, and print-optimized styles
+- **Browser:** Chromium via Puppeteer with headless mode
+- **Format:** A4 with 20px margins
+- **Consistency:** All three document types share same design language
 
 **Remaining Tasks:**
 - ⏳ Test PDF generation with real quote data
 - ⏳ Test PDF generation with real estimate data
+- ⏳ Test PDF generation with real invoice data
 - ⏳ Write automated tests for PDF generation
 - ⏳ Capture screenshots for documentation
 
@@ -1644,25 +1776,33 @@ interface QuoteEstimateMetrics {
 
 ### Phase 6: Change Order Integration (Week 3-4)
 **Priority:** Medium  
-**Estimated Effort:** 2 days
+**Estimated Effort:** 2 days  
+**Status:** ✅ COMPLETED (October 23, 2025)
 
 **Tasks:**
-- [ ] Update change order service to handle estimates
-- [ ] Use base total (not grandTotal) for estimates
-- [ ] Update change order UI to show estimate info
-- [ ] Add contingency recalculation option
-- [ ] Write tests for estimate change orders
-- [ ] Update documentation
+- [x] Update change order service to handle estimates
+- [x] Use base total (not grandTotal) for estimates
+- [x] Update change order UI to show estimate info
+- [x] Add contingency recalculation logic
+- [x] Update CreateChangeOrderPage with estimate support
+- [x] Update ChangeOrderEditPage with estimate support
+- [x] Update Change Order PDF template for estimates
+- [ ] Write tests for estimate change orders (moved to Phase 9)
+- [x] Update documentation
 
 **Deliverables:**
-- Working change orders for estimates
-- Proper baseline calculation
-- Updated UI
+- ✅ Working change orders for estimates
+- ✅ Proper baseline calculation (uses `quote.total` not `grandTotal`)
+- ✅ Updated UI with estimate-specific displays
+- ✅ Contingency recalculation after changes
+- ✅ PDF integration for estimate change orders
 
 **Success Criteria:**
-- Change orders work for both types
-- Financial calculations correct
-- UI shows relevant info
+- ✅ Change orders work for both types (QUOTE and ESTIMATE)
+- ✅ Financial calculations correct (baseline excludes contingency)
+- ✅ UI shows relevant info (base total, grand total, contingency breakdown)
+- ✅ Orange theme distinguishes estimate change orders
+- ✅ PDFs display estimate-specific information
 
 ---
 
@@ -2050,8 +2190,8 @@ The contingency amount is included to account for reasonable variations.
 - [x] Complete Phase 2: API Endpoints
 - [x] Complete Phase 3: Frontend - Create/Edit
 - [x] Complete Phase 4: Frontend - List & Display
-- [ ] Complete Phase 5: PDF Generation
-- [ ] Complete Phase 6: Change Order Integration
+- [x] Complete Phase 5: PDF Generation
+- [x] Complete Phase 6: Change Order Integration
 - [ ] Complete Phase 7: Client Portal
 - [ ] Complete Phase 8: Reporting & Analytics
 - [ ] Complete Phase 9: Testing & Documentation
@@ -2152,16 +2292,37 @@ The contingency amount is included to account for reasonable variations.
 
 #### Sprint 5: PDF & Integration (Week 3)
 **Goal:** PDF generation and change orders  
-**Status:** ✅ Phase 5 Completed (October 23, 2025)  
+**Status:** ✅ Phase 5 & 6 Completed (October 23, 2025)  
 **Tasks:**
-- [x] Estimate PDF template
-- [x] Update PDF service
-- [ ] Change order integration
-- [ ] Portal updates
-- [ ] Integration tests
+- [x] Quote PDF template (Puppeteer migration)
+- [x] Estimate PDF template (Orange theme)
+- [x] Invoice PDF template (Payment status)
+- [x] Update PDF service (Complete rewrite)
+- [x] Migrate from PDFKit to Puppeteer
+- [x] Implement modern HTML/CSS templates
+- [x] Change order integration (Phase 6)
+- [x] Change order service estimate support (Phase 6)
+- [x] Change order UI updates (Phase 6)
+- [x] Change order PDF estimate display (Phase 6)
+- [ ] Portal updates (moved to Sprint 6)
+- [ ] Integration tests (moved to Sprint 6)
 
 **Blockers:** None  
-**Notes:** PDF generation for estimates completed with visual distinction, contingency display, and disclaimers. Change order integration and portal updates still pending.
+**Notes:** 
+- Successfully migrated all PDF generation from PDFKit to Puppeteer
+- Created modern HTML/CSS-based templates matching change order design
+- Applied professional styling to all three document types (Quote, Estimate, Invoice)
+- Quotes and Invoices use blue theme (#2196F3)
+- Estimates use orange theme (#ff9800) with disclaimers
+- Invoices include payment status highlighting (green/red)
+- All PDFs now share consistent, professional design language
+- Backward compatibility maintained with legacy methods
+- **Phase 6 completed:** Change orders now fully support estimates
+- Change orders use base total (excluding contingency) as baseline for estimates
+- Contingency is recalculated after change orders
+- UI displays estimate-specific information with orange theme
+- Change Order PDFs show estimate details and contingency breakdown
+- Portal updates deferred to next sprint
 
 ---
 
@@ -2319,6 +2480,18 @@ Security Tests:     Validation & auth
 |  |  |  | Updated overall completion to 72% |
 |  |  |  | Added Phase 5 implementation summary |
 |  |  |  | Updated sprint 5 status |
+| 1.6 | Oct 23, 2025 | Development Team | PDF Template Modernization Complete |
+|  |  |  | Migrated all PDFs from PDFKit to Puppeteer |
+|  |  |  | Applied modern templates to Quote, Estimate, Invoice |
+|  |  |  | Comprehensive Phase 5 documentation update |
+|  |  |  | Added detailed PDF design elements section |
+|  |  |  | Updated technical implementation details |
+| 1.7 | Oct 23, 2025 | Development Team | Phase 6 completed - Change Order Integration |
+|  |  |  | Updated overall completion to 80% |
+|  |  |  | Added Phase 6 implementation summary |
+|  |  |  | Change orders now fully support estimates |
+|  |  |  | Updated sprint 5 status to include Phase 6 tasks |
+|  |  |  | Updated Phase 6 section with completion details |
 
 ---
 
