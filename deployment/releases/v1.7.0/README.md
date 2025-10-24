@@ -39,6 +39,7 @@ This release represents the complete implementation of the Quotes & Estimates In
 
 - [RELEASE_NOTES_v1.7.0.md](./RELEASE_NOTES_v1.7.0.md) - Complete release notes
 - [DEPLOYMENT_CHECKLIST_v1.7.0.md](./DEPLOYMENT_CHECKLIST_v1.7.0.md) - Deployment verification checklist
+- [MARKETING_POST_v1.7.0.md](./MARKETING_POST_v1.7.0.md) - Marketing announcement and social media content
 - [../../HOW_TO_RELEASE.md](../../HOW_TO_RELEASE.md) - Release process guide
 
 ---

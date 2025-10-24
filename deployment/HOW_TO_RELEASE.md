@@ -8,25 +8,28 @@
 
 ```bash
 # 1. Copy templates (update X.Y.Z to your version)
-cp docs/deployment/RELEASE_TEMPLATE.md docs/deployment/RELEASE_NOTES_v1.2.0.md
-cp docs/deployment/DEPLOYMENT_CHECKLIST_TEMPLATE.md docs/deployment/DEPLOYMENT_CHECKLIST_v1.2.0.md
-cp tools/deployment/release-template.sh tools/deployment/release-v1.2.0.sh
-chmod +x tools/deployment/release-v1.2.0.sh
+cp docs/deployment/RELEASE_TEMPLATE.md docs/deployment/releases/vX.Y.Z/RELEASE_NOTES_vX.Y.Z.md
+cp docs/deployment/DEPLOYMENT_CHECKLIST_TEMPLATE.md docs/deployment/releases/vX.Y.Z/DEPLOYMENT_CHECKLIST_vX.Y.Z.md
+cp tools/deployment/release-template.sh tools/deployment/release-vX.Y.Z.sh
+chmod +x tools/deployment/release-vX.Y.Z.sh
 
-# 2. Update version in all three files
-# Edit: RELEASE_NOTES_v1.2.0.md
-# Edit: DEPLOYMENT_CHECKLIST_v1.2.0.md
-# Edit: release-v1.2.0.sh
+# 2. Update version in all files
+# Edit: RELEASE_NOTES_vX.Y.Z.md
+# Edit: DEPLOYMENT_CHECKLIST_vX.Y.Z.md
+# Edit: release-vX.Y.Z.sh
 
-# 3. Commit templates to git
-git add docs/deployment/RELEASE_NOTES_v1.2.0.md
-git add docs/deployment/DEPLOYMENT_CHECKLIST_v1.2.0.md
-git add tools/deployment/release-v1.2.0.sh
-git commit -m "docs: Add release templates for v1.2.0"
+# 3. Create marketing post (see previous releases for examples)
+# Create: docs/deployment/releases/vX.Y.Z/MARKETING_POST_vX.Y.Z.md
+# Reference: docs/deployment/releases/v1.7.0/MARKETING_POST_v1.7.0.md
+
+# 4. Commit templates to git
+git add docs/deployment/releases/vX.Y.Z/
+git add tools/deployment/release-vX.Y.Z.sh
+git commit -m "docs: Add release templates for vX.Y.Z"
 git push origin main
 
-# 4. Run deployment
-bash tools/deployment/release-v1.2.0.sh
+# 5. Run deployment
+bash tools/deployment/release-vX.Y.Z.sh
 ```
 
 ---
@@ -47,6 +50,7 @@ bash tools/deployment/release-v1.2.0.sh
 - [ ] Update `docs/_features.md` (mark items as completed)
 - [ ] Update `CHANGELOG.md` with changes
 - [ ] Update version in `package.json` files (optional)
+- [ ] Create marketing post for the release (see Step 2.2)
 
 **1.3 Check Database Migrations**
 - [ ] Review new migrations in `apps/backend/prisma/migrations/`
@@ -75,16 +79,40 @@ git push origin main
 # Replace 1.2.0 with your actual version
 VERSION="1.2.0"
 
+# Create release directory
+mkdir -p "docs/deployment/releases/v${VERSION}"
+
 # Copy release notes template
-cp docs/deployment/RELEASE_TEMPLATE.md "docs/deployment/RELEASE_NOTES_v${VERSION}.md"
+cp docs/deployment/RELEASE_TEMPLATE.md "docs/deployment/releases/v${VERSION}/RELEASE_NOTES_v${VERSION}.md"
 
 # Copy checklist template
-cp docs/deployment/DEPLOYMENT_CHECKLIST_TEMPLATE.md "docs/deployment/DEPLOYMENT_CHECKLIST_v${VERSION}.md"
+cp docs/deployment/DEPLOYMENT_CHECKLIST_TEMPLATE.md "docs/deployment/releases/v${VERSION}/DEPLOYMENT_CHECKLIST_v${VERSION}.md"
 
 # Copy deployment script
 cp tools/deployment/release-template.sh "tools/deployment/release-v${VERSION}.sh"
 chmod +x "tools/deployment/release-v${VERSION}.sh"
 ```
+
+**2.2 Create Marketing Post**
+
+Create a marketing announcement based on previous releases:
+
+```bash
+# Reference the v1.7.0 marketing post as a template
+# File: docs/deployment/releases/v1.7.0/MARKETING_POST_v1.7.0.md
+
+# Create your marketing post
+touch "docs/deployment/releases/v${VERSION}/MARKETING_POST_v${VERSION}.md"
+```
+
+The marketing post should include:
+- **Main announcement** with key features and benefits
+- **Social media posts** (Twitter/X, LinkedIn, Facebook/Instagram)
+- **Email announcement template**
+- **Support team quick reference** with FAQs
+- **Distribution checklist**
+
+See `docs/deployment/releases/v1.7.0/MARKETING_POST_v1.7.0.md` for a complete example.
 
 ---
 
@@ -268,7 +296,24 @@ Look for:
 - Note any issues encountered
 - Sign off at the bottom
 
-**8.2 Update Documentation**
+**8.2 Marketing and Communications**
+```bash
+# Publish marketing post
+# Review: docs/deployment/releases/v1.2.0/MARKETING_POST_v1.2.0.md
+
+# Post to social media (use content from marketing post)
+# - Twitter/X
+# - LinkedIn
+# - Facebook/Instagram
+
+# Send email announcement to customers
+# Use email template from marketing post
+
+# Brief support team
+# Review FAQ section from marketing post
+```
+
+**8.3 Update Documentation**
 ```bash
 # Update bug list
 # Mark completed items in docs/_bugs.md
@@ -276,13 +321,17 @@ Look for:
 # Update feature list  
 # Mark completed items in docs/_features.md
 
+# Update marketing post distribution checklist
+# Mark completed items in MARKETING_POST_v1.2.0.md
+
 # Commit changes
 git add docs/_bugs.md docs/_features.md
-git commit -m "docs: Update bug/feature lists post v1.2.0 release"
+git add docs/deployment/releases/v1.2.0/MARKETING_POST_v1.2.0.md
+git commit -m "docs: Update bug/feature lists and marketing post v1.2.0"
 git push origin main
 ```
 
-**8.3 Monitor Application**
+**8.4 Monitor Application**
 - Watch logs for first hour
 - Check for errors at end of day
 - Review metrics next morning

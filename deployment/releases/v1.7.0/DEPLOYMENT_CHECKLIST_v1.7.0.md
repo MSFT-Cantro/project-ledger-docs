@@ -143,6 +143,9 @@
 - [ ] Changelog updated
 - [ ] Team notified (if applicable)
 - [ ] Release notes published
+- [ ] Marketing post published (MARKETING_POST_v1.7.0.md)
+- [ ] Social media announcements posted
+- [ ] Customer email notifications sent
 - [ ] Deployment notes documented
 - [ ] Lessons learned captured
 
