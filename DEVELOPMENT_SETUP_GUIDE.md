@@ -10,47 +10,47 @@ Your ProjectLedger development environment is fully configured and ready to use!
 - **Main Application**: http://localhost:3000
 - **Backend API**: http://localhost:3001
 - **Client Portal**: http://localhost:3002
+- **Storybook (Design System)**: http://localhost:6006
 - **PostgreSQL Database**: localhost:5432
 
 ### ✅ Database Status
 All tables created and seeded with reference data:
-- **Users**: 1 regular user
-- **Admin Users**: 3 internal admin users
+- **Users**: 4 user accounts
+- **Accounts**: 3 company accounts
 - **Clients**: 3 sample clients
-- **Inventory**: 7 sample items
-- **Countries**: 2 (US, Canada)
-- **States/Provinces**: 64 (All US states + Canadian provinces)
-- **Tax Types**: 6 (Sales Tax, GST, PST, HST, QST, VAT)
-- **Tax Rates**: 4 basic rates
 - **Subscription Plans**: 3 (Free, Professional, Enterprise)
+- **Projects**: Sample project data
+- **Quote Templates**: Sample templates
 
 ## 🔐 Login Credentials
 
 ### Regular Application Login
 **URL**: http://localhost:3000/login
-- **Email**: `testuser@example.com`
-- **Password**: `password123`
-- **Role**: Admin (full access to main application)
-- **Account**: Test Company
 
-### Internal Admin Dashboard Login
-**URL**: http://localhost:3000/admin
-
-#### Admin Users Available:
-1. **System Administrator**
+#### Available User Accounts:
+1. **Admin User**
    - **Email**: `admin@projectledger.com`
    - **Password**: `admin123`
    - **Role**: ADMIN
+   - **Account**: Default Account
 
-2. **Super Administrator**
-   - **Email**: `superadmin@projectledger.com`
-   - **Password**: `admin123`
-   - **Role**: SUPERADMIN
+2. **Demo User**
+   - **Email**: `demo@projectledger.com`
+   - **Password**: `demo123`
+   - **Role**: USER
+   - **Account**: Default Account
 
-3. **Customer Support**
-   - **Email**: `support@projectledger.com`
-   - **Password**: `admin123`
-   - **Role**: SUPPORT
+3. **Test User**
+   - **Email**: `test@company.com`
+   - **Password**: `test123`
+   - **Role**: ADMIN
+   - **Account**: Test Company
+
+4. **Test Manager**
+   - **Email**: `manager@company.com`
+   - **Password**: `manager123`
+   - **Role**: USER
+   - **Account**: Test Company
 
 ## 🌐 Application URLs
 
@@ -66,6 +66,9 @@ All tables created and seeded with reference data:
 - **User Settings**: http://localhost:3000/usersettings
 - **Company Settings**: http://localhost:3000/companysettings
 - **Billing**: http://localhost:3000/billing
+
+### Design System & Documentation
+- **Storybook**: http://localhost:6006
 
 ### Internal Admin Dashboard (`localhost:3000/admin`)
 - **Login**: http://localhost:3000/admin/login
@@ -86,52 +89,77 @@ All tables created and seeded with reference data:
 
 ## 📊 Sample Data Available
 
-### Clients
-1. **Acme Construction Corp**
-   - Email: contact@acmeconstruction.com
-   - Phone: 555-0123
-   - Contact: John Smith
+### User Accounts
+1. **Admin User** (admin@projectledger.com)
+   - Full admin access to all features
+   - Password: admin123
+   - Account: Default Account
 
-2. **Downtown Office Building**
-   - Email: facility@downtownoffice.com
-   - Phone: 555-0456
-   - Contact: Sarah Johnson
+2. **Demo User** (demo@projectledger.com)
+   - Standard user permissions
+   - Password: demo123
+   - Account: Default Account
 
-3. **Smith Residence**
-   - Email: homeowner@smithfamily.com
-   - Phone: 555-0789
-   - Contact: Michael Smith
+3. **Test User** (test@company.com)
+   - Admin access for Test Company
+   - Password: test123
+   - Account: Test Company
 
-### Inventory Items
-1. **Standard Labor Hour** - $75.00/hour (SKU: LABOR-STD)
-2. **Premium Labor Hour** - $125.00/hour (SKU: LABOR-PREM)
-3. **Consultation Hour** - $150.00/hour (SKU: CONSULT)
-4. **Project Management** - $100.00/hour (SKU: PM-SERVICE)
-5. **Material - Lumber 2x4** - $8.50/linear foot (SKU: LUMBER-2X4)
-6. **Material - Drywall Sheet** - $15.00/sheet (SKU: DRYWALL-4X8)
-7. **Equipment Rental - Scissor Lift** - $200.00/day (SKU: RENT-SCISSOR)
+4. **Test Manager** (manager@company.com)
+   - Manager role for Test Company
+   - Password: manager123
+   - Account: Test Company
+
+### Company Accounts
+1. **Default Account** - Main system account
+2. **Test Company** - Sample company account
+3. **Additional Test Account** - Third sample account
+
+### Sample Business Documents
+
+#### Quotes & Estimates
+- **QUO-2024-001**: Website redesign quote for Acme Corporation ($50,850) - SENT
+- **QUO-2024-002**: E-commerce setup quote for Small Business Co ($13,560) - DRAFT  
+- **EST-2024-001**: Mobile app development estimate for Tech Innovations Inc ($79,100) - DRAFT with 10% contingency
+
+#### Invoices
+- **INV-2024-001**: Design phase invoice for Acme Corporation ($16,950) - PAID
+
+#### Change Orders
+- **CO-2024-001**: SEO optimization addition (+$5,000) for website project - DRAFT
+- **CO-2024-002**: Extended mobile testing (+$1,500) for website project - SENT
+
+### Sample Clients
+- **Acme Corporation** (contact@acme.com) - Default Account
+- **Tech Innovations Inc** (hello@techinnovations.com) - Default Account  
+- **Small Business Co** (info@smallbiz.com) - Test Company
+
+### Sample Projects
+- **Website Redesign** - For Acme Corporation (In Progress, $50,000 budget)
+- **Mobile App Development** - For Tech Innovations Inc (Planning, $75,000 budget)
+- **E-commerce Setup** - For Small Business Co (Planning, $15,000 budget)
 
 ## 🔧 API Testing
 
-### Test Regular User Login
+### Test User Login
 ```bash
 curl -X POST http://localhost:3001/api/auth/login \
   -H "Content-Type: application/json" \
-  -d '{"email":"testuser@example.com","password":"password123"}'
+  -d '{"email":"admin@projectledger.com","password":"admin123"}'
 ```
 
-### Test Admin Login
+### Test Demo User Login
 ```bash
-curl -X POST http://localhost:3001/api/login-admin \
+curl -X POST http://localhost:3001/api/auth/login \
   -H "Content-Type: application/json" \
-  -d '{"email":"admin@projectledger.com","password":"admin123"}'
+  -d '{"email":"demo@projectledger.com","password":"demo123"}'
 ```
 
 ## 🐳 Docker Commands
 
 ### Start All Services
 ```bash
-cd /c/Code/ProjectLedger2
+cd /c/Code/project-ledger-app
 docker-compose up -d
 ```
 
@@ -166,29 +194,29 @@ docker-compose up -d
 ## 📁 Project Structure
 
 ```
-ProjectLedger2/
+project-ledger-app/
 ├── apps/
 │   ├── backend/           # Express.js API server
-│   ├── frontend/          # React.js main application
-│   └── portal/            # React.js client portal
-├── docs/                  # Documentation
+│   └── frontend/          # React.js main application & portal
 ├── packages/              # Shared packages
-└── tools/                 # Development tools
+│   └── shared-types/      # TypeScript type definitions
+├── docker-compose.yml     # Docker services configuration
+└── README.md             # Project documentation
 ```
 
 ## 🔍 Troubleshooting
 
-### Admin Login Issues
-If you can't log into the admin dashboard:
+### User Login Issues
+If you can't log into the main application:
 
-1. **Check the correct URL**: http://localhost:3000/admin
+1. **Check the correct URL**: http://localhost:3000/login
 2. **Use correct credentials**:
    - Email: `admin@projectledger.com`
    - Password: `admin123`
 3. **Check if backend is running**: http://localhost:3001/health
-4. **Check admin login endpoint directly**:
+4. **Test login endpoint directly**:
    ```bash
-   curl -X POST http://localhost:3001/api/login-admin \
+   curl -X POST http://localhost:3001/api/auth/login \
      -H "Content-Type: application/json" \
      -d '{"email":"admin@projectledger.com","password":"admin123"}'
    ```
@@ -199,8 +227,10 @@ If you can't log into the admin dashboard:
 docker-compose exec postgres psql -U postgres -d projectledger
 
 # Check users
-SELECT id, email, name, role FROM "InternalUser";
 SELECT id, email, name, role FROM "User";
+
+# Check accounts
+SELECT id, "companyName", "companyEmail" FROM "Account";
 ```
 
 ### Reset Environment
@@ -214,18 +244,19 @@ docker-compose up -d
 
 # Re-run setup scripts
 cd apps/backend
-node complete-setup.js
+npx prisma db seed
 ```
 
 ## 📚 Development Features
 
 ### Phase 1 & 2 Completed ✅
-- Complete Internal Admin Dashboard
-- User authentication & authorization
-- Account management system
+- Complete user authentication & authorization system
+- Multi-tenant account management
 - User management interface
+- Design system with Storybook integration
 - Material-UI responsive design
 - Role-based access control
+- Project and client management foundation
 
 ### Available for Development
 - Quote creation and management
@@ -239,11 +270,17 @@ node complete-setup.js
 
 ## 🎯 Next Steps
 
-1. **Login to admin dashboard**: http://localhost:3000/admin
-2. **Explore account management**: Create/edit accounts
-3. **Manage users**: Add/modify internal users
-4. **Test main application**: Login with testuser@example.com
-5. **Create quotes/invoices**: Use the sample clients and inventory
+1. **Login to main application**: http://localhost:3000/login
+2. **Explore design system**: http://localhost:6006 (Storybook)
+3. **Test user roles**: Try different user accounts (admin, demo, test, manager)
+4. **Explore account management**: Create/edit accounts and users
+5. **Test business documents**: 
+   - View existing quotes: QUO-2024-001, QUO-2024-002
+   - Review estimate: EST-2024-001 (with contingency)
+   - Check invoice: INV-2024-001 (completed payment)
+   - Examine change orders: CO-2024-001, CO-2024-002
+6. **Create new sample data**: Use the interface to add more quotes, invoices, projects
+7. **Test workflows**: Quote approval, invoice generation, change order processing
 
 ## 📞 Support
 
@@ -255,6 +292,6 @@ If you encounter any issues:
 
 ---
 
-**Last Updated**: October 29, 2025  
+**Last Updated**: November 7, 2025  
 **Environment**: Development  
 **Status**: ✅ Ready for Development
