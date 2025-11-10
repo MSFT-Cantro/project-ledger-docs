@@ -24,6 +24,16 @@ All tables created and seeded with reference data:
 
 ## 🔐 Login Credentials
 
+### Internal Admin Dashboard Login
+**URL**: http://localhost:3000/admin/login
+
+**Internal Admin User**
+- **Email**: `admin@projectledger.com`
+- **Password**: `admin123`
+- **Role**: SUPERADMIN
+- **Department**: IT
+- **Features**: System-wide administration, user impersonation, audit logging
+
 ### Regular Application Login
 **URL**: http://localhost:3000/login
 
@@ -75,6 +85,11 @@ All tables created and seeded with reference data:
 - **Dashboard**: http://localhost:3000/admin/dashboard
 - **Accounts Management**: http://localhost:3000/admin/accounts
 - **Users Management**: http://localhost:3000/admin/users
+- **System Logs**: http://localhost:3000/admin/logs
+- **Audit Logs**: http://localhost:3000/admin/audit
+- **Impersonation**: Available from user management
+
+**Credentials**: admin@projectledger.com / admin123
 
 ### Client Portal (`localhost:3002`)
 - **Login**: http://localhost:3002/portal/login
@@ -84,10 +99,19 @@ All tables created and seeded with reference data:
 
 ### Backend API (`localhost:3001`)
 - **Regular Login**: `POST /api/auth/login`
-- **Admin Login**: `POST /api/login-admin`
+- **Admin Login**: `POST /api/admin/login`
 - **Health Check**: `GET /health`
 
 ## 📊 Sample Data Available
+
+### Internal Admin Users
+1. **SUPERADMIN** (admin@projectledger.com)
+   - Full system-wide access
+   - User impersonation capabilities
+   - Audit log access
+   - System configuration
+   - Password: admin123
+   - Department: IT
 
 ### User Accounts
 1. **Admin User** (admin@projectledger.com)
@@ -206,6 +230,23 @@ project-ledger-app/
 
 ## 🔍 Troubleshooting
 
+### Internal Admin Login Issues
+If you can't log into the admin dashboard at http://localhost:3000/admin/login:
+
+1. **Verify the InternalUser exists in database**:
+   ```bash
+   docker-compose exec postgres psql -U postgres -d projectledger -c "SELECT id, email, name, role FROM \"InternalUser\";"
+   ```
+
+2. **Create the internal admin user if missing**:
+   ```bash
+   docker-compose exec backend node create-internal-admin.js
+   ```
+
+3. **Use correct credentials**:
+   - Email: `admin@projectledger.com`
+   - Password: `admin123`
+
 ### User Login Issues
 If you can't log into the main application:
 
@@ -226,8 +267,11 @@ If you can't log into the main application:
 # Access PostgreSQL directly
 docker-compose exec postgres psql -U postgres -d projectledger
 
-# Check users
+# Check regular users
 SELECT id, email, name, role FROM "User";
+
+# Check internal admin users
+SELECT id, email, name, role, "isActive" FROM "InternalUser";
 
 # Check accounts
 SELECT id, "companyName", "companyEmail" FROM "Account";
@@ -245,6 +289,9 @@ docker-compose up -d
 # Re-run setup scripts
 cd apps/backend
 npx prisma db seed
+
+# Create internal admin user
+node create-internal-admin.js
 ```
 
 ## 📚 Development Features
@@ -270,17 +317,19 @@ npx prisma db seed
 
 ## 🎯 Next Steps
 
-1. **Login to main application**: http://localhost:3000/login
-2. **Explore design system**: http://localhost:6006 (Storybook)
-3. **Test user roles**: Try different user accounts (admin, demo, test, manager)
-4. **Explore account management**: Create/edit accounts and users
-5. **Test business documents**: 
+1. **Login to internal admin dashboard**: http://localhost:3000/admin/login (admin@projectledger.com / admin123)
+2. **Login to main application**: http://localhost:3000/login (admin@projectledger.com / admin123)
+3. **Explore design system**: http://localhost:6006 (Storybook)
+4. **Test user roles**: Try different user accounts (admin, demo, test, manager)
+5. **Test admin features**: User impersonation, audit logs, system management
+6. **Explore account management**: Create/edit accounts and users
+7. **Test business documents**: 
    - View existing quotes: QUO-2024-001, QUO-2024-002
    - Review estimate: EST-2024-001 (with contingency)
    - Check invoice: INV-2024-001 (completed payment)
    - Examine change orders: CO-2024-001, CO-2024-002
-6. **Create new sample data**: Use the interface to add more quotes, invoices, projects
-7. **Test workflows**: Quote approval, invoice generation, change order processing
+8. **Create new sample data**: Use the interface to add more quotes, invoices, projects
+9. **Test workflows**: Quote approval, invoice generation, change order processing
 
 ## 📞 Support
 
@@ -292,6 +341,12 @@ If you encounter any issues:
 
 ---
 
-**Last Updated**: November 7, 2025  
+**Last Updated**: November 10, 2025  
 **Environment**: Development  
 **Status**: ✅ Ready for Development
+
+### Recent Updates
+- ✅ Added InternalUser model for admin dashboard authentication
+- ✅ Fixed Client schema (removed deprecated contactInfo field)
+- ✅ Created admin user setup scripts (complete-setup.js, create-internal-admin.js)
+- ✅ Configured admin authentication system with audit logging
