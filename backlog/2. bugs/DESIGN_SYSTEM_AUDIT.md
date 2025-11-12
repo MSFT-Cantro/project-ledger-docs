@@ -1710,17 +1710,17 @@ If widespread issues occur:
 - **Phase 2 Status**: COMPLETE ✅
 
 ### Phase 3 Progress (November 12, 2025):
-- ✅ **PortalDashboardPage**: Migrated Grid usage, spacing tokens (-34 lines MUI)
-- ✅ **PortalProjectsPage**: Migrated Grid, Pagination, ToggleButtonGroup (-42 lines MUI)
-- ✅ **PortalProjectDetailPage**: Migrated Grid usage (-14 lines MUI)
-- ✅ **PortalInvoicesPage**: Migrated Grid usage (-13 lines MUI)
-- ✅ **PortalInvoiceDetailPage**: Migrated Grid usage, fixed type errors (-15 lines MUI)
-- ✅ **PortalChangeOrderDetailPage**: Migrated Grid usage (-15 lines MUI)
-- ✅ **PortalQuoteDetailPage**: Migrated Grid usage, fixed type errors (-16 lines MUI)
+- ✅ **PortalDashboardPage**: Migrated Grid usage, spacing tokens (22 ins, 34 del = -12 net)
+- ✅ **PortalProjectsPage**: Migrated Grid, Pagination, ToggleButtonGroup (18 ins, 42 del = -24 net)
+- ✅ **PortalProjectDetailPage**: Migrated Grid usage (3 ins, 14 del = -11 net)
+- ✅ **PortalInvoicesPage**: Migrated Grid usage (3 ins, 13 del = -10 net)
+- ✅ **PortalInvoiceDetailPage**: Migrated Grid usage, fixed type errors (5 ins, 15 del = -10 net)
+- ✅ **PortalChangeOrderDetailPage**: Migrated Grid usage (4 ins, 15 del = -11 net)
+- ✅ **PortalQuoteDetailPage**: Migrated Grid usage, fixed type errors (5 ins, 16 del = -11 net)
 - ✅ **Docker Builds**: 2 verification builds successful
 - ✅ **Git Commits**: 8 commits (1 doc update + 7 portal page migrations)
 - **Progress**: 7/7 portal Grid pages (100% Portal Grid complete) ✅
-- **Code Reduction**: ~149 lines of MUI Grid code removed from portal pages
+- **Code Reduction**: ~79 net lines reduced across portal pages (60 ins, 149 del)
 - **Phase 3 Portal Status**: COMPLETE ✅ (Awaiting user testing before merge)
 
 ### Phase 1 Components Delivered:
@@ -1740,8 +1740,8 @@ If widespread issues occur:
 
 ### Migration Accomplishments:
 - **Code Reduction Phase 2**: ~1,450 lines of MUI code replaced with design system (~60% reduction from admin pages)
-- **Code Reduction Phase 3 Portal**: ~149 lines of MUI Grid code removed from portal pages
-- **Total Code Reduction**: ~1,600 lines of MUI code eliminated across admin and portal pages
+- **Code Reduction Phase 3 Portal**: ~79 net lines reduced (60 insertions, 149 deletions)
+- **Total Code Reduction**: ~1,529 net lines eliminated across admin and portal pages
 - **Consistency**: All 15 migrated pages (8 admin + 7 portal) use identical design patterns
 - **Zero Regressions**: All functionality preserved in migrations
 - **EnhancedTable**: Successfully deployed in 3 complex admin pages
