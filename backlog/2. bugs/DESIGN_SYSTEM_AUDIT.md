@@ -1711,16 +1711,16 @@ If widespread issues occur:
 
 ### Phase 3 Progress (November 12, 2025):
 - ✅ **PortalDashboardPage**: Migrated Grid usage, spacing tokens (22 ins, 34 del = -12 net)
-- ✅ **PortalProjectsPage**: Migrated Grid, Pagination, ToggleButtonGroup (18 ins, 42 del = -24 net) + Added BrandedDataTable for list view (106 ins, 2 del = +104 net)
+- ✅ **PortalProjectsPage**: Migrated Grid, Pagination, ToggleButtonGroup (18 ins, 42 del = -24 net) + Added BrandedDataTable list view (106 ins, 2 del = +104 net) + Removed grid view (5 ins, 127 del = -122 net) = **-42 net total**
 - ✅ **PortalProjectDetailPage**: Migrated Grid usage (3 ins, 14 del = -11 net)
 - ✅ **PortalInvoicesPage**: Migrated Grid usage (3 ins, 13 del = -10 net)
 - ✅ **PortalInvoiceDetailPage**: Migrated Grid usage, fixed type errors (5 ins, 15 del = -10 net)
 - ✅ **PortalChangeOrderDetailPage**: Migrated Grid usage (4 ins, 15 del = -11 net)
 - ✅ **PortalQuoteDetailPage**: Migrated Grid usage, fixed type errors (5 ins, 16 del = -11 net)
-- ✅ **Docker Builds**: 3 verification builds successful
-- ✅ **Git Commits**: 9 commits (1 doc update + 7 portal Grid migrations + 1 list view enhancement)
+- ✅ **Docker Builds**: 4 verification builds successful
+- ✅ **Git Commits**: 10 commits (1 doc update + 7 portal Grid migrations + 1 list view + 1 grid removal)
 - **Progress**: 7/7 portal Grid pages (100% Portal Grid complete) ✅
-- **Code Reduction**: Net +15 lines (166 ins, 151 del) due to list view feature addition
+- **Code Reduction**: Net -107 lines (171 ins, 278 del) across all portal pages
 - **Phase 3 Portal Status**: COMPLETE ✅ (Awaiting user testing before merge)
 
 ### Phase 1 Components Delivered:
@@ -1740,9 +1740,9 @@ If widespread issues occur:
 
 ### Migration Accomplishments:
 - **Code Reduction Phase 2**: ~1,450 lines of MUI code replaced with design system (~60% reduction from admin pages)
-- **Code Reduction Phase 3 Portal**: Net +15 lines (166 insertions, 151 deletions) - MUI removal offset by list view feature
-- **Total Code Reduction**: ~1,435 net lines eliminated (MUI code replaced across admin and portal pages)
-- **Feature Addition**: PortalProjectsPage now has BrandedDataTable list view matching other portal pages
+- **Code Reduction Phase 3 Portal**: Net -107 lines (171 insertions, 278 deletions)
+- **Total Code Reduction**: ~1,557 net lines eliminated (MUI code replaced across admin and portal pages)
+- **Feature Simplification**: PortalProjectsPage simplified to list-only view with BrandedDataTable
 - **Consistency**: All 15 migrated pages (8 admin + 7 portal) use identical design patterns
 - **Zero Regressions**: All functionality preserved in migrations
 - **EnhancedTable**: Successfully deployed in 3 complex admin pages
