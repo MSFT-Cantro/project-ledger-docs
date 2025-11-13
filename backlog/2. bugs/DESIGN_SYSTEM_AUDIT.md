@@ -60,7 +60,13 @@
 
 **Main App Pages (0/8)**
 - [ ] CustomReportBuilder (Stepper)
-- [ ] Other pages (6+)
+- [ ] DashboardPage (Skeleton)
+- [ ] LoginPage (CircularProgress, InputAdornment)
+- [ ] SignupPage (CircularProgress, extensive MUI forms)
+- [ ] OrganizationSelectorPage (ThemeProvider, CircularProgress)
+- [ ] InvoicesPage, QuotesPage, ProjectsPage (CircularProgress, InputAdornment)
+- [ ] Various Detail Pages (CircularProgress throughout)
+- [ ] Component Demo Pages (Phase3CDemo, Phase3DDemo)
 
 ### Success Metrics
 - **Design System Adoption**: 0% → 70% (Phase 1 + Phase 2 + Phase 3 Portal complete) → 95% target
@@ -783,23 +789,358 @@ type AdminStatusType =
 
 ## Phase 3: Portal and Main App Migration
 
-### 3.1 Portal Pages Grid Migration
-**Timeline**: 3-4 days
+### 3.1 Portal Pages Grid Migration (COMPLETE ✅)
+**Timeline**: 3-4 days (COMPLETED November 12, 2025)
 **Files**: All portal pages with `Grid as MuiGrid` usage
 
-**Migration Tasks:**
-1. Replace all MuiGrid usage with design system Grid
-2. Update responsive behavior
-3. Test layout on all screen sizes
+**Completed Tasks:**
+✅ Replaced all MuiGrid usage with design system Grid (7/7 pages)
+✅ Updated responsive behavior with design system spacing tokens
+✅ Standardized statistics cards with CSS Grid and MetricCard (5/5 pages)
+✅ Tested layout on all screen sizes with Docker builds
+✅ Git commits: 16 commits (Grid migrations + stats standardization)
 
-### 3.2 Missing Component Integration
-**Timeline**: 2-3 days
+### 3.2 Main App Pages Migration (NOT STARTED)
+**Timeline**: 5-7 days
+**Estimated Complexity**: High - 35+ pages with MUI imports
+
+#### Priority 1: Core Component Migrations
+
+##### 3.2.1 CustomReportBuilder Page
+**File**: `src/pages/CustomReportBuilder.tsx`
+**Priority**: Critical
+**Timeline**: 2 days
+**Dependencies**: NEW Stepper component wrapper needed
+
+**Current MUI Usage:**
+- `Stepper, Step, StepLabel` from '@mui/material' (line 19)
+- `CircularProgress` for loading states
+- Heavy form component usage (TextField, Select, MenuItem, FormControl, etc.)
 
 **Migration Tasks:**
-1. Replace ToggleButtonGroup usage in PortalProjectsPage
-2. Update pagination in portal pages
-3. Replace InputAdornment usage with enhanced InputField
-4. Update loading indicators to use LoadingSpinner
+1. **Create Stepper Component Wrapper** (if not exists in design system):
+   ```typescript
+   // src/components/common/Stepper.tsx
+   interface StepperProps {
+     activeStep: number;
+     steps: string[];
+     orientation?: 'horizontal' | 'vertical';
+     alternativeLabel?: boolean;
+   }
+   ```
+2. Replace `import { Stepper, Step, StepLabel } from '@mui/material'` with design system Stepper
+3. Replace `CircularProgress` with `LoadingSpinner` from design system
+4. Replace all form components with design system equivalents:
+   - `TextField` → `InputField` from design system
+   - `Select` → `SelectField` from design system
+   - `FormControl` → Remove (handled by design system components)
+   - `InputLabel` → Included in SelectField
+5. Test all 5 report builder steps function correctly
+6. Verify save/preview functionality works
+7. QA review
+
+**Success Criteria:**
+- [ ] Zero MUI imports
+- [ ] All 5 stepper steps work correctly
+- [ ] Report generation functionality preserved
+- [ ] Responsive behavior maintained
+
+##### 3.2.2 DashboardPage
+**File**: `src/pages/DashboardPage.tsx`
+**Priority**: Critical
+**Timeline**: 1 day
+**Dependencies**: NEW Skeleton component wrapper needed
+
+**Current MUI Usage:**
+- `Skeleton` from '@mui/material' (line 13)
+- Multiple skeleton loading states throughout the page
+
+**Migration Tasks:**
+1. **Create Skeleton Component Wrapper** (if not exists in design system):
+   ```typescript
+   // src/components/common/Skeleton.tsx
+   interface SkeletonProps {
+     variant?: 'text' | 'rectangular' | 'circular';
+     width?: string | number;
+     height?: string | number;
+     animation?: 'pulse' | 'wave' | false;
+   }
+   ```
+2. Replace `import { Skeleton } from '@mui/material'` with design system Skeleton
+3. Update all skeleton usage to use design system component
+4. Test loading states display correctly
+5. QA review
+
+**Success Criteria:**
+- [ ] Zero MUI imports
+- [ ] All loading skeletons work correctly
+- [ ] Dashboard metrics display properly
+- [ ] Performance maintained
+
+#### Priority 2: Authentication Pages
+
+##### 3.2.3 LoginPage
+**File**: `src/pages/LoginPage.tsx`
+**Priority**: High
+**Timeline**: 1 day
+
+**Current MUI Usage:**
+- `CircularProgress` for login button loading state
+- `InputAdornment` for password visibility toggle
+- Form components with MUI styling
+
+**Migration Tasks:**
+1. Replace `CircularProgress` with `LoadingSpinner` from design system
+2. Update `TextField` to use design system enhanced TextField with InputAdornment support
+3. Replace any remaining MUI components with design system equivalents
+4. Test login flow works correctly
+5. Test password visibility toggle
+6. QA review
+
+**Success Criteria:**
+- [ ] Zero MUI imports
+- [ ] Login functionality unchanged
+- [ ] Password toggle works
+- [ ] Loading states work correctly
+
+##### 3.2.4 SignupPage
+**File**: `src/pages/SignupPage.tsx`
+**Priority**: High
+**Timeline**: 1-2 days
+**Dependencies**: Heavy MUI form usage
+
+**Current MUI Usage:**
+- Extensive MUI imports (26 lines of imports)
+- `CircularProgress` for signup button
+- Complex form with validation
+- Multiple TextField, Select, Checkbox components
+
+**Migration Tasks:**
+1. Replace all form components with design system equivalents:
+   - `TextField` → `InputField`
+   - `Select` → `SelectField`
+   - `Checkbox` → Design system Checkbox
+   - `FormControlLabel` → Design system wrapper
+2. Replace `CircularProgress` with `LoadingSpinner`
+3. Update form validation to work with design system components
+4. Test signup flow end-to-end
+5. Test form validation
+6. QA review
+
+**Success Criteria:**
+- [ ] Zero MUI imports
+- [ ] Signup flow works correctly
+- [ ] Form validation works
+- [ ] Error states display properly
+
+##### 3.2.5 OrganizationSelectorPage
+**File**: `src/pages/OrganizationSelectorPage.tsx`
+**Priority**: High
+**Timeline**: 0.5 days
+
+**Current MUI Usage:**
+- `ThemeProvider` direct usage
+- `CircularProgress` for loading
+
+**Migration Tasks:**
+1. Remove `ThemeProvider` if not needed (design system handles theming)
+2. Replace `CircularProgress` with `LoadingSpinner`
+3. Test organization selection works
+4. QA review
+
+**Success Criteria:**
+- [ ] Zero MUI imports
+- [ ] Organization selection works
+- [ ] Theming consistent with design system
+
+#### Priority 3: Data List Pages (6 pages)
+
+**Files:**
+- `InvoicesPage.tsx`
+- `QuotesPage.tsx`
+- `ProjectsPage.tsx`
+- `ClientsPage.tsx`
+- `ChangeOrdersPage.tsx`
+- `InventoryPage.tsx`
+
+**Timeline**: 3 days (0.5 days each)
+**Priority**: Medium
+
+**Common MUI Usage in All:**
+- `CircularProgress` for loading lists
+- `InputAdornment` in search TextField for search icons
+
+**Common Migration Tasks for Each:**
+1. Replace `CircularProgress` with `LoadingSpinner` from design system
+2. Update search TextField to use enhanced InputField with built-in icon support
+3. Test list loading and searching works
+4. QA review each page
+
+**Success Criteria:**
+- [ ] Zero MUI imports in all 6 pages
+- [ ] List loading works correctly
+- [ ] Search functionality preserved
+- [ ] Performance maintained
+
+#### Priority 4: Detail Pages (6 pages)
+
+**Files:**
+- `InvoiceDetailPage.tsx`
+- `QuoteDetailPage.tsx`
+- `ProjectDetailPage.tsx`
+- `ClientDetailPage.tsx`
+- `ChangeOrderDetailPage.tsx`
+- `InventoryDetailPage.tsx`
+
+**Timeline**: 3 days (0.5 days each)
+**Priority**: Medium
+
+**Common MUI Usage in All:**
+- `CircularProgress` for loading detail data
+- Various display components (Card, Typography, etc.)
+
+**Common Migration Tasks for Each:**
+1. Replace `CircularProgress` with `LoadingSpinner`
+2. Verify all components use design system equivalents
+3. Test detail display and actions work
+4. QA review each page
+
+**Success Criteria:**
+- [ ] Zero MUI imports in all 6 pages
+- [ ] Detail loading works correctly
+- [ ] All actions preserved
+- [ ] Responsive behavior maintained
+
+#### Priority 5: Edit/Create Pages (12+ pages)
+
+**Files:**
+- `InvoiceCreatePage.tsx`, `InvoiceEditPage.tsx`
+- `QuoteCreatePage.tsx`, `QuoteEditPage.tsx`
+- `ProjectCreatePage.tsx`, `ProjectEditPage.tsx`
+- `ClientFormPage.tsx`, `ClientEditPage.tsx`
+- `InventoryCreatePage.tsx`, `InventoryEditPage.tsx`
+- `ReportCreatePage.tsx`, `ReportEditPage.tsx`
+
+**Timeline**: 4-5 days
+**Priority**: Low (most already use some design system components)
+
+**Common MUI Usage:**
+- `CircularProgress` in save buttons
+- Some form components
+
+**Common Migration Tasks:**
+1. Replace `CircularProgress` with `LoadingSpinner`
+2. Ensure all form components use design system
+3. Test save/update functionality
+4. QA review
+
+**Success Criteria:**
+- [ ] Zero MUI imports in all edit/create pages
+- [ ] Save functionality works
+- [ ] Form validation preserved
+
+#### Priority 6: Demo/Utility Pages (3 pages)
+
+**Files:**
+- `Phase3CDemo.tsx`
+- `Phase3DDemo.tsx`
+- `ComponentDemoPage.tsx`
+
+**Timeline**: 0.5 days
+**Priority**: Low (demo pages, can be removed or updated)
+
+**Options:**
+1. Delete if no longer needed for development
+2. Update to showcase design system components instead
+3. Leave as-is if only used for internal development
+
+### 3.3 Missing Component Wrappers Needed
+
+To complete Phase 3, the following design system components need to be created:
+
+#### 1. Stepper Component Wrapper
+**Priority**: Critical (blocks CustomReportBuilder)
+**File**: `src/components/common/Stepper.tsx`
+**Timeline**: 0.5 days
+
+```typescript
+interface StepperProps {
+  activeStep: number;
+  steps: Array<{
+    label: string;
+    optional?: boolean;
+    error?: boolean;
+  }>;
+  orientation?: 'horizontal' | 'vertical';
+  alternativeLabel?: boolean;
+  nonLinear?: boolean;
+}
+```
+
+#### 2. Skeleton Component Wrapper  
+**Priority**: High (blocks DashboardPage)
+**File**: `src/components/common/Skeleton.tsx`
+**Timeline**: 0.5 days
+
+```typescript
+interface SkeletonProps {
+  variant?: 'text' | 'rectangular' | 'circular';
+  width?: string | number;
+  height?: string | number;
+  animation?: 'pulse' | 'wave' | false;
+  children?: React.ReactNode;
+}
+```
+
+#### 3. Enhanced LoadingSpinner Usage
+**Priority**: High (needed by 35+ pages)
+**File**: `src/components/common/LoadingSpinner.tsx` (already exists, needs promotion)
+**Timeline**: 0 days (already built in Phase 1)
+
+**Tasks:**
+- Document usage patterns for replacing CircularProgress
+- Create migration guide showing common patterns
+- Examples:
+  ```tsx
+  // Before (MUI)
+  {loading && <CircularProgress />}
+  
+  // After (Design System)
+  {loading && <LoadingSpinner />}
+  
+  // In Button
+  <Button disabled={loading}>
+    {loading ? <LoadingSpinner size="small" /> : 'Save'}
+  </Button>
+  ```
+
+### 3.4 Phase 3 Main App Summary
+
+**Total Pages to Migrate**: 35+ pages
+**Estimated Timeline**: 5-7 days
+**New Components Needed**: 2 (Stepper, Skeleton)
+**Complexity**: High (many pages, two new components needed)
+
+**Migration Priority Order:**
+1. **Day 1**: Create Stepper and Skeleton components (1 day)
+2. **Day 2-3**: CustomReportBuilder + DashboardPage (2 days)
+3. **Day 4**: LoginPage + SignupPage + OrganizationSelectorPage (1 day)
+4. **Day 5-6**: Data List Pages (6 pages, 1-2 days)
+5. **Day 7**: Detail Pages (6 pages, 1 day)
+6. **Ongoing**: Edit/Create Pages (12+ pages, can be done incrementally)
+
+**Risk Factors:**
+- CustomReportBuilder is complex with 5 steps - needs careful testing
+- SignupPage has extensive form validation - needs thorough testing
+- 35+ pages means high chance of edge cases
+- Two new components (Stepper, Skeleton) need to be built first
+
+**Mitigation:**
+- Build Stepper and Skeleton components first in Storybook
+- Test each component in isolation before page migration
+- Migrate pages in priority order
+- Keep detailed checklist of completed pages
+- QA review after each major page migration
 
 ---
 
@@ -861,9 +1202,13 @@ type AdminStatusType =
 - **Layout Components**: Direct usage of Box, Card, Paper, Grid
 
 ### Main App Issues
-- **Stepper Components**: CustomReportBuilder needs Stepper wrapper
-- **Loading States**: Inconsistent usage of CircularProgress vs LoadingSpinner
-- **Form Components**: Various pages use direct MUI form components
+- **Stepper Components**: CustomReportBuilder uses MUI Stepper, Step, StepLabel (need design system wrapper)
+- **Skeleton Components**: DashboardPage uses MUI Skeleton for loading states (need design system Skeleton)
+- **Loading States**: 35+ pages use MUI CircularProgress directly (should use LoadingSpinner)
+- **InputAdornment**: Multiple pages use MUI InputAdornment for search icons (should use enhanced TextField)
+- **Form Components**: Many pages still use MUI form components directly
+- **Theme Providers**: LoginPage, SignupPage, OrganizationSelectorPage use ThemeProvider
+- **Auth Pages**: LoginPage and SignupPage have heavy MUI usage with custom styling
 
 ---
 
@@ -1737,10 +2082,15 @@ If widespread issues occur:
 - **Phase 3 Portal Status**: COMPLETE ✅ + ENHANCED + STANDARDIZED ✅
 
 **Remaining Phase 3 Work:**
-- 🔴 **CustomReportBuilder**: Stepper wrapper needed
-- 🔴 **Main App Pages (6+)**: Final cleanup of remaining MUI usage
-- 🔴 **InputAdornment Migration**: Replace with design system TextField enhancements
-- 🔴 **CircularProgress Migration**: Replace with design system LoadingSpinner
+- 🔴 **CustomReportBuilder**: Stepper component (Stepper, Step, StepLabel from MUI)
+- 🔴 **DashboardPage**: Skeleton component from MUI (multiple loading states)
+- 🔴 **LoginPage**: CircularProgress, InputAdornment (search icons)
+- 🔴 **SignupPage**: Heavy MUI usage (CircularProgress, extensive form components)
+- 🔴 **OrganizationSelectorPage**: ThemeProvider, CircularProgress
+- 🔴 **Data List Pages**: InvoicesPage, QuotesPage, ProjectsPage, ClientsPage, ChangeOrdersPage, InventoryPage (CircularProgress, InputAdornment in search)
+- 🔴 **Detail Pages**: InvoiceDetailPage, QuoteDetailPage, ProjectDetailPage, ClientDetailPage, ChangeOrderDetailPage, InventoryDetailPage (CircularProgress throughout)
+- 🔴 **Edit/Create Pages**: Various edit and create pages (CircularProgress, form components)
+- 🔴 **Demo Pages**: Phase3CDemo, Phase3DDemo, ComponentDemoPage (MUI showcase pages)
 
 ### Phase 1 Components Delivered:
 1. **Grid.tsx** - Layout component with spacing tokens and variants
