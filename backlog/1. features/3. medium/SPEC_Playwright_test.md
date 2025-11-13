@@ -1,24 +1,179 @@
-# Playwright E2E Testing Suite Implementation Plan
+# Playwright E2E Testing Suite Specification
+
+**Date:** November 12, 2025  
+**Version:** 1.0  
+**Status:** Ready for Implementation  
+**Priority:** High - Critical for ensuring application quality, preventing regressions, and enabling confident deployments  
+**Location:** `backlog/1. features/3. medium/SPEC_Playwright_test.md`  
+**Completed:** TBD
+
+---
+
+## 📊 Implementation Progress Summary
+
+### Overall Completion: 0% Complete (0/8 phases)
+
+```
+Phase 1: Foundation & Auth       ░░░░░░░░░░░░░░░░░░░░  0% 🔴
+Phase 2: Clients & Projects      ░░░░░░░░░░░░░░░░░░░░  0% 🔴
+Phase 3: Quotes & Invoices       ░░░░░░░░░░░░░░░░░░░░  0% 🔴
+Phase 4: Inventory & Reports     ░░░░░░░░░░░░░░░░░░░░  0% 🔴
+Phase 5: Settings & Admin        ░░░░░░░░░░░░░░░░░░░░  0% 🔴
+Phase 6: Multi-Org & Auth        ░░░░░░░░░░░░░░░░░░░░  0% 🔴
+Phase 7: A11y & Performance      ░░░░░░░░░░░░░░░░░░░░  0% 🔴
+Phase 8: CI/CD Integration       ░░░░░░░░░░░░░░░░░░░░  0% 🔴
+```
+
+### 🎯 Current Status
+**Phase:** Pre-Implementation Planning  
+**Started:** Not Started  
+**Status:** Specification complete, awaiting review and approval to begin Phase 1
+
+### Quick Reference
+- **Authentication Tests**: 🔴 Not Started (Target: 15+ tests)
+- **CRUD Tests**: 🔴 Not Started (Target: 110+ tests)
+- **Business Logic Tests**: 🔴 Not Started (Target: 40+ tests)
+- **Accessibility Tests**: 🔴 Not Started (Target: 15+ tests)
+- **Performance Tests**: 🔴 Not Started (Target: 10+ tests)
+- **Mobile Tests**: 🔴 Not Started (Target: 20+ tests)
+- **CI/CD Pipeline**: 🔴 Not Started
+
+### Progress Indicators
+
+- 🔴 Not Started
+- 🟡 In Progress
+- 🟢 Complete
+- ⚠️ Blocked
+- ⏸️ Paused
+
+---
 
 ## 📋 Overview
 
-Implement a comprehensive end-to-end (E2E) testing suite using Playwright to test all CRUD operations (Create, Read, Update, Delete) across all pages and functionality in the Project Ledger application.
+### Problem Statement
+Currently, the Project Ledger application has only unit tests (Jest + React Testing Library) but no end-to-end testing. This creates significant risk:
+- Manual testing is time-consuming and error-prone
+- Regressions go undetected until production
+- Cross-browser compatibility issues are discovered late
+- Accessibility violations are not systematically caught
+- Complex user workflows remain untested
+- CI/CD pipeline lacks comprehensive validation
+
+### Solution
+Implement a comprehensive Playwright E2E testing suite covering all major user workflows, CRUD operations, and business logic across the entire application.
+
+### Key Benefits
+1. **Quality Assurance**: Catch bugs before production deployment
+2. **Regression Prevention**: Automated detection of breaking changes
+3. **Cross-Browser Validation**: Test across Chrome, Firefox, Safari (WebKit)
+4. **Mobile Testing**: Validate responsive design and mobile interactions
+5. **Accessibility Compliance**: Automated WCAG validation
+6. **Performance Monitoring**: Track page load and API response times
+7. **Confident Deployments**: Comprehensive test coverage enables faster releases
+8. **Documentation**: Tests serve as living documentation of user workflows
+
+### Scope
+**In Scope:**
+- 230+ E2E tests covering all application features
+- Page Object Model architecture for maintainability
+- CI/CD integration with GitHub Actions
+- Cross-browser testing (Chrome, Firefox, Safari)
+- Mobile device testing (iOS, Android)
+- Accessibility testing (keyboard navigation, WCAG compliance)
+- Performance monitoring (page load, API response times)
+- Test data management and cleanup utilities
+
+**Implementation Status:**
+- **Phase 1 (Foundation & Auth)**: 🔴 Not Started - 15+ tests
+- **Phase 2 (Clients & Projects)**: 🔴 Not Started - 30+ tests
+- **Phase 3 (Quotes & Invoices)**: 🔴 Not Started - 40+ tests
+- **Phase 4 (Inventory & Reports)**: 🔴 Not Started - 30+ tests
+- **Phase 5 (Settings & Admin)**: 🔴 Not Started - 45+ tests
+- **Phase 6 (Multi-Org & Auth)**: 🔴 Not Started - 25+ tests
+- **Phase 7 (A11y & Performance)**: 🔴 Not Started - 45+ tests
+- **Phase 8 (CI/CD Integration)**: 🔴 Not Started - 5+ tests
 
 ---
 
-## 🎯 Objectives
+## 🎯 Scope & Requirements
 
-1. **Comprehensive Coverage**: Test all major user workflows and CRUD operations
-2. **Reliability**: Ensure tests are stable, fast, and maintainable
-3. **CI/CD Integration**: Enable automated testing in deployment pipelines
-4. **Cross-Browser Testing**: Validate functionality across Chrome, Firefox, and WebKit
-5. **Mobile Testing**: Test responsive design and mobile-specific features
-6. **Performance Monitoring**: Track and validate page load times
-7. **Accessibility Testing**: Validate WCAG compliance
+### Functional Requirements
+
+| Requirement ID | Description | Priority | Status |
+|----------------|-------------|----------|--------|
+| FR-001 | Test all authentication flows (login, signup, OAuth, logout) | Critical | 🔴 Not Started |
+| FR-002 | Test CRUD operations for all entities (Clients, Projects, Quotes, Invoices, Inventory) | Critical | 🔴 Not Started |
+| FR-003 | Test business workflows (Quote→Invoice, Payment recording, Report generation) | High | 🔴 Not Started |
+| FR-004 | Test multi-organization features (org selector, org switching, data isolation) | High | 🔴 Not Started |
+| FR-005 | Test navigation and search functionality | High | 🔴 Not Started |
+| FR-006 | Test settings and configuration pages | Medium | 🔴 Not Started |
+| FR-007 | Test admin panel features (user management, integrations) | Medium | 🔴 Not Started |
+| FR-008 | Test form validation and error handling | High | 🔴 Not Started |
+| FR-009 | Test PDF generation for quotes and invoices | Medium | 🔴 Not Started |
+| FR-010 | Test email notifications and templates | Low | 🔴 Not Started |
+
+### Non-Functional Requirements
+
+| Requirement ID | Description | Target | Status |
+|----------------|-------------|--------|--------|
+| NFR-001 | Test Execution Time | < 30 minutes for full suite | 🔴 Not Started |
+| NFR-002 | Test Stability | < 5% flaky tests | 🔴 Not Started |
+| NFR-003 | Cross-Browser Coverage | 100% tests pass on Chrome, Firefox, Safari | 🔴 Not Started |
+| NFR-004 | Mobile Coverage | 80% critical tests pass on iOS/Android | 🔴 Not Started |
+| NFR-005 | Page Load Performance | All pages < 3 seconds | 🔴 Not Started |
+| NFR-006 | API Response Time | All endpoints < 500ms | 🔴 Not Started |
+| NFR-007 | Test Code Maintainability | Page Object Model with DRY principles | 🔴 Not Started |
+| NFR-008 | CI/CD Integration | Tests run automatically on every PR | 🔴 Not Started |
+| NFR-009 | Test Coverage | 85%+ coverage of critical user flows | 🔴 Not Started |
+| NFR-010 | Accessibility Compliance | 70%+ WCAG 2.1 AA validation | 🔴 Not Started |
+
+### Out of Scope
+
+- **Load Testing**: Use Artillery or similar tools (separate initiative)
+- **Visual Regression Testing**: Percy integration (future enhancement)
+- **API-Only Testing**: Use Postman/Newman for isolated API tests
+- **Security Testing**: Penetration testing (separate security audit)
+- **Internationalization Testing**: Multi-language validation (future phase)
+- **Third-Party Integrations**: Stripe, OAuth providers (mock in tests)
+- **Database Performance Testing**: Query optimization (separate DB audit)
 
 ---
 
-## 🔍 Current State Analysis
+## 🏗️ Architecture & Design
+
+### System Architecture
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                      Playwright Test Suite                      │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐         │
+│  │  Test Files  │  │ Page Objects │  │   Fixtures   │         │
+│  │  (*.spec.ts) │  │   (.page.ts) │  │ (auth, data) │         │
+│  └──────┬───────┘  └──────┬───────┘  └──────┬───────┘         │
+│         │                  │                  │                 │
+│         └──────────────────┴──────────────────┘                 │
+│                            │                                    │
+│                    ┌───────▼────────┐                          │
+│                    │ Playwright API │                          │
+│                    └───────┬────────┘                          │
+└────────────────────────────┼─────────────────────────────────┘
+                             │
+              ┌──────────────┴──────────────┐
+              │                             │
+    ┌─────────▼─────────┐         ┌────────▼────────┐
+    │   Frontend App    │         │   Backend API   │
+    │ (React + Router)  │◄────────┤  (Express + DB) │
+    └───────────────────┘         └─────────────────┘
+              │                             │
+    ┌─────────▼─────────┐         ┌────────▼────────┐
+    │  Chrome/Firefox   │         │   PostgreSQL    │
+    │     /WebKit       │         │    Database     │
+    └───────────────────┘         └─────────────────┘
+```
+
+### Current Application State Analysis
 
 ### Application Structure
 
@@ -62,11 +217,813 @@ Implement a comprehensive end-to-end (E2E) testing suite using Playwright to tes
 - Jest with React Testing Library (unit tests)
 - No E2E tests currently implemented
 
+### Test Structure
+
+```
+apps/frontend/
+├── e2e/                          # Playwright E2E tests
+│   ├── fixtures/                 # Test fixtures and helpers
+│   │   ├── auth.fixture.ts       # Authentication helpers
+│   │   ├── test-data.ts          # Seed data for tests
+│   │   └── api-helpers.ts        # API interaction helpers
+│   ├── page-objects/             # Page Object Model
+│   │   ├── base.page.ts          # Base page class
+│   │   ├── auth/                 # Authentication pages
+│   │   ├── clients/              # Client pages
+│   │   ├── projects/             # Project pages
+│   │   ├── quotes/               # Quote pages
+│   │   ├── invoices/             # Invoice pages
+│   │   ├── inventory/            # Inventory pages
+│   │   ├── reports/              # Report pages
+│   │   ├── settings/             # Settings pages
+│   │   ├── admin/                # Admin panel pages
+│   │   └── common/               # Shared components (nav, search)
+│   ├── tests/                    # Test files organized by feature
+│   │   ├── auth/                 # Authentication tests
+│   │   ├── clients/              # Client CRUD tests
+│   │   ├── projects/             # Project CRUD tests
+│   │   ├── quotes/               # Quote tests
+│   │   ├── invoices/             # Invoice tests
+│   │   ├── inventory/            # Inventory tests
+│   │   ├── reports/              # Report tests
+│   │   ├── settings/             # Settings tests
+│   │   ├── admin/                # Admin tests
+│   │   ├── navigation/           # Navigation tests
+│   │   ├── accessibility/        # A11y tests
+│   │   └── performance/          # Performance tests
+│   ├── utils/                    # Utility functions
+│   │   ├── database.ts           # Database seeding/cleanup
+│   │   ├── test-users.ts         # Test user management
+│   │   ├── screenshot.ts         # Screenshot helpers
+│   │   └── wait-for.ts           # Custom wait utilities
+│   └── playwright.config.ts      # Playwright configuration
+├── playwright-report/            # Test reports (gitignored)
+└── test-results/                 # Test artifacts (gitignored)
+```
+
+### Component Specifications
+
+#### Component 1: Base Page Object
+**File/Location:** `apps/frontend/e2e/page-objects/base.page.ts`  
+**Priority:** Critical  
+**Dependencies:** @playwright/test
+
+**Purpose:**
+Base class providing common functionality for all page objects, including navigation, element interaction, and waiting utilities.
+
+**Specification:**
+```typescript
+import { Page, Locator } from '@playwright/test';
+
+export class BasePage {
+  constructor(protected page: Page) {}
+
+  async navigate(path: string): Promise<void>;
+  async waitForPageLoad(): Promise<void>;
+  async screenshot(name: string): Promise<void>;
+  async getElement(selector: string): Promise<Locator>;
+  async clickButton(text: string): Promise<void>;
+  async fillInput(label: string, value: string): Promise<void>;
+  async expectVisible(selector: string): Promise<void>;
+}
+```
+
+**Features Required:**
+- Navigation with automatic wait
+- Common element interactions (click, fill, select)
+- Screenshot capture for debugging
+- Custom wait strategies
+- Error handling and retries
+
+#### Component 2: Authentication Fixture
+**File/Location:** `apps/frontend/e2e/fixtures/auth.fixture.ts`  
+**Priority:** Critical  
+**Dependencies:** @playwright/test, BasePage
+
+**Purpose:**
+Provides reusable authentication states for tests, enabling fast test execution by reusing login sessions.
+
+**Specification:**
+```typescript
+import { test as base } from '@playwright/test';
+
+type AuthFixtures = {
+  authenticatedPage: Page;
+  loginAsAdmin: () => Promise<void>;
+  loginAsUser: () => Promise<void>;
+};
+
+export const test = base.extend<AuthFixtures>({
+  authenticatedPage: async ({ page }, use) => {
+    // Login and provide authenticated page
+  },
+  loginAsAdmin: async ({ page }, use) => {
+    // Admin login helper
+  },
+  loginAsUser: async ({ page }, use) => {
+    // User login helper
+  }
+});
+```
+
+**Features Required:**
+- Reusable authentication states
+- Role-based login helpers (admin, user)
+- Storage state management
+- Session persistence
+
+#### Component 3: Page Object Classes
+**File/Location:** `apps/frontend/e2e/page-objects/[feature]/`  
+**Priority:** High  
+**Dependencies:** BasePage
+
+**Purpose:**
+Encapsulate page-specific interactions and selectors using the Page Object Model pattern for maintainability.
+
+**Features Required:**
+- One page object per page/component
+- Semantic method names (e.g., `clickNewClient()`)
+- Stable selectors (ARIA roles, labels, data-testid)
+- Type-safe method signatures
+- Reusable across multiple tests
+
+#### Component 4: Test Data Management
+**File/Location:** `apps/frontend/e2e/utils/database.ts`  
+**Priority:** High  
+**Dependencies:** Prisma, test database
+
+**Purpose:**
+Manage test data creation, seeding, and cleanup to ensure test isolation and prevent data pollution.
+
+**Features Required:**
+- Database seeding utilities
+- Unique data generation (timestamps, UUIDs)
+- Automatic cleanup after tests
+- Test user creation/deletion
+- Transaction rollback support
+
 ---
 
-## 🏗️ Proposed Architecture
+## 🔧 Technical Implementation
 
-### Test Structure
+### Test Framework Configuration
+
+#### Playwright Configuration
+**File:** `apps/frontend/playwright.config.ts`
+
+```typescript
+import { defineConfig, devices } from '@playwright/test';
+
+export default defineConfig({
+  testDir: './e2e/tests',
+  fullyParallel: true,
+  forbidOnly: !!process.env.CI,
+  retries: process.env.CI ? 2 : 0,
+  workers: process.env.CI ? 1 : undefined,
+  
+  reporter: [
+    ['html'],
+    ['json', { outputFile: 'test-results/results.json' }],
+    ['junit', { outputFile: 'test-results/junit.xml' }]
+  ],
+  
+  use: {
+    baseURL: process.env.PLAYWRIGHT_BASE_URL || 'http://localhost:3000',
+    trace: 'on-first-retry',
+    screenshot: 'only-on-failure',
+    video: 'retain-on-failure',
+  },
+
+  projects: [
+    {
+      name: 'chromium',
+      use: { ...devices['Desktop Chrome'] },
+    },
+    {
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] },
+    },
+    {
+      name: 'webkit',
+      use: { ...devices['Desktop Safari'] },
+    },
+    {
+      name: 'Mobile Chrome',
+      use: { ...devices['Pixel 5'] },
+    },
+    {
+      name: 'Mobile Safari',
+      use: { ...devices['iPhone 12'] },
+    },
+  ],
+
+  webServer: {
+    command: 'npm run start',
+    url: 'http://localhost:3000',
+    reuseExistingServer: !process.env.CI,
+    timeout: 120000,
+  },
+});
+```
+
+**Configuration Features:**
+- Multi-browser testing (Chrome, Firefox, Safari)
+- Mobile device emulation (iOS, Android)
+- Automatic server startup
+- Multiple report formats (HTML, JSON, JUnit)
+- Video/screenshot capture on failure
+- Trace recording for debugging
+- Parallel test execution
+
+### Test Data Strategy
+
+**Approach:** Isolated test data per test with automatic cleanup
+
+**Data Management:**
+1. **Unique Identifiers**: Use timestamps or UUIDs for test data
+2. **Test Isolation**: Each test creates its own data
+3. **Parallel-Safe**: No dependencies between tests
+4. **Automatic Cleanup**: Cleanup hooks in fixtures
+5. **Dedicated Test DB**: Separate database for testing
+
+**Example Test Data Utility:**
+```typescript
+// apps/frontend/e2e/utils/test-data.ts
+export function generateTestClient() {
+  return {
+    name: `Test Client ${Date.now()}`,
+    email: `client-${Date.now()}@test.com`,
+    phone: '555-1234',
+    address: '123 Test St',
+    city: 'Test City',
+    province: 'BC',
+    postalCode: 'V1V 1V1',
+    country: 'Canada'
+  };
+}
+
+export async function cleanupTestData(clientIds: number[]) {
+  // Cleanup logic
+}
+```
+
+### Example Test Implementation
+
+#### Login Page Object
+```typescript
+// apps/frontend/e2e/page-objects/auth/login.page.ts
+import { Page } from '@playwright/test';
+import { BasePage } from '../base.page';
+
+export class LoginPage extends BasePage {
+  constructor(page: Page) {
+    super(page);
+  }
+
+  async navigate() {
+    await this.page.goto('/login');
+    await this.waitForPageLoad();
+  }
+
+  async login(email: string, password: string) {
+    await this.fillInput('Email', email);
+    await this.fillInput('Password', password);
+    await this.clickButton('Log In');
+    
+    // Wait for redirect to dashboard or org selector
+    await this.page.waitForURL(/\/(dashboard|select-organization)?/, { 
+      timeout: 10000 
+    });
+  }
+
+  async loginAndExpectError(email: string, password: string) {
+    await this.fillInput('Email', email);
+    await this.fillInput('Password', password);
+    await this.clickButton('Log In');
+    
+    // Should stay on login page with error
+    await this.expectVisible('[role="alert"]');
+  }
+
+  async getErrorMessage() {
+    return await this.page.locator('[role="alert"]').textContent();
+  }
+}
+```
+
+#### Login Test Suite
+```typescript
+// apps/frontend/e2e/tests/auth/login.spec.ts
+import { test, expect } from '../../fixtures/auth.fixture';
+import { LoginPage } from '../../page-objects/auth/login.page';
+
+test.describe('Login Flow', () => {
+  test('should successfully log in with valid credentials', async ({ page }) => {
+    const loginPage = new LoginPage(page);
+    await loginPage.navigate();
+    await loginPage.login('demo@projectledger.com', 'admin123');
+    
+    // Should be redirected to dashboard or org selector
+    await expect(page).toHaveURL(/\/(dashboard|select-organization)?/);
+  });
+
+  test('should show error with invalid credentials', async ({ page }) => {
+    const loginPage = new LoginPage(page);
+    await loginPage.navigate();
+    await loginPage.loginAndExpectError('invalid@example.com', 'wrong');
+    
+    const error = await loginPage.getErrorMessage();
+    expect(error).toContain('Invalid');
+  });
+
+  test('should validate required fields', async ({ page }) => {
+    const loginPage = new LoginPage(page);
+    await loginPage.navigate();
+    await loginPage.clickButton('Log In');
+    
+    // Should show validation errors
+    await loginPage.expectVisible('text=Email is required');
+    await loginPage.expectVisible('text=Password is required');
+  });
+});
+```
+
+---
+
+## 🔐 Security & Compliance
+
+### Authentication & Authorization
+
+**Authentication Method:** JWT tokens stored in localStorage/cookies
+- Tests use dedicated test accounts (demo@projectledger.com, admin@projectledger.com)
+- Storage state persisted for fast test execution
+- Session expiry testing included
+
+**Authorization Rules:**
+- **ADMIN role**: Access to admin panel, company settings, user management
+- **USER role**: Access to own organization data only
+- Data isolation verified in multi-org tests
+
+### Data Security
+
+**Test Environment Security:**
+- Dedicated test database (not production)
+- Test accounts with fake/generated data
+- No real user PII in test data
+- Environment variables for sensitive config
+
+**Data Privacy:**
+- Test data automatically cleaned up
+- No persistent storage of test artifacts in VCS
+- Screenshots/videos excluded from git (gitignored)
+
+### Audit Trail
+
+**Logged Events:**
+- Test execution start/end times
+- Test failures with screenshots/videos
+- Performance metrics (page load, API response times)
+
+**Logged Information:**
+- Test name and suite
+- Browser/device used
+- Timestamp
+- Pass/fail status
+- Error messages and stack traces
+- Screenshot/video URLs
+
+---
+
+## 📋 Implementation Plan
+
+### Phase 1: Foundation & Setup (Week 1)
+
+#### Day 1-2: Playwright Installation & Configuration
+**Developer:** QA Engineer (Lead)  
+**Tasks:**
+1. Install Playwright and dependencies
+   - Run: `npm install --save-dev @playwright/test`
+   - Install browsers: `npx playwright install`
+2. Create Playwright configuration file
+   - Configure browsers (Chrome, Firefox, Safari)
+   - Configure mobile devices (Pixel 5, iPhone 12)
+   - Set up reporters (HTML, JSON, JUnit)
+3. Create base directory structure
+   - `/e2e/tests`, `/e2e/page-objects`, `/e2e/fixtures`, `/e2e/utils`
+
+**Success Criteria:**
+- [ ] Playwright installed and `npx playwright --version` works
+- [ ] playwright.config.ts created and validates
+- [ ] Sample test runs successfully
+- [ ] Test reports generate correctly
+
+#### Day 3-5: Base Infrastructure & Authentication
+**Developer:** QA Engineer (Lead) + Frontend Developer  
+**Tasks:**
+1. Create BasePage class with common utilities
+2. Implement authentication fixture (reusable login states)
+3. Create LoginPage page object
+4. Write 15+ authentication tests
+   - Valid login, invalid credentials, validation errors
+   - OAuth flows (Google, Microsoft)
+   - Logout, session expiry
+5. Set up test data management utilities
+6. Configure test database and cleanup hooks
+
+**Success Criteria:**
+- [ ] BasePage class created with essential methods
+- [ ] Authentication fixture working (reusable login)
+- [ ] LoginPage page object complete
+- [ ] 15+ authentication tests passing
+- [ ] All tests pass on Chrome, Firefox, Safari
+- [ ] Test cleanup working (no data pollution)
+
+---
+
+### Phase 2: Core CRUD Tests - Clients & Projects (Week 2)
+
+#### Day 1-3: Client CRUD Tests
+**Developer:** QA Engineer (Lead)  
+**Tasks:**
+1. Create Client page objects
+   - ClientsListPage, ClientCreatePage, ClientDetailPage, ClientEditPage
+2. Write 15+ Client CRUD tests
+   - Create client (valid data, validation errors)
+   - View client details
+   - Edit client (update name, email, address)
+   - Delete client (with confirmation)
+   - Search clients
+   - Pagination and sorting
+
+**Success Criteria:**
+- [ ] 4 Client page objects created
+- [ ] 15+ Client tests passing
+- [ ] Tests validate form errors
+- [ ] Tests verify data persistence
+- [ ] Tests clean up created data
+
+#### Day 4-5: Project CRUD Tests
+**Developer:** QA Engineer (Lead)  
+**Tasks:**
+1. Create Project page objects
+   - ProjectsListPage, ProjectCreatePage, ProjectDetailPage, ProjectEditPage
+2. Write 15+ Project CRUD tests
+   - Create project (with client association)
+   - View project details
+   - Edit project (status, dates, budget)
+   - Delete project
+   - Search and filter projects
+
+**Success Criteria:**
+- [ ] 4 Project page objects created
+- [ ] 15+ Project tests passing
+- [ ] Tests verify client-project association
+- [ ] Tests validate project status changes
+- [ ] Tests clean up created data
+
+---
+
+### Phase 3: Business Logic Tests - Quotes & Invoices (Week 3)
+
+#### Day 1-3: Quote Tests
+**Developer:** QA Engineer (Lead) + Backend Developer  
+**Tasks:**
+1. Create Quote page objects
+   - QuotesListPage, QuoteCreatePage, QuoteDetailPage, QuoteEditPage
+2. Write 20+ Quote tests
+   - Create quote with line items
+   - Calculate totals (subtotal, tax, total)
+   - Quote status lifecycle (Draft → Sent → Accepted/Rejected)
+   - Convert quote to invoice
+   - Export quote to PDF
+   - Send quote to client (email)
+
+**Success Criteria:**
+- [ ] 4 Quote page objects created
+- [ ] 20+ Quote tests passing
+- [ ] Tests verify calculations (subtotal, tax, total)
+- [ ] Tests verify quote→invoice conversion
+- [ ] Tests verify PDF generation
+
+#### Day 4-5: Invoice Tests
+**Developer:** QA Engineer (Lead) + Backend Developer  
+**Tasks:**
+1. Create Invoice page objects
+   - InvoicesListPage, InvoiceCreatePage, InvoiceDetailPage, InvoiceEditPage
+2. Write 20+ Invoice tests
+   - Create invoice with line items
+   - Apply tax rates
+   - Record payments
+   - Invoice status lifecycle (Draft → Sent → Paid → Overdue)
+   - Export invoice to PDF
+   - Send invoice to client
+
+**Success Criteria:**
+- [ ] 4 Invoice page objects created
+- [ ] 20+ Invoice tests passing
+- [ ] Tests verify payment recording
+- [ ] Tests verify status transitions
+- [ ] Tests verify PDF generation
+
+---
+
+### Phase 4: Inventory & Reports (Week 4)
+
+#### Day 1-2: Inventory Tests
+**Developer:** QA Engineer (Lead)  
+**Tasks:**
+1. Create Inventory page objects
+2. Write 15+ Inventory tests
+   - Create inventory item (name, SKU, price, stock)
+   - Update inventory (stock levels, price changes)
+   - Delete inventory item
+   - Track low stock warnings
+   - Categories and tags
+
+**Success Criteria:**
+- [ ] Inventory page objects created
+- [ ] 15+ Inventory tests passing
+- [ ] Tests verify stock tracking
+- [ ] Tests verify low stock alerts
+
+#### Day 3-5: Reports Tests
+**Developer:** QA Engineer (Lead)  
+**Tasks:**
+1. Create Report page objects
+2. Write 15+ Report tests
+   - Standard reports (Invoice Aging, Revenue, Profitability)
+   - Custom report builder
+   - Report filters and date ranges
+   - Export reports (PDF, CSV, Excel)
+   - Save custom reports
+
+**Success Criteria:**
+- [ ] Report page objects created
+- [ ] 15+ Report tests passing
+- [ ] Tests verify report calculations
+- [ ] Tests verify export functionality
+
+---
+
+### Phase 5: Settings, Admin, and Navigation (Week 5)
+
+#### Day 1-2: Settings Tests
+**Developer:** QA Engineer (Lead)  
+**Tasks:**
+1. Create Settings page objects (all tabs)
+2. Write 20+ Settings tests
+   - User Profile (update name, email, avatar)
+   - Security (change password, 2FA)
+   - Notifications (email preferences)
+   - Appearance (theme, language)
+   - Company Settings (ADMIN only)
+   - Billing (subscription, payment methods)
+
+**Success Criteria:**
+- [ ] Settings page objects created (6 tabs)
+- [ ] 20+ Settings tests passing
+- [ ] Tests verify role-based access (ADMIN vs USER)
+
+#### Day 3-4: Admin Panel Tests
+**Developer:** QA Engineer (Lead)  
+**Tasks:**
+1. Create Admin page objects
+2. Write 15+ Admin tests
+   - User management (create, edit, delete users)
+   - User roles (ADMIN, USER)
+   - Integrations (OAuth setup)
+   - Organization settings
+
+**Success Criteria:**
+- [ ] Admin page objects created
+- [ ] 15+ Admin tests passing
+- [ ] Tests verify ADMIN-only access
+
+#### Day 5: Navigation Tests
+**Developer:** QA Engineer (Lead)  
+**Tasks:**
+1. Create Navigation page objects
+2. Write 10+ Navigation tests
+   - Main navigation menu
+   - Mobile navigation drawer
+   - Breadcrumbs
+   - Global search
+   - Notifications dropdown
+   - User menu
+   - Organization switcher
+
+**Success Criteria:**
+- [ ] Navigation page objects created
+- [ ] 10+ Navigation tests passing
+- [ ] Tests work on desktop and mobile
+
+---
+
+### Phase 6: Multi-Organization & Authentication Edge Cases (Week 6)
+
+#### Day 1-3: Multi-Organization Tests
+**Developer:** QA Engineer (Lead) + Backend Developer  
+**Tasks:**
+1. Create Organization Selector page object
+2. Write 15+ Multi-org tests
+   - Login with multi-org user → Org selector displayed
+   - Login with single-org user → Direct to dashboard
+   - Select organization from selector
+   - Switch organization from dropdown
+   - Verify data isolation between orgs
+   - Org-specific roles (ADMIN in org1, USER in org2)
+
+**Success Criteria:**
+- [ ] Org selector page objects created
+- [ ] 15+ Multi-org tests passing
+- [ ] Tests verify data isolation
+- [ ] Tests verify role switching across orgs
+
+#### Day 4-5: Authentication Edge Cases
+**Developer:** QA Engineer (Lead)  
+**Tasks:**
+1. Write 10+ Auth edge case tests
+   - Session expiry and refresh
+   - OAuth callbacks (Google, Microsoft)
+   - Remember me functionality
+   - Logout from all devices
+   - Password reset flow
+   - Email verification
+
+**Success Criteria:**
+- [ ] 10+ Auth edge case tests passing
+- [ ] OAuth flow tests passing
+- [ ] Session management tests passing
+
+---
+
+### Phase 7: Accessibility, Performance, and Mobile (Week 7)
+
+#### Day 1-2: Accessibility Tests
+**Developer:** QA Engineer (Lead) + Frontend Developer  
+**Tasks:**
+1. Integrate axe-core for automated accessibility scanning
+2. Write 15+ Accessibility tests
+   - Keyboard navigation (Tab, Enter, Esc, Arrow keys)
+   - Screen reader compatibility (ARIA labels, roles)
+   - Focus management
+   - Color contrast
+   - Form labels and error messages
+   - Skip links
+
+**Success Criteria:**
+- [ ] axe-core integrated
+- [ ] 15+ Accessibility tests passing
+- [ ] Tests verify WCAG 2.1 AA compliance
+
+#### Day 3: Performance Tests
+**Developer:** QA Engineer (Lead) + DevOps Engineer  
+**Tasks:**
+1. Write 10+ Performance tests
+   - Page load times (< 3 seconds)
+   - API response times (< 500ms)
+   - Bundle size monitoring
+   - Image optimization
+   - Lazy loading
+
+**Success Criteria:**
+- [ ] 10+ Performance tests passing
+- [ ] Tests track metrics over time
+- [ ] Performance thresholds enforced
+
+#### Day 4-5: Mobile Tests
+**Developer:** QA Engineer (Lead)  
+**Tasks:**
+1. Write 20+ Mobile tests
+   - Mobile navigation drawer
+   - Touch interactions
+   - Responsive layouts (breakpoints)
+   - Mobile forms and inputs
+   - Mobile-specific features
+
+**Success Criteria:**
+- [ ] 20+ Mobile tests passing
+- [ ] Tests run on iOS (iPhone 12) and Android (Pixel 5)
+- [ ] Tests verify touch gestures
+
+---
+
+### Phase 8: CI/CD Integration and Documentation (Week 8)
+
+#### Day 1-2: CI/CD Pipeline
+**Developer:** DevOps Engineer + QA Engineer (Lead)  
+**Tasks:**
+1. Create GitHub Actions workflow
+2. Configure test execution on PR and push
+3. Set up test artifact upload (reports, screenshots, videos)
+4. Configure test failure notifications
+
+**Success Criteria:**
+- [ ] GitHub Actions workflow created
+- [ ] Tests run automatically on every PR
+- [ ] Test reports published and accessible
+- [ ] Failing tests block PR merges
+
+#### Day 3-4: Documentation
+**Developer:** QA Engineer (Lead)  
+**Tasks:**
+1. Write `e2e/README.md` - Setup and running instructions
+2. Write `e2e/CONTRIBUTING.md` - How to add new tests
+3. Write `e2e/TROUBLESHOOTING.md` - Common issues and solutions
+4. Document test data management strategy
+5. Create maintenance guidelines
+
+**Success Criteria:**
+- [ ] Documentation complete and reviewed
+- [ ] Team trained on running/writing tests
+- [ ] Maintenance schedule established
+
+#### Day 5: Final Review & Handoff
+**Developer:** QA Engineer (Lead) + Team  
+**Tasks:**
+1. Run full test suite and verify all tests pass
+2. Review test coverage metrics
+3. Demo test suite to stakeholders
+4. Handoff to team with training session
+
+**Success Criteria:**
+- [ ] All 230+ tests passing
+- [ ] Test coverage targets met (85%+)
+- [ ] Team trained and confident
+- [ ] Documentation approved
+
+---
+
+## � Quality Gates
+
+### Phase 1 Completion Gate
+**Required before moving to Phase 2:**
+- [ ] Playwright installed and configured
+- [ ] BasePage class created and tested
+- [ ] Authentication fixture working
+- [ ] 15+ authentication tests passing on all browsers
+- [ ] Test data cleanup working
+- [ ] Test reports generating correctly
+
+### Phase 2 Completion Gate
+**Required before moving to Phase 3:**
+- [ ] Client and Project page objects created
+- [ ] 30+ CRUD tests passing (15 clients + 15 projects)
+- [ ] Tests verify data persistence
+- [ ] Tests clean up all created data
+- [ ] No flaky tests (< 5% failure rate)
+
+### Phase 3 Completion Gate
+**Required before moving to Phase 4:**
+- [ ] Quote and Invoice page objects created
+- [ ] 40+ business logic tests passing
+- [ ] Tests verify quote→invoice conversion
+- [ ] Tests verify payment recording
+- [ ] PDF generation tests passing
+
+### Phase 4 Completion Gate
+**Required before moving to Phase 5:**
+- [ ] Inventory and Report page objects created
+- [ ] 30+ tests passing (15 inventory + 15 reports)
+- [ ] Tests verify stock tracking
+- [ ] Tests verify report calculations
+
+### Phase 5 Completion Gate
+**Required before moving to Phase 6:**
+- [ ] Settings, Admin, and Navigation page objects created
+- [ ] 45+ tests passing (20 settings + 15 admin + 10 nav)
+- [ ] Tests verify role-based access
+- [ ] Mobile navigation tests passing
+
+### Phase 6 Completion Gate
+**Required before moving to Phase 7:**
+- [ ] Multi-org and auth edge case tests passing
+- [ ] 25+ tests passing (15 multi-org + 10 auth edge cases)
+- [ ] Tests verify data isolation
+- [ ] OAuth flow tests passing
+
+### Phase 7 Completion Gate
+**Required before moving to Phase 8:**
+- [ ] Accessibility, performance, and mobile tests passing
+- [ ] 45+ tests passing (15 a11y + 10 performance + 20 mobile)
+- [ ] WCAG compliance verified
+- [ ] Performance thresholds met
+- [ ] Mobile tests passing on iOS and Android
+
+### Phase 8 Completion Gate (Final)
+**Required for project completion:**
+- [ ] CI/CD pipeline functional
+- [ ] Tests run automatically on every PR
+- [ ] Test reports published
+- [ ] Documentation complete
+- [ ] Team trained
+- [ ] All 230+ tests passing
+- [ ] Test suite completes in < 30 minutes
+- [ ] < 5% flaky tests
+
+---
+
+## 🧪 Testing Strategy
 
 ```
 apps/frontend/
@@ -180,1159 +1137,8 @@ apps/frontend/
 
 ---
 
-## 📋 Implementation Phases
-
-### Phase 1: Foundation & Setup (Week 1)
-
-**Objective**: Set up Playwright infrastructure and authentication tests
-
-#### Tasks:
-
-**1.1 Install and Configure Playwright**
-```bash
-npm install --save-dev @playwright/test
-npx playwright install
-```
-
-**1.2 Create Playwright Configuration**
-```typescript
-// apps/frontend/playwright.config.ts
-import { defineConfig, devices } from '@playwright/test';
-
-export default defineConfig({
-  testDir: './e2e/tests',
-  fullyParallel: true,
-  forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 1 : undefined,
-  reporter: [
-    ['html'],
-    ['json', { outputFile: 'test-results/results.json' }],
-    ['junit', { outputFile: 'test-results/junit.xml' }]
-  ],
-  
-  use: {
-    baseURL: process.env.PLAYWRIGHT_BASE_URL || 'http://localhost:3000',
-    trace: 'on-first-retry',
-    screenshot: 'only-on-failure',
-    video: 'retain-on-failure',
-  },
-
-  projects: [
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
-    },
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
-    {
-      name: 'Mobile Chrome',
-      use: { ...devices['Pixel 5'] },
-    },
-    {
-      name: 'Mobile Safari',
-      use: { ...devices['iPhone 12'] },
-    },
-  ],
-
-  webServer: {
-    command: 'npm run start',
-    url: 'http://localhost:3000',
-    reuseExistingServer: !process.env.CI,
-    timeout: 120000,
-  },
-});
-```
-
-**1.3 Create Base Page Object**
-```typescript
-// apps/frontend/e2e/page-objects/base.page.ts
-import { Page, Locator } from '@playwright/test';
-
-export class BasePage {
-  constructor(protected page: Page) {}
-
-  async navigate(path: string) {
-    await this.page.goto(path);
-  }
-
-  async waitForPageLoad() {
-    await this.page.waitForLoadState('networkidle');
-  }
-
-  async screenshot(name: string) {
-    await this.page.screenshot({ path: `screenshots/${name}.png`, fullPage: true });
-  }
-
-  async getElement(selector: string): Promise<Locator> {
-    return this.page.locator(selector);
-  }
-
-  async clickButton(text: string) {
-    await this.page.getByRole('button', { name: text }).click();
-  }
-
-  async fillInput(label: string, value: string) {
-    await this.page.getByLabel(label).fill(value);
-  }
-
-  async expectVisible(selector: string) {
-    await this.page.locator(selector).waitFor({ state: 'visible' });
-  }
-}
-```
-
-**1.4 Create Authentication Fixture**
-```typescript
-// apps/frontend/e2e/fixtures/auth.fixture.ts
-import { test as base, expect } from '@playwright/test';
-import { LoginPage } from '../page-objects/auth/login.page';
-
-type AuthFixtures = {
-  authenticatedPage: Page;
-  loginAsAdmin: () => Promise<void>;
-  loginAsUser: () => Promise<void>;
-};
-
-export const test = base.extend<AuthFixtures>({
-  authenticatedPage: async ({ page }, use) => {
-    const loginPage = new LoginPage(page);
-    await loginPage.navigate();
-    await loginPage.login('test-user@example.com', 'test123');
-    await use(page);
-  },
-
-  loginAsAdmin: async ({ page }, use) => {
-    const login = async () => {
-      const loginPage = new LoginPage(page);
-      await loginPage.navigate();
-      await loginPage.login('admin@projectledger.com', 'admin123');
-    };
-    await use(login);
-  },
-
-  loginAsUser: async ({ page }, use) => {
-    const login = async () => {
-      const loginPage = new LoginPage(page);
-      await loginPage.navigate();
-      await loginPage.login('demo@projectledger.com', 'admin123');
-    };
-    await use(login);
-  },
-});
-
-export { expect };
-```
-
-**1.5 Create Login Page Object**
-```typescript
-// apps/frontend/e2e/page-objects/auth/login.page.ts
-import { Page } from '@playwright/test';
-import { BasePage } from '../base.page';
-
-export class LoginPage extends BasePage {
-  constructor(page: Page) {
-    super(page);
-  }
-
-  async navigate() {
-    await this.page.goto('/login');
-    await this.waitForPageLoad();
-  }
-
-  async login(email: string, password: string) {
-    await this.fillInput('Email', email);
-    await this.fillInput('Password', password);
-    await this.clickButton('Log In');
-    
-    // Wait for redirect to dashboard or org selector
-    await this.page.waitForURL(/\/(dashboard|select-organization)?/, { timeout: 10000 });
-  }
-
-  async loginAndExpectError(email: string, password: string) {
-    await this.fillInput('Email', email);
-    await this.fillInput('Password', password);
-    await this.clickButton('Log In');
-    
-    // Should stay on login page with error
-    await this.expectVisible('[role="alert"]');
-  }
-
-  async getErrorMessage() {
-    return await this.page.locator('[role="alert"]').textContent();
-  }
-
-  async clickSignUp() {
-    await this.page.getByRole('link', { name: /sign up/i }).click();
-  }
-
-  async clickForgotPassword() {
-    await this.page.getByRole('link', { name: /forgot password/i }).click();
-  }
-}
-```
-
-**1.6 Write Authentication Tests**
-```typescript
-// apps/frontend/e2e/tests/auth/login.spec.ts
-import { test, expect } from '../../fixtures/auth.fixture';
-import { LoginPage } from '../../page-objects/auth/login.page';
-
-test.describe('Login Flow', () => {
-  test('should successfully log in with valid credentials', async ({ page }) => {
-    const loginPage = new LoginPage(page);
-    await loginPage.navigate();
-    await loginPage.login('demo@projectledger.com', 'admin123');
-    
-    // Should be redirected to dashboard or org selector
-    await expect(page).toHaveURL(/\/(dashboard|select-organization)?/);
-  });
-
-  test('should show error with invalid credentials', async ({ page }) => {
-    const loginPage = new LoginPage(page);
-    await loginPage.navigate();
-    await loginPage.loginAndExpectError('invalid@example.com', 'wrongpassword');
-    
-    const error = await loginPage.getErrorMessage();
-    expect(error).toContain('Invalid');
-  });
-
-  test('should navigate to signup page', async ({ page }) => {
-    const loginPage = new LoginPage(page);
-    await loginPage.navigate();
-    await loginPage.clickSignUp();
-    
-    await expect(page).toHaveURL('/signup');
-  });
-
-  test('should show validation errors for empty fields', async ({ page }) => {
-    const loginPage = new LoginPage(page);
-    await loginPage.navigate();
-    await loginPage.clickButton('Log In');
-    
-    // Should show validation errors
-    await loginPage.expectVisible('text=Email is required');
-    await loginPage.expectVisible('text=Password is required');
-  });
-});
-```
-
-**Deliverables**:
-- ✅ Playwright installed and configured
-- ✅ Base page object class created
-- ✅ Authentication fixture created
-- ✅ Login page object implemented
-- ✅ 10+ authentication tests passing
-- ✅ Test reports generated (HTML, JSON, JUnit)
-
----
-
-### Phase 2: Core CRUD Tests - Clients & Projects (Week 2)
-
-**Objective**: Implement comprehensive CRUD tests for Clients and Projects
-
-#### Tasks:
-
-**2.1 Create Client Page Objects**
-```typescript
-// apps/frontend/e2e/page-objects/clients/clients-list.page.ts
-export class ClientsListPage extends BasePage {
-  async navigate() {
-    await this.page.goto('/clients');
-  }
-
-  async clickNewClient() {
-    await this.clickButton('New Client');
-  }
-
-  async searchClient(name: string) {
-    await this.page.getByPlaceholder('Search clients').fill(name);
-    await this.page.waitForTimeout(500); // Debounce
-  }
-
-  async getClientRow(name: string) {
-    return this.page.getByRole('row', { name: new RegExp(name, 'i') });
-  }
-
-  async clickClient(name: string) {
-    await this.getClientRow(name).click();
-  }
-
-  async getClientCount() {
-    const rows = await this.page.getByRole('row').count();
-    return rows - 1; // Subtract header row
-  }
-}
-
-// apps/frontend/e2e/page-objects/clients/client-create.page.ts
-export class ClientCreatePage extends BasePage {
-  async navigate() {
-    await this.page.goto('/clients/new');
-  }
-
-  async fillClientForm(data: {
-    name: string;
-    email: string;
-    phone?: string;
-    address?: string;
-    city?: string;
-    province?: string;
-    postalCode?: string;
-    country?: string;
-  }) {
-    await this.fillInput('Client Name', data.name);
-    await this.fillInput('Email', data.email);
-    
-    if (data.phone) await this.fillInput('Phone', data.phone);
-    if (data.address) await this.fillInput('Address', data.address);
-    if (data.city) await this.fillInput('City', data.city);
-    if (data.province) await this.fillInput('Province', data.province);
-    if (data.postalCode) await this.fillInput('Postal Code', data.postalCode);
-    if (data.country) {
-      await this.page.getByLabel('Country').click();
-      await this.page.getByRole('option', { name: data.country }).click();
-    }
-  }
-
-  async submitForm() {
-    await this.clickButton('Save Client');
-    await this.page.waitForURL(/\/clients\/\d+/);
-  }
-
-  async submitAndExpectError() {
-    await this.clickButton('Save Client');
-    await this.expectVisible('[role="alert"]');
-  }
-}
-
-// apps/frontend/e2e/page-objects/clients/client-detail.page.ts
-export class ClientDetailPage extends BasePage {
-  async getClientName() {
-    return await this.page.locator('h1').textContent();
-  }
-
-  async clickEdit() {
-    await this.clickButton('Edit');
-  }
-
-  async clickDelete() {
-    await this.clickButton('Delete');
-  }
-
-  async confirmDelete() {
-    await this.page.getByRole('button', { name: /confirm|yes|delete/i }).click();
-  }
-
-  async getClientEmail() {
-    return await this.page.getByText(/email/i).locator('..').textContent();
-  }
-}
-
-// apps/frontend/e2e/page-objects/clients/client-edit.page.ts
-export class ClientEditPage extends ClientCreatePage {
-  async navigate(clientId: number) {
-    await this.page.goto(`/clients/${clientId}/edit`);
-  }
-
-  async updateClientName(newName: string) {
-    const nameInput = this.page.getByLabel('Client Name');
-    await nameInput.clear();
-    await nameInput.fill(newName);
-  }
-
-  async saveChanges() {
-    await this.clickButton('Save Changes');
-    await this.page.waitForURL(/\/clients\/\d+$/);
-  }
-}
-```
-
-**2.2 Write Client CRUD Tests**
-```typescript
-// apps/frontend/e2e/tests/clients/client-crud.spec.ts
-import { test, expect } from '../../fixtures/auth.fixture';
-import { ClientsListPage } from '../../page-objects/clients/clients-list.page';
-import { ClientCreatePage } from '../../page-objects/clients/client-create.page';
-import { ClientDetailPage } from '../../page-objects/clients/client-detail.page';
-import { ClientEditPage } from '../../page-objects/clients/client-edit.page';
-
-test.describe('Client CRUD Operations', () => {
-  test.use({ storageState: 'auth-state.json' }); // Reuse authentication
-
-  const testClient = {
-    name: `Test Client ${Date.now()}`,
-    email: `client-${Date.now()}@test.com`,
-    phone: '555-1234',
-    address: '123 Test St',
-    city: 'Test City',
-    province: 'BC',
-    postalCode: 'V1V 1V1',
-    country: 'Canada'
-  };
-
-  test('should create a new client', async ({ page }) => {
-    const listPage = new ClientsListPage(page);
-    const createPage = new ClientCreatePage(page);
-    const detailPage = new ClientDetailPage(page);
-
-    // Navigate to clients list
-    await listPage.navigate();
-    await listPage.clickNewClient();
-
-    // Fill and submit form
-    await createPage.fillClientForm(testClient);
-    await createPage.submitForm();
-
-    // Verify client created
-    const clientName = await detailPage.getClientName();
-    expect(clientName).toContain(testClient.name);
-  });
-
-  test('should view client details', async ({ page }) => {
-    const listPage = new ClientsListPage(page);
-    const detailPage = new ClientDetailPage(page);
-
-    await listPage.navigate();
-    await listPage.searchClient(testClient.name);
-    await listPage.clickClient(testClient.name);
-
-    // Verify details displayed
-    const name = await detailPage.getClientName();
-    expect(name).toContain(testClient.name);
-  });
-
-  test('should edit an existing client', async ({ page }) => {
-    const listPage = new ClientsListPage(page);
-    const detailPage = new ClientDetailPage(page);
-    const editPage = new ClientEditPage(page);
-
-    // Navigate to client
-    await listPage.navigate();
-    await listPage.searchClient(testClient.name);
-    await listPage.clickClient(testClient.name);
-    
-    // Click edit
-    await detailPage.clickEdit();
-
-    // Update client name
-    const newName = `${testClient.name} - Updated`;
-    await editPage.updateClientName(newName);
-    await editPage.saveChanges();
-
-    // Verify update
-    const updatedName = await detailPage.getClientName();
-    expect(updatedName).toContain('Updated');
-  });
-
-  test('should delete a client', async ({ page }) => {
-    const listPage = new ClientsListPage(page);
-    const detailPage = new ClientDetailPage(page);
-
-    // Navigate to client
-    await listPage.navigate();
-    const initialCount = await listPage.getClientCount();
-    
-    await listPage.searchClient(testClient.name);
-    await listPage.clickClient(testClient.name);
-
-    // Delete client
-    await detailPage.clickDelete();
-    await detailPage.confirmDelete();
-
-    // Verify deleted (redirected to list)
-    await expect(page).toHaveURL('/clients');
-    
-    // Verify count decreased
-    const finalCount = await listPage.getClientCount();
-    expect(finalCount).toBeLessThan(initialCount);
-  });
-
-  test('should validate required fields', async ({ page }) => {
-    const createPage = new ClientCreatePage(page);
-
-    await createPage.navigate();
-    await createPage.submitAndExpectError();
-
-    // Should show validation errors
-    await expect(page.getByText(/client name is required/i)).toBeVisible();
-    await expect(page.getByText(/email is required/i)).toBeVisible();
-  });
-
-  test('should search for clients', async ({ page }) => {
-    const listPage = new ClientsListPage(page);
-
-    await listPage.navigate();
-    await listPage.searchClient(testClient.name);
-
-    // Should find the client
-    const row = await listPage.getClientRow(testClient.name);
-    await expect(row).toBeVisible();
-  });
-});
-```
-
-**2.3 Create Project Page Objects** (Similar structure to Clients)
-
-**2.4 Write Project CRUD Tests** (Similar to Client tests)
-
-**Deliverables**:
-- ✅ Client page objects (List, Create, Detail, Edit)
-- ✅ 15+ Client CRUD tests passing
-- ✅ Project page objects (List, Create, Detail, Edit)
-- ✅ 15+ Project CRUD tests passing
-- ✅ Test data cleanup utilities
-
----
-
-### Phase 3: Business Logic Tests - Quotes & Invoices (Week 3)
-
-**Objective**: Test Quotes and Invoices with complex workflows
-
-#### Test Coverage:
-
-**Quotes**:
-- Create quote from scratch
-- Create quote from template
-- Add line items to quote
-- Calculate totals (subtotal, tax, total)
-- Convert quote to invoice
-- Send quote to client
-- Export quote to PDF
-- Quote status lifecycle (Draft → Sent → Accepted/Rejected)
-
-**Invoices**:
-- Create invoice from scratch
-- Create invoice from quote
-- Add line items and calculate totals
-- Apply tax rates
-- Record payments
-- Mark as paid
-- Send invoice to client
-- Export invoice to PDF
-- Invoice status lifecycle (Draft → Sent → Paid → Overdue)
-
-**3.1 Example Quote Conversion Test**
-```typescript
-// apps/frontend/e2e/tests/quotes/quote-conversion.spec.ts
-test('should convert quote to invoice', async ({ page }) => {
-  const quotesPage = new QuotesListPage(page);
-  const quoteDetailPage = new QuoteDetailPage(page);
-  const invoiceDetailPage = new InvoiceDetailPage(page);
-
-  // Create a quote first
-  await quotesPage.navigate();
-  await quotesPage.clickNewQuote();
-  // ... create quote logic
-
-  // Convert to invoice
-  await quoteDetailPage.clickConvertToInvoice();
-  await quoteDetailPage.confirmConversion();
-
-  // Verify invoice created
-  await expect(page).toHaveURL(/\/invoices\/\d+/);
-  
-  const invoiceNumber = await invoiceDetailPage.getInvoiceNumber();
-  expect(invoiceNumber).toBeTruthy();
-  
-  const status = await invoiceDetailPage.getStatus();
-  expect(status).toBe('Draft');
-});
-```
-
-**Deliverables**:
-- ✅ Quote page objects (List, Create, Detail, Edit)
-- ✅ 20+ Quote tests (CRUD, conversion, PDF, status)
-- ✅ Invoice page objects (List, Create, Detail, Edit)
-- ✅ 20+ Invoice tests (CRUD, payments, PDF, status)
-
----
-
-### Phase 4: Inventory & Reports (Week 4)
-
-**Objective**: Test Inventory management and Reporting functionality
-
-#### Test Coverage:
-
-**Inventory**:
-- Create inventory item
-- View inventory item
-- Update inventory item (name, SKU, price, stock)
-- Delete inventory item
-- Track stock levels
-- Low stock warnings
-- Categories and tags
-
-**Reports**:
-- Standard reports (Invoice Aging, Revenue, Project Profitability)
-- Custom report builder
-- Report filters and date ranges
-- Export reports (PDF, CSV, Excel)
-- Save custom reports
-- Report permissions (Pro plan check)
-
-**Deliverables**:
-- ✅ Inventory page objects
-- ✅ 15+ Inventory CRUD tests
-- ✅ Report page objects
-- ✅ 15+ Report tests (standard + custom)
-
----
-
-### Phase 5: Settings, Admin, and Navigation (Week 5)
-
-**Objective**: Test Settings, Admin Panel, and Navigation features
-
-#### Test Coverage:
-
-**Settings**:
-- User Profile (update name, email, avatar)
-- Security (change password, 2FA)
-- Notifications (email preferences)
-- Appearance (theme, language)
-- Company Settings (ADMIN only)
-- Billing (subscription, payment methods)
-
-**Admin Panel** (ADMIN role only):
-- User management (create, edit, delete, roles)
-- Integrations (OAuth setup)
-- Organization settings
-
-**Navigation**:
-- Main navigation menu
-- Mobile navigation drawer
-- Breadcrumbs
-- Global search
-- Notifications dropdown
-- User menu
-- Organization switcher (multi-org)
-
-**5.1 Example Admin Test**
-```typescript
-// apps/frontend/e2e/tests/admin/user-management.spec.ts
-test('admin should create a new user', async ({ page, loginAsAdmin }) => {
-  await loginAsAdmin();
-  
-  const adminPage = new AdminPanelPage(page);
-  await adminPage.navigate();
-  await adminPage.clickUsersTab();
-  await adminPage.clickCreateUser();
-
-  await adminPage.fillUserForm({
-    email: `newuser-${Date.now()}@test.com`,
-    name: 'New Test User',
-    role: 'USER'
-  });
-  await adminPage.submitUserForm();
-
-  // Verify user created
-  const successMessage = await adminPage.getSuccessMessage();
-  expect(successMessage).toContain('User created successfully');
-});
-```
-
-**Deliverables**:
-- ✅ Settings page objects
-- ✅ 20+ Settings tests (all tabs)
-- ✅ Admin page objects
-- ✅ 15+ Admin tests (user management, integrations)
-- ✅ Navigation page objects
-- ✅ 10+ Navigation tests (menu, search, mobile)
-
----
-
-### Phase 6: Multi-Organization & Authentication Edge Cases (Week 6)
-
-**Objective**: Test multi-org features and complex auth scenarios
-
-#### Test Coverage:
-
-**Multi-Organization**:
-- Login with multi-org user → Organization selector displayed
-- Login with single-org user → No selector, direct to dashboard
-- Select organization from selector
-- Switch organization from navigation dropdown
-- Verify data isolation between organizations
-- Organization-specific roles (ADMIN in org1, USER in org2)
-
-**Authentication Edge Cases**:
-- Session expiry and refresh
-- OAuth login (Google, Microsoft)
-- Remember me functionality
-- Logout from all devices
-- Password reset flow
-- Email verification
-
-**6.1 Example Multi-Org Test**
-```typescript
-// apps/frontend/e2e/tests/auth/multi-org.spec.ts
-test('should switch between organizations', async ({ page }) => {
-  const loginPage = new LoginPage(page);
-  const orgSelectorPage = new OrganizationSelectorPage(page);
-  const dashboardPage = new DashboardPage(page);
-  const navigation = new NavigationPage(page);
-
-  // Login with multi-org user
-  await loginPage.navigate();
-  await loginPage.login('lovell@microsoft.com', 'admin123');
-
-  // Should see organization selector
-  await expect(page).toHaveURL('/select-organization');
-  
-  const orgs = await orgSelectorPage.getOrganizations();
-  expect(orgs.length).toBe(2);
-
-  // Select first organization
-  await orgSelectorPage.selectOrganization('Microsoft');
-  await expect(page).toHaveURL('/dashboard');
-
-  // Switch to second organization
-  await navigation.openOrganizationSwitcher();
-  await navigation.selectOrganization('Legacy Account');
-
-  // Verify switched (page should reload)
-  await expect(page).toHaveURL('/dashboard');
-  
-  const currentOrg = await navigation.getCurrentOrganization();
-  expect(currentOrg).toBe('Legacy Account');
-});
-```
-
-**Deliverables**:
-- ✅ Organization selector page objects
-- ✅ 15+ Multi-org tests
-- ✅ 10+ Authentication edge case tests
-- ✅ OAuth callback tests
-
----
-
-### Phase 7: Accessibility, Performance, and Mobile (Week 7)
-
-**Objective**: Test accessibility, performance, and mobile responsiveness
-
-#### Test Coverage:
-
-**Accessibility**:
-- Keyboard navigation (Tab, Enter, Esc, Arrow keys)
-- Screen reader compatibility (ARIA labels, roles)
-- Focus management
-- Color contrast
-- Form labels and error messages
-- Skip links
-
-**Performance**:
-- Page load times (< 3 seconds)
-- API response times (< 500ms)
-- Bundle size monitoring
-- Image optimization
-- Lazy loading
-
-**Mobile Testing**:
-- Mobile navigation drawer
-- Touch interactions
-- Responsive layouts (breakpoints)
-- Mobile forms and inputs
-- Mobile-specific features (bottom navigation)
-
-**7.1 Example Accessibility Test**
-```typescript
-// apps/frontend/e2e/tests/accessibility/keyboard-navigation.spec.ts
-test('should navigate menu with keyboard', async ({ page }) => {
-  const loginPage = new LoginPage(page);
-  await loginPage.navigate();
-  await loginPage.login('demo@projectledger.com', 'admin123');
-
-  // Focus first menu item
-  await page.keyboard.press('Tab');
-  await page.keyboard.press('Tab'); // Skip to main nav
-
-  // Navigate through menu with arrows
-  await page.keyboard.press('ArrowDown');
-  await page.keyboard.press('ArrowDown');
-  
-  // Activate with Enter
-  await page.keyboard.press('Enter');
-
-  // Should navigate to page
-  await expect(page).toHaveURL(/\/projects/);
-});
-```
-
-**7.2 Example Performance Test**
-```typescript
-// apps/frontend/e2e/tests/performance/page-load-times.spec.ts
-test('dashboard should load within 3 seconds', async ({ page }) => {
-  const loginPage = new LoginPage(page);
-  await loginPage.navigate();
-  await loginPage.login('demo@projectledger.com', 'admin123');
-
-  const startTime = Date.now();
-  await page.waitForURL('/dashboard');
-  await page.waitForLoadState('networkidle');
-  const loadTime = Date.now() - startTime;
-
-  expect(loadTime).toBeLessThan(3000);
-});
-```
-
-**Deliverables**:
-- ✅ 15+ Accessibility tests (keyboard, ARIA, focus)
-- ✅ 10+ Performance tests (load times, API)
-- ✅ 20+ Mobile tests (all devices)
-- ✅ Automated accessibility scanning (axe-core integration)
-
----
-
-### Phase 8: CI/CD Integration and Maintenance (Week 8)
-
-**Objective**: Integrate tests into CI/CD pipeline and establish maintenance practices
-
-#### Tasks:
-
-**8.1 GitHub Actions Workflow**
-```yaml
-# .github/workflows/e2e-tests.yml
-name: E2E Tests
-
-on:
-  pull_request:
-    branches: [main, develop]
-  push:
-    branches: [main]
-
-jobs:
-  test:
-    timeout-minutes: 60
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-    
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 20
-    
-    - name: Install dependencies
-      run: |
-        cd apps/frontend
-        npm ci
-    
-    - name: Install Playwright Browsers
-      run: |
-        cd apps/frontend
-        npx playwright install --with-deps
-    
-    - name: Start services
-      run: |
-        docker compose up -d
-        # Wait for services to be ready
-        sleep 30
-    
-    - name: Run Playwright tests
-      run: |
-        cd apps/frontend
-        npx playwright test
-      env:
-        PLAYWRIGHT_BASE_URL: http://localhost:3000
-    
-    - uses: actions/upload-artifact@v3
-      if: always()
-      with:
-        name: playwright-report
-        path: apps/frontend/playwright-report/
-        retention-days: 30
-    
-    - uses: actions/upload-artifact@v3
-      if: always()
-      with:
-        name: test-results
-        path: apps/frontend/test-results/
-        retention-days: 30
-```
-
-**8.2 Test Maintenance Guidelines**
-
-**Best Practices**:
-1. **Page Object Pattern**: All interactions through page objects
-2. **DRY Principle**: Reusable fixtures and utilities
-3. **Test Isolation**: Each test creates/cleans its own data
-4. **Descriptive Names**: Clear test and variable names
-5. **Error Handling**: Proper waits and error messages
-6. **Screenshots**: Capture on failure for debugging
-
-**Maintenance Schedule**:
-- Weekly: Review failing tests, update selectors
-- Monthly: Review test coverage, add missing tests
-- Quarterly: Performance audit, refactor duplicated code
-
-**8.3 Documentation**
-
-Create comprehensive documentation:
-- `e2e/README.md` - Setup and running instructions
-- `e2e/CONTRIBUTING.md` - How to add new tests
-- `e2e/TROUBLESHOOTING.md` - Common issues and solutions
-
-**Deliverables**:
-- ✅ GitHub Actions workflow configured
-- ✅ Tests running on every PR
-- ✅ Test reports published
-- ✅ Documentation complete
-- ✅ Maintenance guidelines established
-
----
-
-## 📊 Testing Metrics and Coverage Goals
-
-### Test Coverage Targets
-
-| Area | Target Coverage | Tests Required |
-|------|----------------|----------------|
-| Authentication | 100% | 15+ tests |
-| Clients CRUD | 90% | 15+ tests |
-| Projects CRUD | 90% | 15+ tests |
-| Quotes CRUD + Workflows | 85% | 20+ tests |
-| Invoices CRUD + Workflows | 85% | 20+ tests |
-| Inventory CRUD | 85% | 15+ tests |
-| Reports | 80% | 15+ tests |
-| Settings | 75% | 20+ tests |
-| Admin Panel | 80% | 15+ tests |
-| Navigation | 85% | 10+ tests |
-| Multi-Org | 90% | 15+ tests |
-| Accessibility | 70% | 15+ tests |
-| Performance | 100% | 10+ tests |
-| Mobile | 80% | 20+ tests |
-
-**Total Tests**: ~230+ E2E tests
-
-### Success Criteria
-
-**Test Execution**:
-- ✅ All tests pass on 3 browsers (Chrome, Firefox, Safari)
-- ✅ All tests pass on 2 mobile devices (iOS, Android)
-- ✅ Test suite completes in < 30 minutes
-- ✅ < 5% flaky tests (tests that fail intermittently)
-
-**Code Quality**:
-- ✅ All page objects follow consistent pattern
-- ✅ No duplicate test code (DRY principle)
-- ✅ Test data properly isolated and cleaned up
-- ✅ Clear, descriptive test names
-
-**CI/CD Integration**:
-- ✅ Tests run automatically on every PR
-- ✅ Test reports published and accessible
-- ✅ Failing tests block PR merges
-- ✅ Screenshot/video artifacts saved on failure
-
----
-
-## 🛠️ Technology and Tools
-
-### Core Testing Framework
-
-- **Playwright 1.40+**: E2E testing framework
-- **TypeScript**: Type-safe test code
-- **Page Object Model**: Maintainable test structure
-- **Test Fixtures**: Reusable test setup
-
-### Additional Tools
-
-- **axe-core**: Automated accessibility testing
-- **Percy** (optional): Visual regression testing
-- **Lighthouse**: Performance auditing
-- **Artillery** (optional): Load testing
-
-### Reporting
-
-- **HTML Reporter**: Interactive test results
-- **JUnit Reporter**: CI/CD integration
-- **JSON Reporter**: Custom analytics
-- **Allure** (optional): Advanced reporting
-
----
-
-## 📋 Implementation Checklist
-
-### Pre-Implementation
-- [ ] Review and approve this specification
-- [ ] Assign team members to phases
-- [ ] Set up test environment (dedicated test database)
-- [ ] Create test user accounts
-- [ ] Document test data requirements
-
-### Phase 1: Foundation (Week 1)
-- [ ] Install Playwright and dependencies
-- [ ] Configure Playwright (config file)
-- [ ] Create base page object class
-- [ ] Create authentication fixture
-- [ ] Implement login page object
-- [ ] Write 10+ authentication tests
-- [ ] Verify tests pass on all browsers
-
-### Phase 2: Clients & Projects (Week 2)
-- [ ] Create client page objects (List, Create, Detail, Edit)
-- [ ] Write 15+ client CRUD tests
-- [ ] Create project page objects
-- [ ] Write 15+ project CRUD tests
-- [ ] Implement test data cleanup
-
-### Phase 3: Quotes & Invoices (Week 3)
-- [ ] Create quote page objects
-- [ ] Write 20+ quote tests (CRUD, conversion, PDF)
-- [ ] Create invoice page objects
-- [ ] Write 20+ invoice tests (CRUD, payments, PDF)
-
-### Phase 4: Inventory & Reports (Week 4)
-- [ ] Create inventory page objects
-- [ ] Write 15+ inventory tests
-- [ ] Create report page objects
-- [ ] Write 15+ report tests
-
-### Phase 5: Settings & Admin (Week 5)
-- [ ] Create settings page objects
-- [ ] Write 20+ settings tests
-- [ ] Create admin panel page objects
-- [ ] Write 15+ admin tests
-- [ ] Create navigation page objects
-- [ ] Write 10+ navigation tests
-
-### Phase 6: Multi-Org & Auth Edge Cases (Week 6)
-- [ ] Create org selector page objects
-- [ ] Write 15+ multi-org tests
-- [ ] Write 10+ auth edge case tests
-- [ ] Test OAuth flows
-
-### Phase 7: Accessibility & Performance (Week 7)
-- [ ] Write 15+ accessibility tests
-- [ ] Write 10+ performance tests
-- [ ] Write 20+ mobile tests
-- [ ] Integrate axe-core scanning
-
-### Phase 8: CI/CD Integration (Week 8)
-- [ ] Create GitHub Actions workflow
-- [ ] Configure test artifacts upload
-- [ ] Write documentation (README, CONTRIBUTING, TROUBLESHOOTING)
-- [ ] Establish maintenance guidelines
-- [ ] Train team on test maintenance
-
----
-
-## 🚨 Risks and Mitigation
-
-### Risk 1: Flaky Tests
-**Risk**: Tests fail intermittently due to timing issues, network conditions, or UI animations
-
-**Mitigation**:
-- Use Playwright's auto-waiting features
-- Implement proper wait strategies (waitForSelector, waitForLoadState)
-- Avoid hardcoded timeouts
-- Retry failed tests automatically (2-3 retries)
-- Use stable selectors (data-testid, ARIA roles)
-
-### Risk 2: Test Data Pollution
-**Risk**: Tests interfere with each other, causing failures
-
-**Mitigation**:
-- Isolated test data per test
-- Automatic cleanup after each test
-- Use unique identifiers (timestamps, UUIDs)
-- Separate test database
-- Database transaction rollback where possible
-
-### Risk 3: Long Test Execution Time
-**Risk**: Test suite takes too long to run, slowing down development
-
-**Mitigation**:
-- Run tests in parallel (Playwright workers)
-- Use test tags to run subsets (smoke tests, full suite)
-- Optimize test setup (reuse authentication)
-- Use fast selectors
-- Target: < 30 minutes for full suite
-
-### Risk 4: Maintenance Burden
-**Risk**: Tests require constant updates as UI changes
-
-**Mitigation**:
-- Page Object Model (centralize selectors)
-- Use semantic selectors (ARIA roles, labels)
-- Avoid brittle selectors (CSS classes, IDs)
-- Regular refactoring and cleanup
-- Team training on best practices
-
-### Risk 5: CI/CD Integration Issues
-**Risk**: Tests pass locally but fail in CI/CD
-
-**Mitigation**:
-- Use consistent environments (Docker)
-- Lock dependency versions
-- Use headless browsers in CI
-- Save artifacts (screenshots, videos) on failure
-- Monitor CI/CD performance
-
----
-
-## 💰 Resource Requirements
-
-### Personnel
-
-- **QA Engineer (Lead)**: 1 full-time (8 weeks)
-- **Frontend Developer**: 0.5 time (assist with page objects)
-- **Backend Developer**: 0.25 time (test data setup)
-- **DevOps Engineer**: 0.25 time (CI/CD integration)
-
-### Infrastructure
-
-- **Test Environment**: Dedicated staging server
-- **Test Database**: PostgreSQL instance
-- **CI/CD Minutes**: ~1000 minutes/month (GitHub Actions)
-- **Storage**: Test artifacts (screenshots, videos) ~10GB/month
-
-### Tools (Estimated Annual Cost)
-
-- Playwright: **Free** (open source)
-- Percy (optional): ~$300/month for visual testing
-- Allure (optional): **Free** (self-hosted) or ~$50/month (cloud)
-- GitHub Actions: **Free** (public repos) or included in plan
-
-**Total Estimated Cost**: $300-600/month for optional premium tools
-
----
-
-## 📈 Timeline Summary
-
-| Phase | Duration | Tests | Status |
-|-------|----------|-------|--------|
-| Phase 1: Foundation & Auth | Week 1 | 10+ | 🟡 Planned |
-| Phase 2: Clients & Projects | Week 2 | 30+ | 🟡 Planned |
-| Phase 3: Quotes & Invoices | Week 3 | 40+ | 🟡 Planned |
-| Phase 4: Inventory & Reports | Week 4 | 30+ | 🟡 Planned |
-| Phase 5: Settings & Admin | Week 5 | 45+ | 🟡 Planned |
-| Phase 6: Multi-Org & Auth | Week 6 | 25+ | 🟡 Planned |
-| Phase 7: A11y & Performance | Week 7 | 45+ | 🟡 Planned |
-| Phase 8: CI/CD & Docs | Week 8 | 5+ | 🟡 Planned |
-
-**Total Duration**: 8 weeks (2 months)  
-**Total Tests**: 230+ E2E tests
-
----
-
-## 🎯 Next Steps
-
-1. **Review and Approval**: Team reviews this specification
-2. **Resource Allocation**: Assign team members to phases
-3. **Environment Setup**: Create test environment and database
-4. **Kickoff Meeting**: Align on goals, timeline, and responsibilities
-5. **Phase 1 Start**: Begin with Foundation & Authentication tests
-
----
-
-**Status**: 🟡 Awaiting Review & Approval  
-**Next Steps**: Review specification → Approve → Begin Phase 1
-
-**Document Version**: 1.0  
-**Last Updated**: October 7, 2025  
-**Author**: Development Team 
+**Document Owner:** Engineering Team  
+**Created:** November 12, 2025  
+**Last Updated:** November 12, 2025  
+**Next Review:** End of Phase 1 (Week 1)  
+**Status:** Ready for Implementation
