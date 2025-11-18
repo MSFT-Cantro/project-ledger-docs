@@ -1476,9 +1476,9 @@ import { Button } from '@/components/common'; // V1
 
 ## 📚 Related Documentation
 
-- [DESIGN_SYSTEM_AUDIT.md](../4.%20low/DESIGN_SYSTEM_AUDIT.md) - V1 design system migration status
-- [Component Library Storybook](http://localhost:6006) - V1 component documentation
-- [Frontend Architecture](../../architecture.md) - Overall frontend structure
+- `DESIGN_SYSTEM_AUDIT.md` - V1 design system migration status
+- Component Library Storybook (http://localhost:6006) - V1 component documentation
+- `architecture.md` - Overall frontend structure (in app repo)
 - V2 Design System Guide (to be created)
 - V2 Migration Guide (to be created)
 - V2 Component API Reference (to be created)

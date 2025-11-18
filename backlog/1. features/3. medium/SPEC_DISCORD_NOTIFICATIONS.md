@@ -1351,9 +1351,9 @@ git revert <commit-sha-of-discord-changes>
 
 ## 📚 Related Documentation
 
-- [HOW_TO_RELEASE.md](../../deployment/HOW_TO_RELEASE.md) - Release process documentation
-- [DEPLOYMENT_PLAN.md](../../deployment/DEPLOYMENT_PLAN.md) - Deployment procedures
-- [validate-docs.yml](../../.github/workflows/validate-docs.yml) - Current documentation workflow
+- `deployment/HOW_TO_RELEASE.md` - Release process documentation
+- `deployment/DEPLOYMENT_PLAN.md` - Deployment procedures
+- `.github/workflows/validate-docs.yml` - Current documentation workflow
 - [Discord Webhooks Documentation](https://discord.com/developers/docs/resources/webhook) - Official Discord API docs
 - [GitHub Actions Documentation](https://docs.github.com/en/actions) - GitHub workflow reference
 
