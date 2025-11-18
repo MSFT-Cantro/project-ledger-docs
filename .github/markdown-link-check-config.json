@@ -2,6 +2,15 @@
   "ignorePatterns": [
     {
       "pattern": "^http://localhost"
+    },
+    {
+      "pattern": "^https://github.com/MSFT-Cantro/project-ledger"
+    },
+    {
+      "pattern": "^https://www.whatsmydns.net"
+    },
+    {
+      "pattern": "^https://projectledger-backend"
     }
   ],
   "timeout": "20s",
