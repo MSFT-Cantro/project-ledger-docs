@@ -157,7 +157,7 @@
 - [HOW_TO_RELEASE.md](../../HOW_TO_RELEASE.md)
 - [DEPLOYMENT_CHECKLIST_v1.7.0.md](./DEPLOYMENT_CHECKLIST_v1.7.0.md)
 - [DEPLOYMENT_PLAN.md](../../DEPLOYMENT_PLAN.md)
-- [SPEC_quotes_estimates_integration.md](../../../backlog/critical/SPEC_quotes_estimates_integration.md)
+- [SPEC_quotes_estimates_integration.md](../../../backlog/0.%20Completed/SPEC_quotes_estimates_integration.md)
 
 ---
 

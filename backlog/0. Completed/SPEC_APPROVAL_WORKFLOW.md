@@ -2074,13 +2074,13 @@ Next Steps: Contact the client to resolve the dispute and issue a corrected invo
 
 ## 📚 Related Documentation
 
-- [Client Portal Specification](../../Completed/SPEC_client_portal.md) - Complete client portal implementation
-- [Change Orders Specification](../critical/SPEC_change_orders.md) - Change order system overview
-- [Change Orders Approval Workflow](./CHANGE_ORDERS_APPROVAL_WORKFLOW.md) - Similar approval workflow for change orders
-- [Email Notification System](./SPEC_email_notification_system.md) - General email infrastructure
-- [Invoices Missing Features](./INVOICES_Missing_Features.md) - Other invoice enhancements needed
-- [Email Service Documentation](../../apps/backend/src/lib/emailService.ts) - Email service implementation
-- [Portal Routes Documentation](../../apps/backend/src/routes/portal/data.ts) - Portal API routes
+- [Client Portal Specification](./SPEC_client_portal.md) - Complete client portal implementation
+- [Change Orders Specification](../1.%20features/1.%20critical/SPEC_change_orders.md) - Change order system overview
+- Change Orders Approval Workflow (to be created) - Similar approval workflow for change orders
+- Email Notification System (to be created) - General email infrastructure
+- Invoices Missing Features (see high priority backlog) - Other invoice enhancements needed
+- Email Service Documentation (in app repository) - Email service implementation
+- Portal Routes Documentation (in app repository) - Portal API routes
 
 ---
 
@@ -2114,9 +2114,9 @@ This document now represents a **fully implemented and tested** approval workflo
 - 🔔 **Enhanced Notifications**: SMS and Slack integrations
 
 ### Related Documentation:
-- [Client Portal Specification](../../Completed/SPEC_client_portal.md) - Complete portal system
-- [Implementation Success Report](../../docs/IMPLEMENTATION_SUCCESS_REPORT.md) - Detailed success metrics
-- [Docker Build Memory Fix](../../docs/DOCKER_BUILD_MEMORY_FIX.md) - Build optimization guide
+- [Client Portal Specification](./SPEC_client_portal.md) - Complete portal system
+- Implementation documentation (in app repository) - Detailed success metrics
+- Docker build optimization (in app repository) - Build optimization guide
 
 ---
 

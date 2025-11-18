@@ -420,10 +420,9 @@ curl -I https://app.projectledger.ca
 
 ## 📚 Additional Resources
 
-- [RELEASE_TEMPLATE.md](./RELEASE_TEMPLATE.md) - Full release template
 - [DEPLOYMENT_CHECKLIST_TEMPLATE.md](./DEPLOYMENT_CHECKLIST_TEMPLATE.md) - Checklist template
-- [PRODUCTION_RELEASE_PLAN.md](./PRODUCTION_RELEASE_PLAN.md) - v1.1.0 example
-- [Azure Deployment](./AZURE_DEPLOYMENT_COMPLETE.md) - Infrastructure details
+- [PRODUCTION_RELEASE_PLAN.md](./archive/PRODUCTION_RELEASE_PLAN.md) - v1.1.0 example (archived)
+- [Azure Deployment Archive](./archive/) - Historical infrastructure details
 
 ---
 

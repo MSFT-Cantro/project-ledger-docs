@@ -998,7 +998,7 @@ The following features were considered for Phase 4 but deferred as optional:
 ## Future Phases
 
 For details on Phase 5 (Financial Integration) and Phase 6 (Testing & Polish), see:
-- **[Change Orders Future Enhancements](../medium/CHANGE_ORDERS_FUTURE_ENHANCEMENTS.md)** (Medium Priority)
+- **[Change Orders Future Enhancements](../3.%20medium/SPEC_CHANGE_ORDERS_FUTURE_ENHANCEMENTS.md)** (Medium Priority)
 
 **Phase 5 Summary:** Automatic invoice/credit note generation upon change order execution  
 **Phase 6 Summary:** Comprehensive testing, performance optimization, and production readiness
@@ -1290,7 +1290,7 @@ For details on Phase 5 (Financial Integration) and Phase 6 (Testing & Polish), s
 **Last Updated:** October 21, 2025  
 **Status:** 80% Complete (4 of 5 phases done)  
 **Related Documents:** 
-- [Change Orders Future Enhancements](../medium/CHANGE_ORDERS_FUTURE_ENHANCEMENTS.md) (Phase 5 & 6)
+- [Change Orders Future Enhancements](../3.%20medium/SPEC_CHANGE_ORDERS_FUTURE_ENHANCEMENTS.md) (Phase 5 & 6)
 
 **Recent Updates (October 21, 2025):**
 - ✅ Completed Phase 4: Client Portal Integration

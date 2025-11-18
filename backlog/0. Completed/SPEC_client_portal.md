@@ -1297,9 +1297,9 @@ model ClientPortalActivity {
 ## Related Documentation
 
 ### Core Documentation
-- **[Client Approval Workflow](../backlog/high/SPEC_APPROVAL_WORKFLOW.md)** - Comprehensive documentation of quote approval workflow (complete) and invoice approval workflow (planned)
-- **[Client Portal API Documentation](../../apps/backend/src/routes/portal/README.md)** - API endpoints and authentication
-- **[Email Service Documentation](../../apps/backend/src/lib/emailService.ts)** - Notification system implementation
+- **[Client Approval Workflow](./SPEC_APPROVAL_WORKFLOW.md)** - Comprehensive documentation of quote approval workflow (complete) and invoice approval workflow (planned)
+- Client Portal API Documentation (in app repository) - API endpoints and authentication
+- Email Service Documentation (in app repository) - Notification system implementation
 
 ### Implementation Guides
 - **Quote Approval System** - See Phase 3 section in this document

@@ -8,29 +8,25 @@ This repository contains all documentation, specifications, guides, and architec
 
 ### 📋 Specifications & Planning
 - **[Backlog](./backlog/)** - Feature specifications organized by priority
-  - [Critical](./backlog/critical/) - Security and critical infrastructure
-  - [High](./backlog/high/) - Important features
-  - [Medium](./backlog/medium/) - Enhancement requests
-  - [Completed](./backlog/Completed/) - Implemented features
-- **[Features](./_features.md)** - Feature request tracking
-- **[Bugs](./_bugs.md)** - Bug tracking and resolutions
-- **[Tech Debt](./_techdebt.md)** - Technical debt tracking
+  - [Critical](./backlog/1.%20features/1.%20critical/) - Security and critical infrastructure
+  - [High](./backlog/1.%20features/2.%20high/) - Important features
+  - [Medium](./backlog/1.%20features/3.%20medium/) - Enhancement requests
+  - [Low](./backlog/1.%20features/4.%20low/) - Nice-to-have features
+  - [Completed](./backlog/0.%20Completed/) - Implemented features
+- **[Features](./backlog/0.%20Completed/_features.md)** - Feature request tracking
+- **[Bugs](./backlog/2.%20bugs/_bugs.md)** - Bug tracking and resolutions
+- **[Tech Debt](./backlog/2.%20bugs/_techdebt.md)** - Technical debt tracking
 
 ### 🚀 Deployment & Operations
 - **[Deployment](./deployment/)** - Deployment guides and checklists
-- **[Fixes](./fixes/)** - Production fixes and resolutions
 
 ### 📖 Guides
 - **[Guides](./guides/)** - Development and setup guides
-- **[Development Setup](./DEVELOPMENT_SETUP_GUIDE.md)** - Local development setup
-
-### ✅ Completed Work
-- **[Completed](./Completed/)** - Completed specifications and implementation reports
 
 ## 🔍 Quick Links
 
 - [Main Repository](https://github.com/MSFT-Cantro/project-ledger)
-- [Development Setup Guide](./DEVELOPMENT_SETUP_GUIDE.md)
+- [Development Setup Guide](./guides/DEVELOPMENT_SETUP_GUIDE.md)
 - [Deployment Plan](./deployment/DEPLOYMENT_PLAN.md)
 
 ## 🤝 Contributing

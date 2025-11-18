@@ -1991,11 +1991,9 @@ If widespread issues occur:
 
 ## 📚 Related Documentation
 
-- [Design System Guidelines](../../guides/design-system-guidelines.md) - Design system usage guide
-- [Component Library Storybook](http://localhost:6006) - Interactive component documentation
-- [Frontend Architecture](../../architecture.md) - Overall frontend structure
-- [MUI Migration Guide](../../guides/mui-migration-guide.md) - How to migrate from MUI
-- [Testing Strategy](../../guides/testing-strategy.md) - Testing approach
+- Component Library Storybook (http://localhost:6006) - Interactive component documentation
+- Frontend architecture documentation (in app repository)
+- Design system guidelines (to be created)
 
 ---
 

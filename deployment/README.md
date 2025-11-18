@@ -7,9 +7,8 @@ This folder contains all documentation related to deploying and managing the Pro
 ## 📑 Quick Reference
 
 ### **⭐ Release Templates** (Start Here for New Releases)
-- **[RELEASE_TEMPLATE.md](RELEASE_TEMPLATE.md)** - 🎯 Standard template for all production releases
 - **[DEPLOYMENT_CHECKLIST_TEMPLATE.md](DEPLOYMENT_CHECKLIST_TEMPLATE.md)** - ✅ Printable checklist for any release
-- **[release-template.sh](../../tools/deployment/release-template.sh)** - 🤖 Automated deployment script template
+- **[MARKETING_POST_TEMPLATE.md](MARKETING_POST_TEMPLATE.md)** - 📣 Social media announcement template
 
 ### **Getting Started**
 - **[HOW_TO_RELEASE.md](HOW_TO_RELEASE.md)** - 🎯 Complete guide for releasing new versions
@@ -22,15 +21,10 @@ This folder contains all documentation related to deploying and managing the Pro
   - **[v1.1.0/](releases/v1.1.0/)** - Beamer Integration + UserMenu Updates (October 2, 2025)
 
 ### **Azure Deployment**
-- **[AZURE_DEPLOYMENT_COMPLETE.md](AZURE_DEPLOYMENT_COMPLETE.md)** - ✅ Complete Azure deployment details and current configuration
-
-### **Custom Domain Setup**
-- **[GODADDY_DNS_SETUP.md](GODADDY_DNS_SETUP.md)** - Complete DNS configuration guide for GoDaddy
+- **[Azure Deployment Archive](archive/)** - Historical Azure deployment documentation
 
 ### **Production & Security**
-- **[PRODUCTION_DEPLOYMENT_PAYPAL.md](PRODUCTION_DEPLOYMENT_PAYPAL.md)** - PayPal integration for production
-- **[SECURITY_AUDIT_PAYPAL.md](SECURITY_AUDIT_PAYPAL.md)** - Security audit checklist for PayPal integration
-- **[MONITORING_ALERTING_PAYPAL.md](MONITORING_ALERTING_PAYPAL.md)** - Monitoring and alerting setup
+- See archived documentation for production deployment details
 
 ---
 

@@ -25,7 +25,7 @@ Each release folder contains:
 
 - **[Release Notes](v1.3.0/RELEASE_NOTES_v1.3.0.md)**
 - **[Deployment Checklist](v1.3.0/DEPLOYMENT_CHECKLIST_v1.3.0.md)**
-- **[Deployment Script](../../../tools/deployment/release-v1.3.0.sh)**
+- **Deployment Scripts** - Located in app repository under `tools/deployment/`
 
 **Key Changes:**
 - 🚀 **NEW MAJOR FEATURE**: Multi-Organization Support - Users can belong to multiple organizations and switch between them
@@ -48,7 +48,7 @@ Each release folder contains:
 
 - **[Release Notes](v1.2.0/RELEASE_NOTES_v1.2.0.md)**
 - **[Deployment Checklist](v1.2.0/DEPLOYMENT_CHECKLIST_v1.2.0.md)**
-- **[Deployment Script](../../../tools/deployment/releases/release-v1.2.0.sh)**
+- **Deployment Scripts** - Located in app repository
 
 **Key Changes:**
 - Bug #26: Fixed TextField focus indicator overlapping labels in Client/Inventory forms
@@ -67,7 +67,7 @@ Each release folder contains:
 
 - **[Release Summary](v1.1.0/RELEASE_SUMMARY_v1.1.0.md)**
 - **[Deployment Checklist](v1.1.0/DEPLOYMENT_CHECKLIST_v1.1.0.md)**
-- **[Deployment Script](../../../tools/deployment/releases/release-v1.1.0.sh)**
+- **Deployment Scripts** - Located in app repository
 
 **Key Changes:**
 - Integrated Beamer notification system

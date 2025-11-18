@@ -441,11 +441,9 @@ curl -I https://app.projectledger.ca
 
 ## 📚 Related Documentation
 
-- [Multi-Org Implementation Complete](../../MULTI_ORG_IMPLEMENTATION_COMPLETE.md) - Complete implementation guide
-- [Organization Selector Spec](../../Completed/SPEC_organization-selector.md) - Full specification (moved to completed)
-- [Azure Deployment Guide](../AZURE_DEPLOYMENT_COMPLETE.md) - Infrastructure setup
-- [Database Seeding](../DATABASE_SEEDING.md) - Database management
-- [Monitoring & Alerting](../MONITORING_ALERTING_PAYPAL.md) - Monitoring setup
+- Multi-org implementation documentation (in app repository)
+- [Organization Selector Spec](../../../backlog/0.%20Completed/SPEC_organization-selector.md) - Full specification
+- See archive folder for historical Azure deployment and database documentation
 
 ---
 
@@ -589,8 +587,8 @@ The application is now fully operational and ready for user signups with:
 
 Before deploying v1.4.0 or any future release, **MANDATORY reading:**
 
-1. **[DATA_LOSS_INCIDENT_PREVENTION.md](../DATA_LOSS_INCIDENT_PREVENTION.md)** - Complete incident analysis and prevention measures
-2. **[DEPLOYMENT_PLAN.md](../DEPLOYMENT_PLAN.md)** - Updated with critical safety checks
-3. **[RELEASE_TEMPLATE.md](../RELEASE_TEMPLATE.md)** - Enhanced with mandatory safety procedures
+1. **Data Loss Prevention** - Complete incident analysis (in app repository)
+2. **[DEPLOYMENT_PLAN.md](../../DEPLOYMENT_PLAN.md)** - Updated with critical safety checks
+3. **Release Templates** - Enhanced with mandatory safety procedures (in app repository)
 
 **Key Reminder:** The October 8, 2025 incident resulted in complete production data loss. The comprehensive safety measures now in place exist to ensure this never happens again. **Never skip the database safety checks.**

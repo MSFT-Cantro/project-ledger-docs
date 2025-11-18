@@ -90,7 +90,7 @@ This folder contains all documentation related to the v1.6.0 release:
 - [DEPLOYMENT_PLAN.md](../../DEPLOYMENT_PLAN.md) - Deployment strategy
 
 ### Scripts
-- [release-v1.6.0.sh](../../../tools/deployment/release-v1.6.0.sh) - Deployment script
+- Deployment script located in app repository (`tools/deployment/release-v1.6.0.sh`)
 
 ### GitHub
 - **Repository:** MSFT-Cantro/project-ledger

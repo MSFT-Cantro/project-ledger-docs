@@ -109,9 +109,9 @@
 
 ## 🔗 Related Documentation
 
-- [HOW_TO_RELEASE.md](../HOW_TO_RELEASE.md)
+- [HOW_TO_RELEASE.md](../../HOW_TO_RELEASE.md)
 - [DEPLOYMENT_CHECKLIST_v1.6.0.md](./DEPLOYMENT_CHECKLIST_v1.6.0.md)
-- [DEPLOYMENT_PLAN.md](../DEPLOYMENT_PLAN.md)
+- [DEPLOYMENT_PLAN.md](../../DEPLOYMENT_PLAN.md)
 
 ---
 

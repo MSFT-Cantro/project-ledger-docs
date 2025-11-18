@@ -9,7 +9,7 @@ This specification outlines the infrastructure deployment and hosting setup for 
 **Effort Estimate**: 1-2 days infrastructure setup  
 **Owner**: DevOps Team / Frontend Team Lead  
 **Date**: December 2024  
-**Prerequisite**: [SPEC_storybook_integration.md](./SPEC_storybook_integration.md) - COMPLETE
+**Prerequisite**: [SPEC_storybook_integration.md](../../0.%20Completed/SPEC_storybook_integration.md) - COMPLETE
 
 ---
 

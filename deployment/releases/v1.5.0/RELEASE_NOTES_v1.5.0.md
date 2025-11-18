@@ -517,8 +517,8 @@ curl -I https://app.projectledger.ca
 
 - [HOW_TO_RELEASE.md](../../HOW_TO_RELEASE.md) - Release process guide
 - [DEPLOYMENT_PLAN.md](../../DEPLOYMENT_PLAN.md) - Technical deployment guide
-- [SPEC_change_orders.md](../../../backlog/critical/SPEC_change_orders.md) - Feature specification
-- [CHANGE_ORDERS_APPROVAL_WORKFLOW.md](../../../backlog/high/CHANGE_ORDERS_APPROVAL_WORKFLOW.md) - Approval workflow spec
+- [SPEC_change_orders.md](../../../backlog/1.%20features/1.%20critical/SPEC_change_orders.md) - Feature specification
+- Change orders approval workflow (see app repository)
 
 ---
 

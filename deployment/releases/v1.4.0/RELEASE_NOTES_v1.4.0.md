@@ -464,11 +464,9 @@ curl -I https://app.projectledger.ca
 
 ## 📚 Related Documentation
 
-- [Production Release Plan](../PRODUCTION_RELEASE_PLAN.md) - Detailed procedures
-- [Azure Deployment Guide](../AZURE_DEPLOYMENT_COMPLETE.md) - Infrastructure setup
-- [Database Seeding](../DATABASE_SEEDING.md) - Database management
-- [Monitoring & Alerting](../MONITORING_ALERTING_PAYPAL.md) - Monitoring setup
-- [HOW_TO_RELEASE.md](../HOW_TO_RELEASE.md) - Release process guide
+- [Production Release Plan](../../archive/PRODUCTION_RELEASE_PLAN.md) - Detailed procedures (archived)
+- [HOW_TO_RELEASE.md](../../HOW_TO_RELEASE.md) - Release process guide
+- See archive folder for historical Azure deployment and database documentation
 
 ---
 

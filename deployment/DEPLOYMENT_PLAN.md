@@ -776,7 +776,7 @@ git push origin main --tags
 ### **Getting Help**
 
 - **Azure Container Apps Docs:** https://learn.microsoft.com/en-us/azure/container-apps/
-- **Deployment Documentation:** [`docs/fixes/AZURE_DEPLOYMENT_COMPLETE.md`](../fixes/AZURE_DEPLOYMENT_COMPLETE.md)
+- **Deployment Documentation:** See [archive](./archive/) for historical Azure deployment details
 - **Azure Portal:** https://portal.azure.com → projectledger-poc
 
 ---
