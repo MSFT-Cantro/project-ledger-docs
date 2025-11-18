@@ -19,3 +19,108 @@ jobs:
       with:
         use-quiet-mode: 'yes'
         config-file: '.github/markdown-link-check-config.json'
+
+  notify-discord:
+    name: Notify Discord of Documentation Update
+    runs-on: ubuntu-latest
+    needs: validate
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 2
+    
+    - name: Get Changed Files
+      id: changed-files
+      run: |
+        # Get list of changed files
+        CHANGED_FILES=$(git diff --name-only HEAD^ HEAD | head -10)
+        NUM_FILES=$(git diff --name-only HEAD^ HEAD | wc -l)
+        
+        # Truncate list if too long
+        if [ $NUM_FILES -gt 10 ]; then
+          CHANGED_FILES="$CHANGED_FILES"$'\n'"... and $((NUM_FILES - 10)) more files"
+        fi
+        
+        # Export for next step
+        {
+          echo "files<<EOF"
+          echo "$CHANGED_FILES"
+          echo "EOF"
+          echo "count=$NUM_FILES"
+        } >> $GITHUB_OUTPUT
+    
+    - name: Send Discord Notification
+      if: env.DISCORD_WEBHOOK != ''
+      env:
+        DISCORD_WEBHOOK: ${{ secrets.DISCORD_DOCS_WEBHOOK }}
+      run: |
+        # Extract commit info
+        COMMIT_MSG=$(git log -1 --pretty=%B | head -1)
+        COMMIT_AUTHOR=$(git log -1 --pretty=%an)
+        COMMIT_SHA=$(git rev-parse --short HEAD)
+        COMMIT_URL="https://github.com/${{ github.repository }}/commit/${{ github.sha }}"
+        
+        # Format changed files for Discord
+        CHANGED_FILES="${{ steps.changed-files.outputs.files }}"
+        FILE_COUNT="${{ steps.changed-files.outputs.count }}"
+        
+        # Determine emoji and title based on files changed
+        if echo "$CHANGED_FILES" | grep -q "SPEC_"; then
+          EMOJI="📋"
+          TITLE="Specification Updated"
+        elif echo "$CHANGED_FILES" | grep -q "deployment/"; then
+          EMOJI="🚀"
+          TITLE="Deployment Documentation Updated"
+        elif echo "$CHANGED_FILES" | grep -q "guides/"; then
+          EMOJI="📖"
+          TITLE="Guide Updated"
+        else
+          EMOJI="📝"
+          TITLE="Documentation Updated"
+        fi
+        
+        # Escape special characters for JSON
+        COMMIT_MSG_ESCAPED=$(echo "$COMMIT_MSG" | sed 's/"/\\"/g' | sed "s/'/\\'/g")
+        CHANGED_FILES_ESCAPED=$(echo "$CHANGED_FILES" | sed 's/"/\\"/g')
+        
+        # Create Discord embed
+        curl -H "Content-Type: application/json" \
+          -d '{
+            "username": "Project Ledger Docs",
+            "avatar_url": "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png",
+            "embeds": [{
+              "title": "'"$EMOJI $TITLE"'",
+              "description": "'"$COMMIT_MSG_ESCAPED"'",
+              "url": "'"$COMMIT_URL"'",
+              "color": 5814783,
+              "fields": [
+                {
+                  "name": "Author",
+                  "value": "'"$COMMIT_AUTHOR"'",
+                  "inline": true
+                },
+                {
+                  "name": "Commit",
+                  "value": "[`'"$COMMIT_SHA"'`]('"$COMMIT_URL"')",
+                  "inline": true
+                },
+                {
+                  "name": "Files Changed",
+                  "value": "'"$FILE_COUNT"' file(s)",
+                  "inline": true
+                },
+                {
+                  "name": "Changed Files",
+                  "value": "```\n'"$CHANGED_FILES_ESCAPED"'\n```",
+                  "inline": false
+                }
+              ],
+              "timestamp": "'$(date -u +%Y-%m-%dT%H:%M:%S.000Z)'"
+            }]
+          }' \
+          "$DISCORD_WEBHOOK"
+        
+        echo "✅ Discord notification sent successfully"
