@@ -549,10 +549,9 @@ az monitor metrics list \
 
 ## 📚 Related Documentation
 
-- [DEPLOYMENT_PLAN.md](./DEPLOYMENT_PLAN.md) - General deployment strategy
-- [AZURE_DEPLOYMENT_COMPLETE.md](./AZURE_DEPLOYMENT_COMPLETE.md) - Infrastructure details
-- [ROLLBACK.md](./ROLLBACK.md) - Detailed rollback procedures
-- [MONITORING_ALERTING_PAYPAL.md](./MONITORING_ALERTING_PAYPAL.md) - Monitoring setup
+- [DEPLOYMENT_PLAN.md](../DEPLOYMENT_PLAN.md) - General deployment strategy
+- Infrastructure and monitoring details (see app repository)
+- Rollback procedures (see deployment plan)
 
 ---
 

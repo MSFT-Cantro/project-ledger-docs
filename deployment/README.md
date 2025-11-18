@@ -13,7 +13,6 @@ This folder contains all documentation related to deploying and managing the Pro
 ### **Getting Started**
 - **[HOW_TO_RELEASE.md](HOW_TO_RELEASE.md)** - 🎯 Complete guide for releasing new versions
 - **[DEPLOYMENT_PLAN.md](DEPLOYMENT_PLAN.md)** - Complete deployment strategy with zero-downtime updates
-- **[DATABASE_SEEDING.md](DATABASE_SEEDING.md)** - ⚠️ CRITICAL: Database seeding guide (required after initial deployment)
 
 ### **Release History**
 - **[releases/](releases/)** - 📦 Archived releases with documentation and scripts
@@ -31,7 +30,7 @@ This folder contains all documentation related to deploying and managing the Pro
 ## 🎯 Common Tasks
 
 ### **Initial Deployment**
-1. Read [AZURE_DEPLOYMENT_COMPLETE.md](AZURE_DEPLOYMENT_COMPLETE.md) for infrastructure setup
+1. Review infrastructure setup documentation (see archive folder for historical reference)
 2. **IMPORTANT:** Seed the database after deployment:
    ```bash
    # Seed subscription plans (REQUIRED - signup won't work without this!)
@@ -43,8 +42,8 @@ This folder contains all documentation related to deploying and managing the Pro
    DATABASE_URL="postgresql://postgres:PASSWORD@projectledger-db.eastus2.azurecontainer.io:5432/projectledger" \
    node seed-canada.js
    ```
-3. Follow [GODADDY_DNS_SETUP.md](GODADDY_DNS_SETUP.md) for custom domain
-4. Review [SECURITY_AUDIT_PAYPAL.md](SECURITY_AUDIT_PAYPAL.md) before going live
+3. Configure custom domain settings
+4. Review security audit procedures before going live
 
 ### **Production Releases**
 
@@ -73,7 +72,7 @@ This folder contains all documentation related to deploying and managing the Pro
    ```
 
 4. Follow verification checklist
-5. Monitor using [MONITORING_ALERTING_PAYPAL.md](MONITORING_ALERTING_PAYPAL.md)
+5. Monitor application health and performance
 
 **Example Releases:** 
 - See [releases/v1.2.0/](releases/v1.2.0/) for latest release
@@ -82,10 +81,10 @@ This folder contains all documentation related to deploying and managing the Pro
 ### **Daily Updates**
 1. Use the deployment scripts in `/tools/deployment/`
 2. Follow the zero-downtime strategy in [DEPLOYMENT_PLAN.md](DEPLOYMENT_PLAN.md)
-3. Monitor using [MONITORING_ALERTING_PAYPAL.md](MONITORING_ALERTING_PAYPAL.md)
+3. Monitor application health and performance
 
 ### **Troubleshooting**
-1. Check [AZURE_LOCAL_TEST_FIX_SUMMARY.md](AZURE_LOCAL_TEST_FIX_SUMMARY.md) for local testing
+1. Check [AZURE_LOCAL_TEST_FIX_SUMMARY.md](archive/AZURE_LOCAL_TEST_FIX_SUMMARY.md) for local testing (archived)
 2. Review container logs using Azure CLI commands
 3. Consult rollback procedures in [DEPLOYMENT_PLAN.md](DEPLOYMENT_PLAN.md)
 
@@ -121,14 +120,11 @@ This folder contains all documentation related to deploying and managing the Pro
   - **[v1.1.0/](releases/v1.1.0/)** - Beamer Integration + UserMenu Updates (Oct 2, 2025)
 
 ### **Infrastructure & Configuration**
-- AZURE_DEPLOYMENT_COMPLETE.md
-- GODADDY_DNS_SETUP.md
-- DATABASE_SEEDING.md
+- See [archive/](archive/) for historical infrastructure documentation
 
 ### **Production Operations**
-- PRODUCTION_DEPLOYMENT_PAYPAL.md
-- MONITORING_ALERTING_PAYPAL.md
-- SECURITY_AUDIT_PAYPAL.md
+- Deployment scripts located in app repository
+- Monitoring and security procedures documented in app repository
 
 ### **Archived Documentation**
 - **[archive/README.md](archive/README.md)** - Historical documents preserved for reference

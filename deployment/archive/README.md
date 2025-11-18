@@ -8,7 +8,7 @@ This folder contains historical deployment documentation that is no longer activ
 
 ### Planning & Strategy (Superseded)
 - **AZURE_DEPLOYMENT_PLAN.md** - Original Azure deployment planning
-  - *Superseded by:* `AZURE_DEPLOYMENT_COMPLETE.md`
+  - *Superseded by:* Automated deployment processes
   - *Archived:* October 6, 2025
   - *Reason:* Initial planning doc, actual deployment differs
 
@@ -56,8 +56,8 @@ These documents contain:
 For active deployment documentation, see:
 - **Main Index:** `../README.md`
 - **How to Release:** `../HOW_TO_RELEASE.md`
-- **Current Infrastructure:** `../AZURE_DEPLOYMENT_COMPLETE.md`
-- **Templates:** `../RELEASE_TEMPLATE.md` and `../DEPLOYMENT_CHECKLIST_TEMPLATE.md`
+- **Deployment Plan:** `../DEPLOYMENT_PLAN.md`
+- **Templates:** `../DEPLOYMENT_CHECKLIST_TEMPLATE.md` and `../MARKETING_POST_TEMPLATE.md`
 
 ---
 
