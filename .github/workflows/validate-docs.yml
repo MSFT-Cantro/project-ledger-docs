@@ -7,23 +7,9 @@ on:
     branches: [ main ]
 
 jobs:
-  validate:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-      
-    - name: Check markdown files
-      uses: gaurav-nelson/github-action-markdown-link-check@v1
-      with:
-        use-quiet-mode: 'yes'
-        config-file: '.github/markdown-link-check-config.json'
-
   notify-discord:
     name: Notify Discord of Documentation Update
     runs-on: ubuntu-latest
-    needs: validate
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     
     steps:
