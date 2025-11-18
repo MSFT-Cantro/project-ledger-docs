@@ -113,10 +113,10 @@ When creating a new release:
 
 ## 📚 Related Documentation
 
-- **[Release Template](../RELEASE_TEMPLATE.md)** - Template for creating new releases
+- **Release Templates** - Use deployment checklist and marketing post templates
 - **[Deployment Checklist Template](../DEPLOYMENT_CHECKLIST_TEMPLATE.md)** - Template for deployment verification
 - **[How to Release Guide](../HOW_TO_RELEASE.md)** - Complete release process guide
-- **[Deployment Tools](../../../tools/deployment/)** - Deployment scripts and utilities
+- **Deployment Tools** - Located in app repository (`tools/deployment/`)
 
 ---
 

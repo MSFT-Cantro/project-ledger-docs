@@ -10,7 +10,7 @@ This specification outlines the implementation plan for integrating Storybook in
 **Owner**: Frontend Team  
 **Date**: October 31, 2025  
 **Completion Date**: December 2024  
-**Implementation Plan**: [IMPLEMENTATION_storybook_integration.md](./IMPLEMENTATION_storybook_integration.md)
+**Implementation Plan**: Implementation details (in app repository)
 
 ---
 

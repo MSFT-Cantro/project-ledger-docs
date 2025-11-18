@@ -421,7 +421,7 @@ curl -I https://app.projectledger.ca
 ## 📚 Additional Resources
 
 - [DEPLOYMENT_CHECKLIST_TEMPLATE.md](./DEPLOYMENT_CHECKLIST_TEMPLATE.md) - Checklist template
-- [PRODUCTION_RELEASE_PLAN.md](./archive/PRODUCTION_RELEASE_PLAN.md) - v1.1.0 example (archived)
+- [Production Release Plan](./archive/PRODUCTION_RELEASE_PLAN.md) - v1.1.0 example (archived)
 - [Azure Deployment Archive](./archive/) - Historical infrastructure details
 
 ---

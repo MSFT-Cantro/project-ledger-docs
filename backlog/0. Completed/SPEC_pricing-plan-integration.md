@@ -575,7 +575,7 @@ Phase 3 PayPal integration is **complete and ready for production**.
 - ✅ **Monitoring**: Comprehensive logging + alerting configured
 - ✅ **Compliance**: PCI DSS + GDPR considerations documented
 
-**Security Documentation**: [SECURITY_AUDIT_PAYPAL.md](./SECURITY_AUDIT_PAYPAL.md)
+**Security Documentation**: Security audit documentation (in app repository)
 
 #### 3. ✅ Production Environment Configuration - READY
 
@@ -586,7 +586,7 @@ Phase 3 PayPal integration is **complete and ready for production**.
 - ✅ **PayPal Integration**: Live API credentials and webhook configuration
 - ✅ **Deployment Scripts**: Automated deployment with rollback procedures
 
-**Deployment Documentation**: [PRODUCTION_DEPLOYMENT_PAYPAL.md](./PRODUCTION_DEPLOYMENT_PAYPAL.md)
+**Deployment Documentation**: [PRODUCTION_DEPLOYMENT_PAYPAL.md](../../deployment/archive/PRODUCTION_DEPLOYMENT_PAYPAL.md) (if exists) or see app repository
 
 #### 4. ✅ Monitoring & Alerting Setup - OPERATIONAL
 
@@ -611,10 +611,10 @@ Phase 3 PayPal integration is **complete and ready for production**.
 #### 6. ✅ Documentation Complete - COMPREHENSIVE
 
 **Production Documentation Suite**
-- ✅ **Phase 4 Completion Summary**: [PHASE_4_COMPLETION_SUMMARY.md](./PHASE_4_COMPLETION_SUMMARY.md)
-- ✅ **Security Audit**: [SECURITY_AUDIT_PAYPAL.md](./SECURITY_AUDIT_PAYPAL.md)
-- ✅ **Production Deployment**: [PRODUCTION_DEPLOYMENT_PAYPAL.md](./PRODUCTION_DEPLOYMENT_PAYPAL.md)
-- ✅ **Monitoring & Alerting**: [MONITORING_ALERTING_PAYPAL.md](./MONITORING_ALERTING_PAYPAL.md)
+- ✅ **Phase 4 Completion Summary**: Implementation summary (in app repository)
+- ✅ **Security Audit**: Security documentation (in app repository)
+- ✅ **Production Deployment**: Deployment documentation (in app repository)
+- ✅ **Monitoring & Alerting**: Monitoring setup (in app repository)
 - ✅ **Updated Pricing Spec**: Complete implementation status documented
 
 ### Production Readiness Validation ✅

@@ -1332,8 +1332,8 @@ async function sendInvoiceReminder(invoiceId: string) {
 **Created:** October 15, 2025  
 **Owner:** Engineering Team  
 **Related Documents:**
-- [Change Orders Specification](../critical/SPEC_change_orders.md)
-- [Change Orders Approval Workflow](./CHANGE_ORDERS_APPROVAL_WORKFLOW.md)
+- [Change Orders Specification](../1.%20critical/SPEC_change_orders.md)
+- Change Orders Approval Workflow (to be created)
 
 **Next Actions:**
 1. Review and approve architecture
