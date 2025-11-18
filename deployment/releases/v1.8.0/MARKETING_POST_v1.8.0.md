@@ -1,6 +1,6 @@
 ````markdown
 ```markdown
-🚀 ProjectLedger v1.8.0 — Complete Design System & Internal Admin Platform
+🚀 ProjectLedger v1.8.0 — Enhanced Interface & Better Mobile Experience
 
 Release Date: November 18, 2025  
 Version: 1.8.0
@@ -9,15 +9,15 @@ Version: 1.8.0
 
 ✨ What's New
 
-We've launched ProjectLedger v1.8.0 with a complete design system overhaul and powerful internal admin dashboard. This release brings consistency, accessibility, and enterprise-grade management tools to the platform.
+We've launched ProjectLedger v1.8.0 with a refreshed interface design and significantly improved mobile experience. This release brings better consistency, accessibility, and performance to your daily workflow.
 
 ---
 
 💡 Key Updates
 
-🎨 Complete Design System Migration
+🎨 Refreshed Interface Design
 
-Every page in the application now uses our custom design system with consistent components, theming, and accessibility.
+Every page has been updated with a more consistent, modern design.
 
 What you get:
 - Consistent look and feel across all pages
@@ -26,53 +26,37 @@ What you get:
 - Faster, more responsive interface
 
 Real-world use:  
-Whether you're managing projects on desktop or checking invoices on mobile, the interface is now consistent, predictable, and easier to use.
-
----
-
-🔐 Internal Admin Dashboard
-
-New enterprise-grade administration platform for system management and customer account oversight.
-
-Why it matters:
-- Separate admin authentication from customer accounts
-- Complete account and user management
-- Enhanced metrics and system analytics
-- Role-based access control for security
-
-Real-world use:  
-System administrators can now manage all customer accounts, monitor usage, handle support requests, and access comprehensive analytics—all from a secure, dedicated admin portal.
+Whether you're managing projects on desktop or checking invoices on mobile, the interface is now more consistent, predictable, and easier to use.
 
 ---
 
 📱 Enhanced Client Portal
 
-Improved portal experience with better mobile support and consistent design.
+Significantly improved portal experience with better mobile support.
 
 Improvements:
-- Responsive layouts for all devices
+- Responsive layouts that work beautifully on all devices
 - Fixed mobile authentication issues
-- Consistent statistics cards across pages
+- Consistent statistics cards across all pages
 - Improved list views with better data tables
-- User menu and branded login experience
+- Enhanced user menu and login experience
 
 Real-world use:  
-Your clients get a better experience viewing projects, invoices, and estimates on any device—phone, tablet, or desktop.
+Your clients get a better experience viewing projects, invoices, and estimates on any device—phone, tablet, or desktop. Mobile users will especially notice the improvements.
 
 ---
 
-📊 Storybook Component Library
+📊 Better Analytics & Charts
 
-Developer documentation and component showcase for faster development.
+Improved reporting visualizations and data displays.
 
 What's included:
-- Complete component library documentation
-- Interactive component examples
-- Dark theme support in documentation
-- Development and testing tools
+- Enhanced chart rendering for clearer insights
+- Better data visualization across analytics pages
+- Improved performance for large datasets
 
-Why it matters:  
-Faster development of new features with documented, reusable components.
+Real-world use:  
+View your business metrics and project analytics with clearer, faster charts that help you make better decisions.
 
 ---
 
@@ -81,24 +65,21 @@ Faster development of new features with documented, reusable components.
 19+ bug fixes and enhancements across the platform.
 
 Key fixes:
-- Resolved React Hook violations for better stability
-- Improved dark mode visibility
-- Fixed analytics chart rendering
-- Better memory management for builds
-- Database seeding improvements
+- Improved application stability
+- Better dark mode visibility
+- Enhanced chart rendering
+- Faster page loads
+- Smoother mobile experience
 
 ---
 
 ✅ Summary
 
-Complete platform modernization with design system and admin tools.
+Better interface, better mobile experience, better performance.
 
-✅ Design system migration — Consistent UI across all pages  
-✅ Internal admin dashboard — Enterprise management platform  
+✅ Refreshed interface design — Consistent UI across all pages  
 ✅ Portal enhancements — Better mobile & accessibility  
-✅ Storybook integration — Component documentation  
-✅ Discord notifications — Automated deployment alerts  
-✅ Analytics improvements — Better reporting & charts  
+✅ Analytics improvements — Clearer reporting & charts  
 ✅ 19+ bug fixes — Improved stability & performance  
 ✅ Zero downtime deployment — Updated while you were working
 
@@ -118,12 +99,12 @@ Twitter/X
 ```
 ⚒️ ProjectLedger v1.8.0 is live! 
 
-Complete Design System & Admin Platform:
+Interface Refresh & Mobile Improvements:
 ✅ Consistent UI across all pages
-✅ Internal admin dashboard
 ✅ Enhanced client portal
-✅ Storybook component library
-✅ 19+ bug fixes & improvements
+✅ Better mobile experience
+✅ Improved analytics & charts
+✅ 19+ bug fixes & performance boosts
 
 Zero downtime deployment.
 
@@ -134,39 +115,38 @@ https://app.projectledger.ca
 
 LinkedIn
 ```
-ProjectLedger v1.8.0 brings a complete design system overhaul and enterprise-grade internal admin platform.
+ProjectLedger v1.8.0 brings a refreshed interface and significantly improved mobile experience.
 
 This release delivers:
 
-✅ Complete design system migration for consistent UI/UX
-✅ Internal admin dashboard with role-based access control
-✅ Enhanced client portal with mobile improvements
-✅ Storybook component library for faster development
-✅ Comprehensive analytics and reporting improvements
-✅ 19+ bug fixes for better stability and performance
+✅ Consistent, modern interface design across all pages
+✅ Enhanced client portal with better mobile support
+✅ Improved analytics and reporting visualizations
+✅ Better accessibility and responsiveness
+✅ 19+ bug fixes for improved stability and performance
 
-From system management to client experience—everything is now more consistent, accessible, and powerful.
+From desktop to mobile—everything works better and looks more consistent.
 
 Updated with zero downtime during deployment.
 
 Log in now: https://app.projectledger.ca
 
-#Contractors #ConstructionBusiness #SmallBusiness #ContractorTools #SaaS
+#Contractors #ConstructionBusiness #SmallBusiness #ContractorTools
 ```
 
 Facebook/Instagram
 ```
-🔨 Major platform upgrade! 
+🔨 Better interface, better mobile! 
 
 ProjectLedger v1.8.0 brings:
 
-✅ Complete design system overhaul
-✅ New internal admin platform
+✅ Refreshed, consistent design
 ✅ Enhanced mobile client portal
-✅ Better performance & stability
-✅ Improved accessibility
+✅ Better analytics & charts
+✅ Improved performance & stability
+✅ Fixed mobile authentication
 
-Everything is now more consistent and easier to use—on any device.
+Everything is now more consistent and easier to use—especially on mobile.
 
 Already upgraded. No downtime. Just log in and go.
 
@@ -179,30 +159,27 @@ Already upgraded. No downtime. Just log in and go.
 
 📧 Email Announcement Template
 
-Subject: ProjectLedger v1.8.0 - Complete Design System & Admin Platform
+Subject: ProjectLedger v1.8.0 - Refreshed Interface & Better Mobile Experience
 
 Body:
 
 Hey [Name],
 
-Big news - we just launched v1.8.0 with a complete design system overhaul and powerful new internal admin dashboard.
+Big news - we just launched v1.8.0 with a refreshed interface and significantly improved mobile experience.
 
 What's New:
 
-Complete Design System Migration  
-Every page in the application now uses our custom design system. This means consistent styling, better accessibility, improved dark mode support, and a more responsive interface across all devices.
-
-Internal Admin Dashboard  
-We've built an enterprise-grade administration platform with separate authentication, complete account and user management, enhanced metrics, and role-based access control. System administrators now have powerful tools to manage the entire platform.
+Refreshed Interface Design  
+Every page has been updated with a more consistent, modern design. This means better styling, improved accessibility, enhanced dark mode support, and a more responsive interface across all devices.
 
 Enhanced Client Portal  
-Your clients get an even better experience with responsive layouts for all devices, fixed mobile authentication, consistent statistics displays, and improved data tables. The portal now works beautifully on phones, tablets, and desktops.
+Your clients get an even better experience with responsive layouts for all devices, fixed mobile authentication, consistent statistics displays, and improved data tables. The portal now works beautifully on phones, tablets, and desktops—especially notice the mobile improvements.
 
-Storybook Component Library  
-We've documented all our components in Storybook, making it faster to develop new features and maintain consistency across the platform.
+Better Analytics & Charts  
+We've improved reporting visualizations with enhanced chart rendering and better data displays. View your business metrics with clearer, faster charts.
 
 Performance & Quality  
-This release includes 19+ bug fixes and improvements: resolved React Hook violations, improved dark mode visibility, fixed analytics charts, better memory management, and database seeding improvements.
+This release includes 19+ bug fixes and improvements: better application stability, improved dark mode visibility, enhanced chart rendering, faster page loads, and smoother mobile experience.
 
 No Downtime  
 As always, we upgraded everything while you were working. You probably didn't even notice.
@@ -218,18 +195,17 @@ The Team
 
 ---
 
-P.S. This platform modernization sets the foundation for even more powerful features coming soon.
+P.S. These improvements set the foundation for even more powerful features coming soon.
 
 ---
 
 📝 Support Team Quick Reference
 
 Key Messages
-- v1.8.0 delivers complete design system and internal admin platform
-- All pages migrated to consistent design system
-- New admin dashboard with enterprise features
+- v1.8.0 delivers refreshed interface and improved mobile experience
+- All pages updated with consistent, modern design
 - Enhanced client portal with better mobile support
-- Storybook component documentation
+- Improved analytics and chart visualizations
 - 19+ bug fixes and performance improvements
 - Zero downtime deployment
 
@@ -239,26 +215,26 @@ Q: What changed in the user interface?
 A: The interface is now more consistent across all pages. You'll notice better styling, improved dark mode, and more responsive layouts—especially on mobile devices.
 
 Q: Do I need to do anything differently?  
-A: No! All existing functionality works exactly the same. The improvements are under the hood and in the visual consistency.
-
-Q: What is the internal admin dashboard?  
-A: It's a new platform for system administrators to manage customer accounts, monitor usage, and access analytics. Regular users won't see this—it's for internal operations.
+A: No! All existing functionality works exactly the same. The improvements are in the visual consistency and mobile experience.
 
 Q: Did my client portal change?  
-A: Yes, it's been enhanced! Your clients will see improved mobile support, better layouts, and more consistent design. Everything works the same, just better.
-
-Q: What is Storybook?  
-A: It's a development tool for documenting our components. It helps us build new features faster and maintain consistency. You won't interact with it directly.
+A: Yes, it's been enhanced! Your clients will see improved mobile support, better layouts, and more consistent design. Everything works the same, just better—especially on mobile devices.
 
 Q: Will this affect my existing data?  
 A: No! All your projects, invoices, quotes, and data remain unchanged. Only the interface has been improved.
 
+Q: What about the analytics changes?  
+A: Analytics charts now render better with improved visualizations. All your data is the same, just displayed more clearly.
+
+Q: Is the mobile experience really better?  
+A: Yes! We've fixed mobile authentication issues and improved responsive layouts across the entire portal. Clients using phones or tablets will have a much better experience.
+
 Troubleshooting
 
-Interface looks different: This is intentional—we've improved the design system for better consistency and accessibility.  
+Interface looks different: This is intentional—we've improved the design for better consistency and accessibility.  
 Dark mode issues: We've improved dark mode visibility. If you see any remaining issues, please report them.  
 Mobile portal login: Mobile authentication has been fixed. Clear your browser cache if you experience any login issues.  
-Admin dashboard access: Only internal system administrators have access to the admin dashboard.
+Charts not displaying: Clear your browser cache and refresh. The new chart rendering is more efficient.
 
 ---
 
