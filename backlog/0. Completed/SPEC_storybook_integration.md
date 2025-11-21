@@ -1809,7 +1809,7 @@ This Storybook integration has achieved **outstanding success** with **95% compl
 
 ### Remaining Work
 The remaining 5% consists of **infrastructure deployment only** and is documented in a separate specification:
-- **New Spec**: [`SPEC_storybook_deployment.md`](../1.%20features/4.%20low/SPEC_storybook_deployment.md)
+- **New Spec**: [`SPEC_storybook_deployment.md`](../low/SPEC_storybook_deployment.md)
 - **Scope**: Azure hosting, CI/CD pipeline, domain configuration  
 - **Type**: Infrastructure/DevOps work, not feature development
 - **Priority**: Low (infrastructure only)
